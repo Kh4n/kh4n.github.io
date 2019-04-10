@@ -4,17 +4,25 @@ window.onload = function(e) {
 
 function convert(str) {
     str = str.replace(/ /g, "");
-    try {
-        ret = parser.parse(str);
-    } catch (error) {
-        ret = error
-    }
-    return ret
+    return parser.parse(str);
 }
 
 function parser_submit(input, output) {
-    if (input.value != "")
-        output.innerHTML = convert(input.value)
-    else
-        output.innerHTML = ""
+    output.innerHTML = ""
+    if (input.value != "") {
+        try {
+            converted = convert(input.value)
+            var display_output = document.createElement('p')
+            display_output.innerHTML = converted
+            var copy = document.createElement("button")
+            copy.type = "button"
+            copy.addEventListener('click', copyTextToClipboard(converted), true)
+            copy.innerHTML = "Copy"
+            output.appendChild(display_output)
+            output.appendChild(copy)
+        }
+        catch (error) {
+            output.innerHTML = error
+        }
+    }
 }

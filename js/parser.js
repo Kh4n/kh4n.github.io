@@ -1,3 +1,5 @@
+//This is an automatically generated file. For more info, visit https://github.com/Kh4n/SAP_parser
+
 parser = (function() {
   "use strict";
 
