@@ -22,7 +22,9 @@ function parser_submit(input, output) {
             output.appendChild(copy)
         }
         catch (error) {
-            output.innerHTML = error
+            var error_msg = document.createElement('p')
+            error_msg.innerHTML = error
+            output.appendChild(error_msg)
         }
     }
 }
