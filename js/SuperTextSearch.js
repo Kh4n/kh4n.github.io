@@ -10,43 +10,46 @@ window.onload = function(_) {
 }
 
 function pdf_upload(e) {
-    texts = []
+    document.getElementById("search_output").innerHTML = "Loading PDF...";
     var file = e.target.files[0]
     var fileReader = new FileReader();  
 
 	fileReader.onload = function() {
-		var typedarray = new Uint8Array(this.result);
-
+        var typedarray = new Uint8Array(this.result);
+        
+        var promises = []
 		pdfjsLib.getDocument(typedarray).then(function(pdf) {
 			// you can now use *pdf* here
             console.log("the pdf has ",pdf.numPages, "page(s).")
-            promises = []
             for (var i = 1; i <= pdf.numPages; ++i) {
                 promises.push(pdf.getPage(i).then(function(page) {
                     return page.getTextContent().then(function(text) {
-                        return text.items.map(e => e.str.trim()).join(' ')
-                    })
-                }))
+                        return text.items.map(e => e.str.trim()).join(' ');
+                    });
+                }));
             }
             Promise.all(promises).then(function(ts) {
-                var length = parseInt(document.getElementById("length").value);
-                var offset = parseInt(document.getElementById("offset").value);
-                pdf_complete = ts.join(' ')
+                pdf_complete = ts.join(' ');
                 gen_search_index();
-            })
+            });
 		});
 	};
     fileReader.readAsArrayBuffer(file);
 }
 
 function gen_search_index() {
+    texts = []
     var length = parseInt(document.getElementById("length").value);
-    var offset = parseInt(document.getElementById("offset").value);
+    // var offset = parseInt(document.getElementById("offset").value);
     if (!texts) {
         alert("You must upload a pdf first")
     }
-    texts = splitSlice(pdf_complete, length, offset);
+    document.getElementById("search_output").innerHTML = "Loading search index...";
+    for (var i = 0; i < length; i += length/5) {
+        texts.extend(splitSlice(pdf_complete, length, i));
+    }
     idx = genIdx(texts);
+    document.getElementById("search_output").innerHTML = "Done loading search index...use the search button to search";
 }
 
 function search() {
@@ -85,7 +88,7 @@ function genIdx(texts) {
 
 function highlight(terms, text) {
     return text.split(/[ \n]/).map(function(w) {
-        if (terms.includes(w.toLowerCase())) {
+        if (terms.includes(w.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").toLowerCase())) {
             return "<mark>"+w+"</mark>"
         }
         return w
@@ -116,10 +119,16 @@ function advSearch(texts, idx, question) {
         '2', '3', '4', '5', '6', '7', '8', '9', '0', '_'
     ];
     question = question.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
-    question = question.split(" ").filter(e => !words.includes(e));
-    question = question.map(e => e.toLowerCase());
+    question = question.split(" ").map(e => e.toLowerCase()).filter(e => !words.includes(e));
     // the final string that contains the most relevant words
     var relevenceString = question.join(' ')
     console.log(`Keyword string: ${relevenceString}\n`);
-    return highlight(question, texts[idx.search(relevenceString)[0].ref]);
+    return highlight(question, texts[idx.search(relevenceString)[0].ref]) + "<br><br><br>" + 
+            highlight(question, texts[idx.search(relevenceString)[1].ref]) + "<br><br><br>" + 
+            highlight(question, texts[idx.search(relevenceString)[2].ref]);
+}
+
+Array.prototype.extend = function (other_array) {
+    /* You should include a test to check whether other_array really is an array */
+    other_array.forEach(function(v) {this.push(v)}, this);
 }
