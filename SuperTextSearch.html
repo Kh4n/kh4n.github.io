@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <script src="./js/lunr.js"></script>
+    <script src="./js/SuperTextSearch.js"></script>
+    <body>
+        Paste the complete PDF into the box below, and hit submit to genereate the search index. Just press Ctrl+A in the PDF you want to use and paste it here: <br>
+        <textarea id="pdf_text" cols="40" rows="5"></textarea>
+        <br>
+        Offset <input type="number" id="offset" min="0" value="0" style="max-width: 50px;">
+        Length <input type="number" id="length" min="0" value="2000" style="max-width: 50px;">
+        <button id="text_btn">Submit</button>
+        <br>
+        Enter question to search:
+        <input type="text" id="search_input"></input>
+        <button id="search_btn">Search</button>
+        <div id="search_output"></div>
+    </body>
+</html>

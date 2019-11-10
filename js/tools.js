@@ -15,7 +15,8 @@ function fallbackCopyTextToClipboard(text) {
     }
   
     document.body.removeChild(textArea);
-  }
+}
+
 function copyTextToClipboard(text) {
     if (!navigator.clipboard) {
       fallbackCopyTextToClipboard(text);

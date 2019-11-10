@@ -1,4 +1,4 @@
-window.onload = function(e) {
+window.onload = function(_) {
     link("parser_input", "parser_output", "oninput", parser_submit)
 }
 
