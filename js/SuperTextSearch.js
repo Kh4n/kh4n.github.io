@@ -1,16 +1,51 @@
 // "use strict";
+var pdf_complete = null;
 var texts = null;
 var idx = null;
 
 window.onload = function(_) {
     document.getElementById("text_btn").addEventListener("click", gen_search_index);
     document.getElementById("search_btn").addEventListener("click", search);
+    document.getElementById("pdf_file").addEventListener("change", pdf_upload);
+}
+
+function pdf_upload(e) {
+    texts = []
+    var file = e.target.files[0]
+    var fileReader = new FileReader();  
+
+	fileReader.onload = function() {
+		var typedarray = new Uint8Array(this.result);
+
+		pdfjsLib.getDocument(typedarray).then(function(pdf) {
+			// you can now use *pdf* here
+            console.log("the pdf has ",pdf.numPages, "page(s).")
+            promises = []
+            for (var i = 1; i <= pdf.numPages; ++i) {
+                promises.push(pdf.getPage(i).then(function(page) {
+                    return page.getTextContent().then(function(text) {
+                        return text.items.map(e => e.str.trim()).join(' ')
+                    })
+                }))
+            }
+            Promise.all(promises).then(function(ts) {
+                var length = parseInt(document.getElementById("length").value);
+                var offset = parseInt(document.getElementById("offset").value);
+                pdf_complete = ts.join(' ')
+                gen_search_index();
+            })
+		});
+	};
+    fileReader.readAsArrayBuffer(file);
 }
 
 function gen_search_index() {
     var length = parseInt(document.getElementById("length").value);
     var offset = parseInt(document.getElementById("offset").value);
-    texts = splitSlice(document.getElementById("pdf_text").value, length, offset);
+    if (!texts) {
+        alert("You must upload a pdf first")
+    }
+    texts = splitSlice(pdf_complete, length, offset);
     idx = genIdx(texts);
 }
 
@@ -22,7 +57,7 @@ function search() {
     document.getElementById("search_output").innerHTML = advSearch(texts, idx, document.getElementById("search_input").value)
 }
 
-// splits string into either n chunks with length len or into len chunks (depending on nchunks)
+// splits string into either n chunks with length len
 function splitSlice(str, len, offset) {
     var ret = [];
     for (var cur = offset, strLen = str.length; cur < strLen; cur += len) {
