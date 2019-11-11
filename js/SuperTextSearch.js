@@ -38,13 +38,18 @@ function pdf_upload(e) {
 }
 
 function gen_search_index() {
+    if (!pdf_complete) {
+        alert("You must upload a PDF first")
+        return;
+    }
+    setTimeout(_gen_search_index, 1);
+    document.getElementById("search_output").innerHTML = "Loading search index...";
+}
+
+function _gen_search_index() {
     texts = []
     var length = parseInt(document.getElementById("length").value);
     // var offset = parseInt(document.getElementById("offset").value);
-    if (!texts) {
-        alert("You must upload a pdf first")
-    }
-    document.getElementById("search_output").innerHTML = "Loading search index...";
     for (var i = 0; i < length; i += length/2) {
         texts.extend(splitSlice(pdf_complete, length, i));
     }
@@ -54,7 +59,7 @@ function gen_search_index() {
 
 function search() {
     if (!(texts && idx)) {
-        document.getElementById("search_output").innerHTML = "YOU MUST HIT SUBMIT FIRST";
+        document.getElementById("search_output").innerHTML = "You must upload a PDF first";
         return;
     }
     document.getElementById("search_output").innerHTML = advSearch(texts, idx, document.getElementById("search_input").value)
