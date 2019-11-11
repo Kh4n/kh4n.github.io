@@ -45,7 +45,7 @@ function gen_search_index() {
         alert("You must upload a pdf first")
     }
     document.getElementById("search_output").innerHTML = "Loading search index...";
-    for (var i = 0; i < length; i += length/5) {
+    for (var i = 0; i < length; i += length/2) {
         texts.extend(splitSlice(pdf_complete, length, i));
     }
     idx = genIdx(texts);
