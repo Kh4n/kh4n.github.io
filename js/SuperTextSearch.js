@@ -29,7 +29,7 @@ function pdf_upload(e) {
                 }));
             }
             Promise.all(promises).then(function(ts) {
-                pdf_complete = ts.join(' ');
+                pdf_complete = ts.join(' ').replace(/\- /g,"");
                 gen_search_index();
             });
 		});
