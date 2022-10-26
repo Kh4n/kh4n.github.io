@@ -2,15 +2,15 @@
 [Pedagogy](2-pedagogy.md)
 [Do's and Dont's](3-dos-donts.md)
 
-# Python
+# Python: Basics of Programming
 - [Basics](1-python/1-basics-intro.md)
     - [Hello World](1-python/1-basics/hello-world.md)
     - [What just happened?](1-python/1-basics/hello-world-explained.md)
 
-# C
+# C: Computer and OS Internals
 - [Basics](2-c/1-basics-intro.md)
     - [Hello World](2-c/1-basics/hello-world.md)
 
-# Java
+# Java: Software Design
 - [Basics](3-java/1-basics-intro.md)
     - [Hello World](3-java/1-basics/hello-world.md)
