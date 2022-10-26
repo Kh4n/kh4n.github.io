@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Pedagogy - (WIP - NOT COMPLETE) My Complete Guide to Programming</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="1-intro.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="2-pedagogy.html" class="active">Pedagogy</a></li><li class="chapter-item expanded affix "><a href="3-dos-donts.html">Do's and Dont's</a></li><li class="chapter-item expanded affix "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="1-python/1-basics-intro.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="1-python/1-basics/hello-world.html"><strong aria-hidden="true">1.1.</strong> Hello World</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">C</li><li class="chapter-item expanded "><a href="2-c/1-basics-intro.html"><strong aria-hidden="true">2.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2-c/1-basics/hello-world.html"><strong aria-hidden="true">2.1.</strong> Hello World</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Java</li><li class="chapter-item expanded "><a href="3-java/1-basics-intro.html"><strong aria-hidden="true">3.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3-java/1-basics/hello-world.html"><strong aria-hidden="true">3.1.</strong> Hello World</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">(WIP - NOT COMPLETE) My Complete Guide to Programming</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="pedagogy"><a class="header" href="#pedagogy">Pedagogy</a></h1>
+<p>Here I will explain some of the choices that I made with regard to this guide. Feel free to skip this section if you don't care about this; it is not important to read this if you are just trying to learn programming.</p>
+<h2 id="language-order"><a class="header" href="#language-order">Language order</a></h2>
+<p>On first glance, the order of languages chosen seems a little bizarre. Python first makes total sense, but C next? Isn't that an &quot;advanced&quot; programming language? Also isn't Java beginner friendly, shouldn't we be learning that first?</p>
+<p>Here is my explanation:</p>
+<ol>
+<li>Python: this is a great first language. It has very few pitfalls, is easy to pick up, and can let beginners feel the &quot;joy of programming&quot;.
+<ul>
+<li>Another huge advantage is that I can teach a huge part of this language without doing the &quot;you'll learn about this in depth later so just take it at face value for now&quot; thing which I really hate. I will have to do that a few times as it is unavoidable, but Python first really mitigates that</li>
+<li>Python has few pitfalls, but is not completely devoid of them, so there may be slightly better choices, but I am really experienced with Python so it makes sense to me to use it</li>
+</ul>
+</li>
+<li>C: this is the weird one. The core reasoning behind this is due to what C and Java are supposed to teach
+<ul>
+<li>Here is what I am using each to teach, which is pretty common in general as well:
+<ul>
+<li>C is to help people learn low level concepts and create a core understanding about how a computer works and how languages interact with the computer</li>
+<li>Java is to help understand OOP and software design</li>
+</ul>
+</li>
+<li>My key takeaway after learning these languages in the opposite order many years ago is this:
+<strong>the concepts in C are deceptively <em>easy</em> to learn, while the concepts in Java are deceptively <em>difficult</em> to learn</strong>
+<ul>
+<li>Computer internals may seem intimidating at first but are really straightforward to understand at a medium-high level and give an excellent baseline to learn other languages that abstract over these concepts</li>
+<li>Software design is very different: it is hard to understand properly, hard to apply, and the best practices are changing rapidly all the time. OOP may seem easy at first to beginners: &quot;just make correlations to real world objects&quot;. But this methodology completely falls apart in the real world and results in some really, <em>really</em> bad design that can frustrate newcomers to the field</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Java: this may also seem strange given its age, but it is still one of the most in demand languages, and is pretty simple when it comes to software design
+<ul>
+<li>Other languages have too many sophisticated features that can clutter understanding</li>
+<li>Learning C first means we don't need to be confused by objects vs primitives and what not</li>
+<li>A kind of underrated language these days: everyone hates on it (I used to as well), but I have come to appreciate its simplicity, even if it is a bit verbose
+<ul>
+<li>The newer APIs in the language are also a big boon</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="avoiding-the-well-come-back-to-this-later-phenomenon"><a class="header" href="#avoiding-the-well-come-back-to-this-later-phenomenon">Avoiding the &quot;we'll come back to this later&quot; phenomenon</a></h2>
+<p>I mentioned earlier that I really hate this phrase in tutorials: it can be hard as a learner to just ignore the fact that you are using something you can't fully understand. As stated, I can't totally avoid this, but I will try very hard to reduce this phrase as much as possible. Here are the ways I will mitigate this:</p>
+<ul>
+<li>Python first will allow us to get the basics down without much trouble</li>
+<li>I will try to give high level explanations that will allow you to &quot;black box&quot; things effectively</li>
+<li>I will go in depth right at the spot as much as I can without it being too tiresome</li>
+</ul>
+<h2 id="other-goals-and-general-ideas"><a class="header" href="#other-goals-and-general-ideas">Other goals and general ideas</a></h2>
+<ul>
+<li>I want to make this easy to read and not tiresome</li>
+<li>I want to make it approachable and not intimidating</li>
+<li>I want to make it fluid when reading but still work as decently as a reference
+<ul>
+<li>The main focus is straightforward reading, as maintaining a reference is difficult, but I want people to be able to come back to certain sections if there is something they forgot or want to reread</li>
+</ul>
+</li>
+<li>I do not want people to just memorize things and move on, so I will make that as hard as I can by giving as few things to memorize as possible</li>
+<li>I do not want large code sections, especially not at the beginning
+<ul>
+<li>I want to discourage copy/paste as much as possible</li>
+<li>Also newcomers tend to glaze over when seeing a wall of code
+<ul>
+<li>Hell, I feel my eyes start to glaze over sometimes :)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I do not want a tutorial &quot;feel&quot; to this guide. Tutorials are kind of bad as they are perpetually out of date and tend to encourage copy/paste as well as lack of understanding
+<ul>
+<li>Instead, I want people to learn and understand core concepts and be able to apply them freely to their own projects</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="1-intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="3-dos-donts.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="1-intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="3-dos-donts.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
