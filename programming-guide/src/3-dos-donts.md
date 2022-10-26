@@ -1,6 +1,11 @@
 # Do's and Dont's
 Here I will outline some things to note before we get started
 
+# DO make an issue if you see a mistake or can't understand something
+Open an issue here (make an account if you don't have one): https://github.com/Kh4n/kh4n.github.io/issues
+
+Please, *please* do not hesitate to raise an issue if you see a problem or have trouble understanding something. I will address issues quickly because it would be bad to have misinformation in a guide meant for beginners. As for trouble with understanding, that clearly means a problem with my guide, so after I attempt to explain it, I will update the guide to hopefully be more clear in the future.
+
 ## DO NOT get scared or tell yourself "I can't understand this" when I say something is complicated
 Anything worth learning is complicated. At some point in your life, just *talking* was complicated. Now you can do it almost without thinking. The same will be true of concepts in this guide: they will be challenging at first, but you'll get them soon enough, and when you do they will seem very easy.
 

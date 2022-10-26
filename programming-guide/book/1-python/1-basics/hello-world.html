@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../1-intro.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="../../2-pedagogy.html">Pedagogy</a></li><li class="chapter-item expanded affix "><a href="../../3-dos-donts.html">Do's and Dont's</a></li><li class="chapter-item expanded affix "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="../../1-python/1-basics-intro.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../1-python/1-basics/hello-world.html" class="active"><strong aria-hidden="true">1.1.</strong> Hello World</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">C</li><li class="chapter-item expanded "><a href="../../2-c/1-basics-intro.html"><strong aria-hidden="true">2.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2-c/1-basics/hello-world.html"><strong aria-hidden="true">2.1.</strong> Hello World</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Java</li><li class="chapter-item expanded "><a href="../../3-java/1-basics-intro.html"><strong aria-hidden="true">3.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../3-java/1-basics/hello-world.html"><strong aria-hidden="true">3.1.</strong> Hello World</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../1-intro.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="../../2-pedagogy.html">Pedagogy</a></li><li class="chapter-item expanded affix "><a href="../../3-dos-donts.html">Do's and Dont's</a></li><li class="chapter-item expanded affix "><li class="part-title">Python</li><li class="chapter-item expanded "><a href="../../1-python/1-basics-intro.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../1-python/1-basics/hello-world.html" class="active"><strong aria-hidden="true">1.1.</strong> Hello World</a></li><li class="chapter-item expanded "><a href="../../1-python/1-basics/hello-world-explained.html"><strong aria-hidden="true">1.2.</strong> What just happened?</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">C</li><li class="chapter-item expanded "><a href="../../2-c/1-basics-intro.html"><strong aria-hidden="true">2.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2-c/1-basics/hello-world.html"><strong aria-hidden="true">2.1.</strong> Hello World</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Java</li><li class="chapter-item expanded "><a href="../../3-java/1-basics-intro.html"><strong aria-hidden="true">3.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../3-java/1-basics/hello-world.html"><strong aria-hidden="true">3.1.</strong> Hello World</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -138,7 +138,7 @@
 <p>Ah, the pinnacle of programming. Every programmer starts with a &quot;hello world&quot; program, as will you. Let's get started.</p>
 <h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
 <p>Here I will be making a shift: many tutorials start with an agonizing development environment setup that can suck the joy out of many a beginner (or even experienced) programmer. Instead, we will be using the glory of an <strong>Online IDE</strong>. Fear not, it will have all the features you need, will be fully setup, and can be accessed from anywhere you have a browser.</p>
-<p>You are free to use any online IDE, but I strongly recommend <a href="http://repl.it">Replit</a>. Sign up, create a new Repl, make sure to select Python. It should be Python version 3. You will see a code editor on the left. Here is what mine looks like (it may look different):
+<p>You are free to use any online IDE, but I strongly recommend <a href="http://repl.it">Replit</a>, as it is free and easy to use. Sign up, create a new Repl, make sure to select Python. It should be Python version 3. You will see a code editor on the left. Here is what mine looks like (it may look different):
 <img src="../img/replit-screenshot.png" alt="Replit Screenshot" /></p>
 <p>You see I have some code in the left side:</p>
 <pre><code class="language-python">import sys
@@ -146,13 +146,13 @@ print(sys.version_info.major)
 </code></pre>
 <p>Paste this in to whatever IDE or editor you are using, Replit or otherwise, and ensure that after you run (the green &quot;Run&quot; button in the case of Replit) the console on the right outputs a &quot;3&quot;. This is to make sure we are on Python 3, and not 2. If you get an error, you are on the wrong version.</p>
 <p>Ignore the other files that are there, and do not open them or edit them. They are not relevant.</p>
+<p><strong>IMPORTANT</strong>: As a note to yourself for the distant future: do not <em>ever</em> write proprietary code in an online IDE, or any code that you want to own yourself. It is not safe from a legal or security standpoint, please do not do it. I will show you how to properly set up your environment locally later on, and it is not even that hard. It's just that right now I want to get you started as quickly as possible, and this is the best way to do that. The code you will write as a beginner will not be so important tha you need to copyright it, but in the future it may be.</p>
 <p>Now that you are on the right version, delete that code and pretend that you never ran it, because now we will write our first legitimate piece of software.</p>
 <h2 id="the-actual-code"><a class="header" href="#the-actual-code">The actual code</a></h2>
 <p>In the editor, type:</p>
 <pre><code class="language-python">print(&quot;Hello World!&quot;)
 </code></pre>
 <p>and hit run. You should see the words printed on the right. This output area is known as the console. Later on we will discuss what is going on in more depth, as even a simple hello world program has much to be explained. Suffice it to say, the console is where you will see your program output, as it is (usually) very easy to output text to it in most languages, Python included. In fact, in Python it is only one line as you can see here.</p>
-<p>So what is going on here? A couple of things: we wrote <code>print</code>, which is known as a <em>function</em>, one of the first and most important concepts to understand in programming. The part in quotes is </p>
 
                     </main>
 
@@ -161,7 +161,7 @@ print(sys.version_info.major)
                             <a rel="prev" href="../../1-python/1-basics-intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="../../2-c/1-basics-intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../1-python/1-basics/hello-world-explained.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -173,7 +173,7 @@ print(sys.version_info.major)
                     <a rel="prev" href="../../1-python/1-basics-intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="../../2-c/1-basics-intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../1-python/1-basics/hello-world-explained.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

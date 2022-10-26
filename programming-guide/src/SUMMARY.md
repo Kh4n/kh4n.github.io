@@ -5,6 +5,7 @@
 # Python
 - [Basics](1-python/1-basics-intro.md)
     - [Hello World](1-python/1-basics/hello-world.md)
+    - [What just happened?](1-python/1-basics/hello-world-explained.md)
 
 # C
 - [Basics](2-c/1-basics-intro.md)
