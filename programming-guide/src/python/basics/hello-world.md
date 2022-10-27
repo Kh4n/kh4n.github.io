@@ -25,4 +25,8 @@ In the editor, type:
 ```python
 print("Hello World!")
 ```
-and hit run. You should see the words printed on the right. This output area is known as the console. Later on we will discuss what is going on in more depth, as even a simple hello world program has much to be explained. Suffice it to say, the console is where you will see your program output, as it is (usually) very easy to output text to it in most languages, Python included. In fact, in Python it is only one line as you can see here.
+and hit run. You should see the words printed on the right like so:
+```
+Hello World!
+```
+This output area is known as the console. Later on we will discuss what is going on in more depth, as even a simple hello world program has much to be explained. Suffice it to say, the console is where you will see your program output, as it is (usually) very easy to output text to it in most languages, Python included. In fact, in Python it is only one line as you can see here.

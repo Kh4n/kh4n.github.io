@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introduction - (WIP - NOT COMPLETE) My Complete Guide to Programming</title>
+        <title>Pedagogy - (WIP - NOT COMPLETE) My Complete Guide to Programming</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html" class="active">Introduction</a></li><li class="chapter-item expanded affix "><a href="pedagogy.html">Pedagogy</a></li><li class="chapter-item expanded affix "><a href="dos-donts.html">Do's and Dont's</a></li><li class="chapter-item expanded affix "><li class="part-title">Python: Basics of Programming</li><li class="chapter-item expanded "><a href="python/basics-intro.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="python/basics/hello-world.html"><strong aria-hidden="true">1.1.</strong> Hello World</a></li><li class="chapter-item expanded "><a href="python/basics/hello-world-explained.html"><strong aria-hidden="true">1.2.</strong> What just happened?</a></li><li class="chapter-item expanded "><a href="python/basics/variables.html"><strong aria-hidden="true">1.3.</strong> More on Variables</a></li><li class="chapter-item expanded "><a href="python/basics/functions.html"><strong aria-hidden="true">1.4.</strong> Functions</a></li><li class="chapter-item expanded "><a href="python/basics/some-examples.html"><strong aria-hidden="true">1.5.</strong> Some Examples</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">C: Computer and OS Internals</li><li class="chapter-item expanded "><a href="c/basics-intro.html"><strong aria-hidden="true">2.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="c/basics/hello-world.html"><strong aria-hidden="true">2.1.</strong> Hello World</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Java: Software Design</li><li class="chapter-item expanded "><a href="java/basics-intro.html"><strong aria-hidden="true">3.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="java/basics/hello-world.html"><strong aria-hidden="true">3.1.</strong> Hello World</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="pedagogy.html" class="active">Pedagogy</a></li><li class="chapter-item expanded affix "><a href="dos-donts.html">Do's and Dont's</a></li><li class="chapter-item expanded affix "><li class="part-title">Python: Basics of Programming</li><li class="chapter-item expanded "><a href="python/basics-intro.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="python/basics/hello-world.html"><strong aria-hidden="true">1.1.</strong> Hello World</a></li><li class="chapter-item expanded "><a href="python/basics/hello-world-explained.html"><strong aria-hidden="true">1.2.</strong> What just happened?</a></li><li class="chapter-item expanded "><a href="python/basics/variables.html"><strong aria-hidden="true">1.3.</strong> More on Variables</a></li><li class="chapter-item expanded "><a href="python/basics/functions.html"><strong aria-hidden="true">1.4.</strong> Functions</a></li><li class="chapter-item expanded "><a href="python/basics/some-examples.html"><strong aria-hidden="true">1.5.</strong> Some Examples</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">C: Computer and OS Internals</li><li class="chapter-item expanded "><a href="c/basics-intro.html"><strong aria-hidden="true">2.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="c/basics/hello-world.html"><strong aria-hidden="true">2.1.</strong> Hello World</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Java: Software Design</li><li class="chapter-item expanded "><a href="java/basics-intro.html"><strong aria-hidden="true">3.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="java/basics/hello-world.html"><strong aria-hidden="true">3.1.</strong> Hello World</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,50 +134,77 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
-<p>Hello, and welcome to a guide I am making for anyone interested in learning programming.</p>
-<p>This guide will (eventually) contain pretty much everything I know about programming, and will continue to grow and improve as that knowledge expands</p>
-<h2 id="why-make-this"><a class="header" href="#why-make-this">Why make this?</a></h2>
-<p>I am making this for a few reasons:</p>
+                        <h1 id="pedagogy"><a class="header" href="#pedagogy">Pedagogy</a></h1>
+<p>Here I will explain some of the choices that I made with regard to this guide. Feel free to skip this section if you don't care about this; it is not important to read this if you are just trying to learn programming.</p>
+<h2 id="language-order"><a class="header" href="#language-order">Language order</a></h2>
+<p>On first glance, the order of languages chosen seems a little bizarre. Python first makes total sense, but C next? Isn't that an &quot;advanced&quot; programming language? Also isn't Java beginner friendly, shouldn't we be learning that first?</p>
+<p>Here is my explanation:</p>
+<ol>
+<li>Python: this is a great first language. It has very few pitfalls, is easy to pick up, and can let beginners feel the &quot;joy of programming&quot;.
 <ul>
-<li>People ask me all the time &quot;how do I learn programming&quot;, or &quot;what are some good resources to learn programming&quot;, or &quot;can I learn programming for free&quot;. I want to be able to point these people to a resource I trust</li>
-<li>A lot of programming guides and tutorials online are not comprehensive unless they are paid for. Many resources online are great but are usually not up to date and way too language specific</li>
-<li>I feel a lot of despair in the programming community about concepts that quite frankly should not be that difficult to teach, yet are still a pain point for many. This results in people discounting large portions of computer science/software engineering as &quot;useless&quot;, and lots of frustration ensues</li>
-<li>A way to keep things I have learned in one place</li>
-</ul>
-<p>Basically I want to help people learn with a methodology that I believe in, with a source that I can control and change as I see fit</p>
-<h2 id="why-should-you-read-this"><a class="header" href="#why-should-you-read-this">Why should you read this?</a></h2>
-<p>Honestly, I have no justification. I am not an expert at programming; I am pretty good, but there is still much for me to learn. I am also not an expert at teaching, nor do I have any experience in that.</p>
-<p>What I do have is a passion for programming, and I was lucky enough to have some good teachers early on, so some of this will contain their knowledge. The rest will come from my experience and what I feel is important to teach, in an order that I think is unique and effective.</p>
-<h2 id="who-should-read-this"><a class="header" href="#who-should-read-this">Who should read this</a></h2>
-<ul>
-<li>You know how to use a computer to a basic - intermediate degree
-<ul>
-<li>You need to know copy paste, right click, navigate and use the computer</li>
-<li>You don't need to know what a kernel is, how the internet works, or what processor architecture you have currently</li>
+<li>Another huge advantage is that I can teach a huge part of this language without doing the &quot;you'll learn about this in depth later so just take it at face value for now&quot; thing which I really hate. I will have to do that a few times as it is unavoidable, but Python first really mitigates that</li>
+<li>Python has few pitfalls, but is not completely devoid of them, so there may be slightly better choices, but I am really experienced with Python so it makes sense to me to use it</li>
 </ul>
 </li>
-<li>You have an interest in learning programming and want to start <em>now</em></li>
-<li>You have anywhere from complete ignorance to total and complete knowledge of programming
+<li>C: this is the weird one. The core reasoning behind this is due to what C and Java are supposed to teach
 <ul>
-<li>Feel free to skip around if you feel the beginning sections are too basic</li>
+<li>Here is what I am using each to teach, which is pretty common in general as well:
+<ul>
+<li>C is to help people learn low level concepts and create a core understanding about how a computer works and how languages interact with the computer</li>
+<li>Java is to help understand OOP and software design</li>
 </ul>
 </li>
-<li>You have access to a web browser and an internet connection
+<li>My key takeaway after learning these languages in the opposite order many years ago is this:
+<strong>the concepts in C are deceptively <em>easy</em> to learn, while the concepts in Java are deceptively <em>difficult</em> to learn</strong>
 <ul>
-<li>Not a single part of this guide will require a local work environment, <strong>with the sole exception of the section on developer environments</strong>, which is an important topic which will require some sort of local filesystem (so not really possible on a chromebook for example)</li>
-<li>If you don't access to this</li>
+<li>Computer internals may seem intimidating at first but are really straightforward to understand at a medium-high level and give an excellent baseline to learn other languages that abstract over these concepts</li>
+<li>Software design is very different: it is hard to understand properly, hard to apply, and the best practices are changing rapidly all the time. OOP may seem easy at first to beginners: &quot;just make correlations to real world objects&quot;. But this methodology completely falls apart in the real world and results in some really, <em>really</em> bad design that can frustrate newcomers to the field</li>
 </ul>
 </li>
-<li>You have a willingness to work through challenges and difficulty
-<ul>
-<li>Anyone can learn programming, and I don't think it is that difficult to do so. However, writing good software is hard, like <em>really</em> hard. Sure, you can create something that works, but that is very different from a masterfully architected, scalable, and elegant solutions. </li>
-<li>It is very easy to confuse the two: just because you learned something does not mean it will be easy to apply it. I will try my best to give you the tools and knowledge to make this possible, but it will require your effort in the end</li>
 </ul>
 </li>
-<li>You are willing to trust the process, at least to a certain degree
+<li>Java: this may also seem strange given its age, but it is still one of the most in demand languages, and is pretty simple when it comes to software design
 <ul>
-<li>I mentioned earlier that the order of this guide is a bit strange compared to most tutorials, but I want you to follow it in order if you are a beginner</li>
+<li>Other languages have too many sophisticated features that can clutter understanding</li>
+<li>Learning C first means we don't need to be confused by objects vs primitives and what not</li>
+<li>A kind of underrated language these days: everyone hates on it (I used to as well), but I have come to appreciate its simplicity, even if it is a bit verbose
+<ul>
+<li>The newer APIs in the language are also a big boon</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="avoiding-the-well-come-back-to-this-later-phenomenon"><a class="header" href="#avoiding-the-well-come-back-to-this-later-phenomenon">Avoiding the &quot;we'll come back to this later&quot; phenomenon</a></h2>
+<p>I mentioned earlier that I really hate this phrase in tutorials: it can be hard as a learner to just ignore the fact that you are using something you can't fully understand. As stated, I can't totally avoid this, but I will try very hard to reduce this phrase as much as possible. Here are the ways I will mitigate this:</p>
+<ul>
+<li>Python first will allow us to get the basics down without much trouble</li>
+<li>I will try to give high level explanations that will allow you to &quot;black box&quot; things effectively</li>
+<li>I will go in depth right at the spot as much as I can without it being too tiresome</li>
+</ul>
+<h2 id="other-goals-and-general-ideas"><a class="header" href="#other-goals-and-general-ideas">Other goals and general ideas</a></h2>
+<ul>
+<li>I want to make this easy to read and not tiresome</li>
+<li>I want to make it approachable and not intimidating</li>
+<li>I want to make it fluid when reading but still work as decently as a reference
+<ul>
+<li>The main focus is straightforward reading, as maintaining a reference is difficult, but I want people to be able to come back to certain sections if there is something they forgot or want to reread</li>
+</ul>
+</li>
+<li>I do not want people to just memorize things and move on, so I will make that as hard as I can by giving as few things to memorize as possible</li>
+<li>I do not want large code sections, especially not at the beginning
+<ul>
+<li>I want to discourage copy/paste as much as possible</li>
+<li>Also newcomers tend to glaze over when seeing a wall of code
+<ul>
+<li>Hell, I feel my eyes start to glaze over sometimes :)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I do not want a tutorial &quot;feel&quot; to this guide. Tutorials are kind of bad as they are perpetually out of date and tend to encourage copy/paste as well as lack of understanding
+<ul>
+<li>Instead, I want people to learn and understand core concepts and be able to apply them freely to their own projects</li>
 </ul>
 </li>
 </ul>
@@ -186,7 +213,10 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="next" href="pedagogy.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="prev" href="intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="dos-donts.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -195,7 +225,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="next" href="pedagogy.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="prev" href="intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="dos-donts.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

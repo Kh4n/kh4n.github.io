@@ -1,16 +1,19 @@
-[Introduction](1-intro.md)
-[Pedagogy](2-pedagogy.md)
-[Do's and Dont's](3-dos-donts.md)
+[Introduction](intro.md)
+[Pedagogy](pedagogy.md)
+[Do's and Dont's](dos-donts.md)
 
 # Python: Basics of Programming
-- [Basics](1-python/1-basics-intro.md)
-    - [Hello World](1-python/1-basics/hello-world.md)
-    - [What just happened?](1-python/1-basics/hello-world-explained.md)
+- [Basics](python/basics-intro.md)
+    - [Hello World](python/basics/hello-world.md)
+    - [What just happened?](python/basics/hello-world-explained.md)
+    - [More on Variables](python/basics/variables.md)
+    - [Functions](python/basics/functions.md)
+    - [Some Examples](python/basics/some-examples.md)
 
 # C: Computer and OS Internals
-- [Basics](2-c/1-basics-intro.md)
-    - [Hello World](2-c/1-basics/hello-world.md)
+- [Basics](c/basics-intro.md)
+    - [Hello World](c/basics/hello-world.md)
 
 # Java: Software Design
-- [Basics](3-java/1-basics-intro.md)
-    - [Hello World](3-java/1-basics/hello-world.md)
+- [Basics](java/basics-intro.md)
+    - [Hello World](java/basics/hello-world.md)

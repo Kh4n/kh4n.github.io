@@ -1,2 +1,0 @@
-# What just happened?
-So what is going on here? A couple of things: we wrote `print`, which is known as a *function*, one of the first and most important concepts to understand in programming. The part in quotes is 

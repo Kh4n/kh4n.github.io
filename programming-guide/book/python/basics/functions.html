@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Functions - (WIP - NOT COMPLETE) My Complete Guide to Programming</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../intro.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="../../pedagogy.html">Pedagogy</a></li><li class="chapter-item expanded affix "><a href="../../dos-donts.html">Do's and Dont's</a></li><li class="chapter-item expanded affix "><li class="part-title">Python: Basics of Programming</li><li class="chapter-item expanded "><a href="../../python/basics-intro.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../python/basics/hello-world.html"><strong aria-hidden="true">1.1.</strong> Hello World</a></li><li class="chapter-item expanded "><a href="../../python/basics/hello-world-explained.html"><strong aria-hidden="true">1.2.</strong> What just happened?</a></li><li class="chapter-item expanded "><a href="../../python/basics/variables.html"><strong aria-hidden="true">1.3.</strong> More on Variables</a></li><li class="chapter-item expanded "><a href="../../python/basics/functions.html" class="active"><strong aria-hidden="true">1.4.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../../python/basics/some-examples.html"><strong aria-hidden="true">1.5.</strong> Some Examples</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">C: Computer and OS Internals</li><li class="chapter-item expanded "><a href="../../c/basics-intro.html"><strong aria-hidden="true">2.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../c/basics/hello-world.html"><strong aria-hidden="true">2.1.</strong> Hello World</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Java: Software Design</li><li class="chapter-item expanded "><a href="../../java/basics-intro.html"><strong aria-hidden="true">3.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../java/basics/hello-world.html"><strong aria-hidden="true">3.1.</strong> Hello World</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">(WIP - NOT COMPLETE) My Complete Guide to Programming</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="functions"><a class="header" href="#functions">Functions</a></h1>
+<p>Functions are, in my opinion, the most important thing to understand when it comes to programming. Thinking about things in terms of functions can help immensely as you go along. The good news is that they are quite easy to understand.</p>
+<h2 id="the-print-function"><a class="header" href="#the-print-function">The <code>print</code> function</a></h2>
+<p>I could jump in and try to explain this function, but I think it is actually better if we take a slight detour and make our own function first, and then come back to this</p>
+<h2 id="your-first-function"><a class="header" href="#your-first-function">Your first function</a></h2>
+<p>Copy and paste this into your editor and hit run:</p>
+<pre><code class="language-python">def add(a, b):
+    return a + b
+
+num1 = 12
+num2 = 5
+output = add(num1, num2)
+print(output)
+</code></pre>
+<p>Output:</p>
+<pre><code>17
+</code></pre>
+<p>Whew! A lot going on here. Let's break it down line by line again:</p>
+<ol>
+<li><code>def add(a, b)</code>
+<ol>
+<li><code>def</code>: this is what we call a <em>keyword</em>, or a <em>reserved word</em>. It tells Python that we are about to define a function</li>
+<li><code>add</code>: this is the name of our function</li>
+<li><code>a, b</code>: this is a comma separated list of <em>parameters</em> to our function which serve as variables we can access in the body of the function</li>
+</ol>
+</li>
+<li><code>return a + b</code>: this is probably the weirdest part. <code>return</code> is another keyword, which serves to tell Python that we want to output the expression after it back to whoever called the function. We cannot add any more lines after this, which makes sense because we have already output something back to the user</li>
+<li><code>output = add(num1, num2)</code>: here we <em>called</em> our function with the variables we made earlier, and assigned its output to the variable <code>output</code></li>
+</ol>
+<p>This is quite a bit, so make sure to take it all in. Essentially, to make a function, we need to:</p>
+<ol>
+<li>Give it a name</li>
+<li>Give it some parameters, any number (even none at all!)</li>
+<li>Give it a body where we do some stuff</li>
+<li>Optionally return a value</li>
+</ol>
+<p>These are all valid functions:</p>
+<pre><code class="language-python">def subtract(a, b):
+    return b - a
+
+def sayHello():
+    print(&quot;Hello&quot;)
+
+def areaOfTriangle(base, height):
+    return (1/2) * base * height
+</code></pre>
+<p>Note that the code in the function does not execute until we actually call it, which we do by adding a set of parentheses enclosing our <em>arguments</em>. This is an important distinction! When the variables are in the first set of parentheses after the function name (the <code>def</code> part), commonly referred to the <em>definition</em> of the function (hence the keyword &quot;def&quot;) they are called parameters, but when you use variables to call a function, they are called <em>arguments</em>.</p>
+<h2 id="how-to-visualize-functions"><a class="header" href="#how-to-visualize-functions">How to visualize functions</a></h2>
+<p>I recommend using a &quot;black box&quot; method. That is, think of the function as a black box which takes some input and magically spits out something. So our add function might look like this:
+<img src="../img/add.svg" alt="Addition Function" /></p>
+<p>It is not important for anyone else to know what is happening inside the function, all they know is they put two numbers in and this function adds them. This is an important reoccurring concept. For this case we know exactly whats happening because we wrote it, but if you are reading someone else's code you can take their (hopefully descriptive) function name at face value. Now you might be thinking, what does the <code>print</code> function black box look like? Maybe something like this:
+<img src="../img/print-wrong.svg" alt="Print Function Wrong Visualization" /></p>
+<p>This is wrong! I will explain why.</p>
+<h2 id="back-to-our-friend-the-print-function"><a class="header" href="#back-to-our-friend-the-print-function">Back to our friend the <code>print</code> function</a></h2>
+<p>So why was the above visualization wrong? Well remember how I said functions have outputs? Let's see what the <code>output</code> of print is:</p>
+<pre><code class="language-python">def add(a, b):
+    return a + b
+
+out = add(2, 3)
+print(out)
+out = print(&quot;Hello World!&quot;)
+print(out)
+</code></pre>
+<p>Output:</p>
+<pre><code>5
+Hello World!
+None
+</code></pre>
+<p>Huh??? What is <code>None</code>? Why was that the output of <code>print</code>?</p>
+<p>Let's start with the <code>None</code> thing: Python has the concept of a value that means &quot;nothing&quot;, or that &quot;there is no value&quot;. This may sound weird at first until we consider the fact that this is super useful to have and exists everywhere:</p>
+<ul>
+<li>Numbers have a 0, because we want to know when we have 0 of something, just like when we have 2 or 200 of something</li>
+<li>The languages we speak all have words for &quot;nothing&quot;, because again, we need to know when we have...nothing! It would be weird and hard to understand if there was an empty pause every time we meant to say nothing</li>
+</ul>
+<p>Now, why was the output <code>None</code>? Well that is because <code>print</code> actually does not output (<code>return</code>) anything. We can make a function ourselves that returns nothing to prove this:</p>
+<pre><code class="language-python">def nothing():
+    return None
+
+output = nothing()
+print(output)
+</code></pre>
+<p>Output:</p>
+<pre><code>None
+</code></pre>
+<p>In fact, in Python, if we do not have a return statement, or simply leave the expression after <code>return</code> blank, it automatically makes it return <code>None</code>. Note that this is a language specific thing, and not every language operates like this. Here is an example:</p>
+<pre><code class="language-python">def nothing():
+    return
+
+out = nothing()
+print(out)
+</code></pre>
+<p>Output:</p>
+<pre><code>None
+</code></pre>
+<h2 id="so-if-print-does-not-return-anything-why-is-there-output-in-the-console"><a class="header" href="#so-if-print-does-not-return-anything-why-is-there-output-in-the-console">So if <code>print</code> does not <code>return</code> anything, why is there output in the console</a></h2>
+<p>Additionally, why do our functions that actually return things not show up in the console? Why do we need to use <code>print</code> afterwards?</p>
+<p>So here is where the black box analogy can struggle: the <code>print</code> function actually affects things <em>outside</em> of the function itself. Basically, unlike our <code>add</code> function up there which was only touching the <code>a</code> and <code>b</code> variables it defined, the <code>print</code> function affected things that were not in the input, and used those <em>side effects</em> to make things appear in our console. If that sounds confusing, don't worry, it is a bit tricky. But basically, we can instead visualize our <code>print</code> function with the concept of hidden inputs and outputs:</p>
+<p><img src="../img/print-correct.svg" alt="Print Function, better Visualization" /></p>
+<p>For now, don't worry about how it actually shows up to the console, or where this hidden output is. You'll learn about that in later sections. Many times people just forget about this way of visualizing functions because of this inconvenience. However, I promise it is worth it to use this slightly weird concept of hidden inputs and outputs instead to make the visualization work.</p>
+<p>For now, just know that:</p>
+<ol>
+<li><code>print</code> does not return anything</li>
+<li>Even though it has one input, there are other things it is affecting</li>
+<li>You can visualize those other things as hidden inputs/outputs, even though Python does not actually have the concept of hidden inputs and outputs</li>
+</ol>
+<h2 id="wow-functions-sound-like-a-real-pain-i-think-ill-avoid-them"><a class="header" href="#wow-functions-sound-like-a-real-pain-i-think-ill-avoid-them">Wow! Functions sound like a real pain! I think I'll avoid them...</a></h2>
+<p>NO! Functions are way to useful to let some new keywords and hidden inputs/outputs to scare you away. They let you define things in one place and use them over and over. The <code>add</code> example seems pointless, but that is because Python gives you a builtin <code>add</code> function, the <code>+</code>, so it is kind of redundant. But if we were doing something even slight complicated like the volume of a cylinder function I wrote earlier, we can reuse that logic over and over to save ourselves time and make our code cleaner and easier to <em>maintain</em>:</p>
+<pre><code class="language-python">def areaOfTriangle(base, height):
+    return (1/2) * base * height
+
+vol1 = areaOfTriangle(4, 10)
+print(vol1)
+</code></pre>
+<p>Output:</p>
+<pre><code>20.0
+</code></pre>
+<p>This is still pretty basic, but it is easier to read, and most importantly if we ever need to change the logic for <code>areaOfTriangle</code>, its already all in one spot which makes things easier.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../python/basics/variables.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../python/basics/some-examples.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../python/basics/variables.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../python/basics/some-examples.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
