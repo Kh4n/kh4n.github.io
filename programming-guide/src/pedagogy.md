@@ -1,12 +1,12 @@
 # Pedagogy
-Here I will explain some of the choices that I made with regard to this guide. Feel free to skip this section if you don't care about this; it is not important to read this if you are just trying to learn programming.
+Here I will explain some of the choices that I made with regard to this guide. This section is not part of the guide so you only need to read this if you are curious about my methodology.
 
 ## Language order
-On first glance, the order of languages chosen seems a little bizarre. Python first makes total sense, but C next? Isn't that an "advanced" programming language? Also isn't Java beginner friendly, shouldn't we be learning that first?
+On first glance, the order of languages chosen seems a little bizarre. Python first makes total sense, but C next? Isn't that an "advanced" programming language? Also, isn't Java beginner friendly, shouldn't we be learning that first?
 
 Here is my explanation:
 1. Python: this is a great first language. It has very few pitfalls, is easy to pick up, and can let beginners feel the "joy of programming".
-    - Another huge advantage is that I can teach a huge part of this language without doing the "you'll learn about this in depth later so just take it at face value for now" thing which I really hate. I will have to do that a few times as it is unavoidable, but Python first really mitigates that
+    - Another huge advantage is that I can teach a huge part of this language without doing the "you'll learn about this in depth later so just take it at face value for now" thing which I really hate. I will have to do that a few times as it is unavoidable, but learning Python first really mitigates that
     - Python has few pitfalls, but is not completely devoid of them, so there may be slightly better choices, but I am really experienced with Python so it makes sense to me to use it
 2. C: this is the weird one. The core reasoning behind this is due to what C and Java are supposed to teach
     - Here is what I am using each to teach, which is pretty common in general as well:
@@ -18,7 +18,7 @@ Here is my explanation:
         - Software design is very different: it is hard to understand properly, hard to apply, and the best practices are changing rapidly all the time. OOP may seem easy at first to beginners: "just make correlations to real world objects". But this methodology completely falls apart in the real world and results in some really, *really* bad design that can frustrate newcomers to the field
 3. Java: this may also seem strange given its age, but it is still one of the most in demand languages, and is pretty simple when it comes to software design
     - Other languages have too many sophisticated features that can clutter understanding
-    - Learning C first means we don't need to be confused by objects vs primitives and what not
+    - Learning C first means we don't need to be confused by objects vs primitives and whatnot
     - A kind of underrated language these days: everyone hates on it (I used to as well), but I have come to appreciate its simplicity, even if it is a bit verbose
         - The newer APIs in the language are also a big boon
 

@@ -104,7 +104,7 @@ Output:
 None
 ```
 
-## So if `print` does not `return` anything, why is there output in the console
+## So if `print` does not `return` anything, why is there output in the console?
 Additionally, why do our functions that actually return things not show up in the console? Why do we need to use `print` afterwards?
 
 So here is where the black box analogy can struggle: the `print` function actually affects things *outside* of the function itself. Basically, unlike our `add` function up there which was only touching the `a` and `b` variables it defined, the `print` function affected things that were not in the input, and used those *side effects* to make things appear in our console. If that sounds confusing, don't worry, it is a bit tricky. But basically, we can instead visualize our `print` function with the concept of hidden inputs and outputs:
@@ -119,16 +119,20 @@ For now, just know that:
 3. You can visualize those other things as hidden inputs/outputs, even though Python does not actually have the concept of hidden inputs and outputs
 
 ## Wow! Functions sound like a real pain! I think I'll avoid them...
-NO! Functions are way to useful to let some new keywords and hidden inputs/outputs to scare you away. They let you define things in one place and use them over and over. The `add` example seems pointless, but that is because Python gives you a builtin `add` function, the `+`, so it is kind of redundant. But if we were doing something even slight complicated like the volume of a cylinder function I wrote earlier, we can reuse that logic over and over to save ourselves time and make our code cleaner and easier to *maintain*:
+NO! Functions are way to useful to let some new keywords and hidden inputs/outputs to scare you away. They let you define things in one place and use them over and over. The `add` example seems pointless, but that is because Python gives you a builtin `add` function, the `+`, so it is kind of redundant. But if we were doing something even slightly complicated like the volume of a cylinder function I wrote earlier, we can reuse that logic over and over to save ourselves time and make our code cleaner and easier to *maintain*:
 ```python
 def areaOfTriangle(base, height):
     return (1/2) * base * height
 
 vol1 = areaOfTriangle(4, 10)
 print(vol1)
+print(areaOfTriangle(3, 4))
 ```
 Output:
 ```
 20.0
+6.0
 ```
-This is still pretty basic, but it is easier to read, and most importantly if we ever need to change the logic for `areaOfTriangle`, its already all in one spot which makes things easier.
+This is still pretty basic, but it is easier to read, and most importantly if we ever need to change the logic for `areaOfTriangle`, its already all in one spot which makes things easier. 
+
+There are many, *many* more advantages functions have, and as we progress they will become apparent

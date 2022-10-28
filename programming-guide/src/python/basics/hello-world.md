@@ -16,7 +16,7 @@ Paste this in to whatever IDE or editor you are using, Replit or otherwise, and 
 
 Ignore the other files that are there, and do not open them or edit them. They are not relevant.
 
-**IMPORTANT**: As a note to yourself for the distant future: do not *ever* write proprietary code in an online IDE, or any code that you want to own yourself. It is not safe from a legal or security standpoint, please do not do it. I will show you how to properly set up your environment locally later on, and it is not even that hard. It's just that right now I want to get you started as quickly as possible, and this is the best way to do that. The code you will write as a beginner will not be so important tha you need to copyright it, but in the future it may be.
+**IMPORTANT**: As a note to yourself for the distant future: do not *ever* write proprietary code in an online IDE, or any code that you want to own yourself. It is not safe from a legal or security standpoint, please do not do it. I will show you how to properly set up your environment locally later on, and it is not even that hard. It's just that right now I want to get you started as quickly as possible, and this is the best way to do that. The code you will write as a beginner will not be so important that you need to copyright it, but in the future it may be.
 
 Now that you are on the right version, delete that code and pretend that you never ran it, because now we will write our first legitimate piece of software.
 

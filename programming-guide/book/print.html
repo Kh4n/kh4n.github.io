@@ -144,6 +144,7 @@
 <li>People ask me all the time &quot;how do I learn programming&quot;, or &quot;what are some good resources to learn programming&quot;, or &quot;can I learn programming for free&quot;. I want to be able to point these people to a resource I trust</li>
 <li>A lot of programming guides and tutorials online are not comprehensive unless they are paid for. Many resources online are great but are usually not up to date and way too language specific</li>
 <li>I feel a lot of despair in the programming community about concepts that quite frankly should not be that difficult to teach, yet are still a pain point for many. This results in people discounting large portions of computer science/software engineering as &quot;useless&quot;, and lots of frustration ensues</li>
+<li>Colossal amount of blatantly wrong information and &quot;guides&quot; on the internet, especially on social media (instagram is the worst offender)</li>
 <li>A way to keep things I have learned in one place</li>
 </ul>
 <p>Basically I want to help people learn with a methodology that I believe in, with a source that I can control and change as I see fit</p>
@@ -167,12 +168,12 @@
 <li>You have access to a web browser and an internet connection
 <ul>
 <li>Not a single part of this guide will require a local work environment, <strong>with the sole exception of the section on developer environments</strong>, which is an important topic which will require some sort of local filesystem (so not really possible on a chromebook for example)</li>
-<li>If you don't access to this</li>
+<li>If you don't have access to this that is OK, but I really do recommend it</li>
 </ul>
 </li>
 <li>You have a willingness to work through challenges and difficulty
 <ul>
-<li>Anyone can learn programming, and I don't think it is that difficult to do so. However, writing good software is hard, like <em>really</em> hard. Sure, you can create something that works, but that is very different from a masterfully architected, scalable, and elegant solutions. </li>
+<li>Anyone can learn programming, and I don't think it is that difficult to do so. However, writing good software is hard, like <em>really</em> hard. Sure, you can create something that works, but that is very different from a masterfully architected, scalable, and elegant solution. </li>
 <li>It is very easy to confuse the two: just because you learned something does not mean it will be easy to apply it. I will try my best to give you the tools and knowledge to make this possible, but it will require your effort in the end</li>
 </ul>
 </li>
@@ -183,14 +184,14 @@
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="pedagogy"><a class="header" href="#pedagogy">Pedagogy</a></h1>
-<p>Here I will explain some of the choices that I made with regard to this guide. Feel free to skip this section if you don't care about this; it is not important to read this if you are just trying to learn programming.</p>
+<p>Here I will explain some of the choices that I made with regard to this guide. This section is not part of the guide so you only need to read this if you are curious about my methodology.</p>
 <h2 id="language-order"><a class="header" href="#language-order">Language order</a></h2>
-<p>On first glance, the order of languages chosen seems a little bizarre. Python first makes total sense, but C next? Isn't that an &quot;advanced&quot; programming language? Also isn't Java beginner friendly, shouldn't we be learning that first?</p>
+<p>On first glance, the order of languages chosen seems a little bizarre. Python first makes total sense, but C next? Isn't that an &quot;advanced&quot; programming language? Also, isn't Java beginner friendly, shouldn't we be learning that first?</p>
 <p>Here is my explanation:</p>
 <ol>
 <li>Python: this is a great first language. It has very few pitfalls, is easy to pick up, and can let beginners feel the &quot;joy of programming&quot;.
 <ul>
-<li>Another huge advantage is that I can teach a huge part of this language without doing the &quot;you'll learn about this in depth later so just take it at face value for now&quot; thing which I really hate. I will have to do that a few times as it is unavoidable, but Python first really mitigates that</li>
+<li>Another huge advantage is that I can teach a huge part of this language without doing the &quot;you'll learn about this in depth later so just take it at face value for now&quot; thing which I really hate. I will have to do that a few times as it is unavoidable, but learning Python first really mitigates that</li>
 <li>Python has few pitfalls, but is not completely devoid of them, so there may be slightly better choices, but I am really experienced with Python so it makes sense to me to use it</li>
 </ul>
 </li>
@@ -214,7 +215,7 @@
 <li>Java: this may also seem strange given its age, but it is still one of the most in demand languages, and is pretty simple when it comes to software design
 <ul>
 <li>Other languages have too many sophisticated features that can clutter understanding</li>
-<li>Learning C first means we don't need to be confused by objects vs primitives and what not</li>
+<li>Learning C first means we don't need to be confused by objects vs primitives and whatnot</li>
 <li>A kind of underrated language these days: everyone hates on it (I used to as well), but I have come to appreciate its simplicity, even if it is a bit verbose
 <ul>
 <li>The newer APIs in the language are also a big boon</li>
@@ -257,6 +258,35 @@
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="dos-and-donts"><a class="header" href="#dos-and-donts">Do's and Dont's</a></h1>
+<p>Here I will outline some things to note before we get started</p>
+<h1 id="do-make-an-issue-if-you-see-a-mistake-or-cant-understand-something"><a class="header" href="#do-make-an-issue-if-you-see-a-mistake-or-cant-understand-something">DO make an issue if you see a mistake or can't understand something</a></h1>
+<p>Open an issue here (make an account if you don't have one): https://github.com/Kh4n/kh4n.github.io/issues</p>
+<p>Please, <em>please</em> do not hesitate to raise an issue if you see a problem or have trouble understanding something. I will address issues quickly because it would be bad to have misinformation in a guide meant for beginners. As for trouble with understanding, that clearly means a problem with my guide, so after I attempt to explain it, I will update the guide to hopefully be more clear in the future.</p>
+<h2 id="do-not-get-scared-or-tell-yourself-i-cant-understand-this-when-i-say-something-is-complicated"><a class="header" href="#do-not-get-scared-or-tell-yourself-i-cant-understand-this-when-i-say-something-is-complicated">DO NOT get scared or tell yourself &quot;I can't understand this&quot; when I say something is complicated</a></h2>
+<p>Anything worth learning is complicated. At some point in your life, just <em>talking</em> was complicated. Now you can do it almost without thinking. The same will be true of concepts in this guide: they will be challenging at first, but you'll get them soon enough, and when you do they will seem very easy.</p>
+<h2 id="do-not-focus-on-the-what-focus-on-the-how-and-why"><a class="header" href="#do-not-focus-on-the-what-focus-on-the-how-and-why">DO NOT focus on the &quot;what&quot;, focus on the &quot;how&quot; and &quot;why&quot;</a></h2>
+<p>This is also a general piece of advice, not just limited to your approach to this guide. The field of software engineering changes extremely rapidly, especially compared to many other fields. It may seem easier at first to just learn the &quot;what&quot; and ignore understanding things at a deeper level, but if you do this you will be chasing the &quot;what&quot; for the rest of your life, and programming will be a chore that you hate.</p>
+<p>What do I mean by this? If you try to just memorize concepts and spit them back out, you can get surprisingly far. But it will take you much longer than if you just struggle a bit at the beginning to learn things with understanding, and then apply that understanding to understand &quot;how&quot; and &quot;why&quot; things change the way they do. You will find that many of tools and languages out there have a ton of similarities, and knowing why these exist is key to learning things fast.</p>
+<p>This is why experienced programmers find the question &quot;how many languages do you know?&quot; funny: I know many programming languages, more that I can list, even ones I have not touched in years. Why? Because I understand <em>programming</em>, not <em>programming languages</em>, and languages are just a tool. It is not difficult at all to reach this level either: in fact as I mentioned earlier, the sooner you start with this mentality the better and faster you'll learn. You'll surprise yourself with how easy it is to pick up each successive language after you learn the first few.</p>
+<p>Compare this to memorizing features and patterns in languages: these will change from language to language, library to library, and every time you want to learn something new you will have to start from scratch. That does <em>not</em> sound fun.</p>
+<h2 id="do-take-breaks-and-have-fun"><a class="header" href="#do-take-breaks-and-have-fun">DO take breaks and have fun</a></h2>
+<p>There is no need to read this through in one sitting (and then promptly forget its contents). Take breaks, experiment around with the code, take longer on a section you like more, etc. There is no need to be rigid. It is better that you enjoy what you are doing, that way you are more likely to finish it instead of giving up halfway through.</p>
+<h2 id="do-not-overly-copy-and-paste"><a class="header" href="#do-not-overly-copy-and-paste">DO NOT overly copy and paste</a></h2>
+<p>Unless I explicitly say so, do not copy and paste code. Type it out manually, every time. Trust me. It will improve your coding speed and confidence drastically.</p>
+<h2 id="do-not-learn-other-languages-until-you-have-finished-the-python-and-c-sections"><a class="header" href="#do-not-learn-other-languages-until-you-have-finished-the-python-and-c-sections">DO NOT learn other languages until you have finished the Python and C sections</a></h2>
+<p>There is a reason I chose these languages first, as I believe they are an excellent baseline for learning and understanding a very large number of existing programming languages. If you must learn something else, I implore you to stay far, <em>far</em> away from the languages I am about to list:</p>
+<ul>
+<li>C++: absolutely do not touch this beast. You do not understand it, you will not understand it, and most importantly, you will have the delusion that you <em>do</em> understand it when in reality you don't. This is easily one of the most complex and difficult to master languages ever. Don't let the two pluses confuse you: this is more than just a step up from C, it is truly advanced and deep, and filled with difficult to understand concepts while having little to no safety rails and guards. I myself tried to learn this language early on, and it was a huge mistake. I would stay far away from this until you feel you have mastered Java. I may eventually make a guide, but I am not confident with it, which is really saying something as I have been using it longer than C</li>
+<li>Rust: this is a great language, one of my favorites. But if you try to learn this before understanding what a language memory model is, and why resource allocation is hard, you <em>will</em> suffer. None of the concepts will make sense, and you will want to murder the compiler. Which would be a damn shame, because the Rust compiler might actually be the most user friendly and insanely good compilers of all time, but you really won't be able to appreciate it before learning C</li>
+<li>JavaScript: this might come as a surprise, as a lot of people say it is good for beginners, even going as far as recommending it. I sincerely believe that this is one of the worst languages ever created, especially if you consider how much it is used. It is filled with pitfalls, is not easy to set up in practice, and is all around frustrating for beginners. Stay away. If you must, learn TypeScript instead (everyone uses that these days anyway). Stick to Python for your day to day needs</li>
+<li>PHP: just...don't. Trust me. You sincerely have no use for this language at this point</li>
+<li>Any super old language (Cobol, Fortran, etc.): it is not worth your time at this point. Stick to the basics, you can always come back to these</li>
+<li>Haskell: this is a language that is very cool and also important to learn to a certain level, but again: not right now. Learn the basics, then come back and understand what a monad is and how you have actually been using it forever without actually knowing what it was called :)</li>
+</ul>
+<h2 id="do-not-get-frustrated-if-you-learn-one-thing-easily-but-the-next-thing-is-hard"><a class="header" href="#do-not-get-frustrated-if-you-learn-one-thing-easily-but-the-next-thing-is-hard">DO NOT get frustrated if you learn one thing easily, but the next thing is hard</a></h2>
+<p>Different people learn things at different rates. You may excel at design and debugging, but suck at data structures and algorithms. There is nothing wrong with that; you are not a worse programmer because of it. Just make sure you understand both, and when you are actually on the job or working on a project you will have people you can rely on that are better at things you are not so good at. This is why we work on teams. </p>
+<p>It is still important to know all aspects of programming, mainly because if you skip things you will never know when something you are working on is actually more complicated than you are treating it, or that you are making a design mistake that is gonna bite you months down the road, and bite you <strong>hard</strong>. </p>
+<p>Just don't let it impact your confidence :). You <em>can</em> learn programming.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="basics"><a class="header" href="#basics">Basics</a></h1>
 <p>Here we will learn the basics of Python as well as programming in general. What is a keyword? What is a function? What is a variable? Things like that. Read on to get started.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hello-world"><a class="header" href="#hello-world">Hello World</a></h1>
@@ -271,7 +301,7 @@ print(sys.version_info.major)
 </code></pre>
 <p>Paste this in to whatever IDE or editor you are using, Replit or otherwise, and ensure that after you run (the green &quot;Run&quot; button in the case of Replit) the console on the right outputs a &quot;3&quot;. This is to make sure we are on Python 3, and not 2. If you get an error, you are on the wrong version.</p>
 <p>Ignore the other files that are there, and do not open them or edit them. They are not relevant.</p>
-<p><strong>IMPORTANT</strong>: As a note to yourself for the distant future: do not <em>ever</em> write proprietary code in an online IDE, or any code that you want to own yourself. It is not safe from a legal or security standpoint, please do not do it. I will show you how to properly set up your environment locally later on, and it is not even that hard. It's just that right now I want to get you started as quickly as possible, and this is the best way to do that. The code you will write as a beginner will not be so important tha you need to copyright it, but in the future it may be.</p>
+<p><strong>IMPORTANT</strong>: As a note to yourself for the distant future: do not <em>ever</em> write proprietary code in an online IDE, or any code that you want to own yourself. It is not safe from a legal or security standpoint, please do not do it. I will show you how to properly set up your environment locally later on, and it is not even that hard. It's just that right now I want to get you started as quickly as possible, and this is the best way to do that. The code you will write as a beginner will not be so important that you need to copyright it, but in the future it may be.</p>
 <p>Now that you are on the right version, delete that code and pretend that you never ran it, because now we will write our first legitimate piece of software.</p>
 <h2 id="the-actual-code"><a class="header" href="#the-actual-code">The actual code</a></h2>
 <p>In the editor, type:</p>
@@ -484,7 +514,7 @@ print(out)
 <p>Output:</p>
 <pre><code>None
 </code></pre>
-<h2 id="so-if-print-does-not-return-anything-why-is-there-output-in-the-console"><a class="header" href="#so-if-print-does-not-return-anything-why-is-there-output-in-the-console">So if <code>print</code> does not <code>return</code> anything, why is there output in the console</a></h2>
+<h2 id="so-if-print-does-not-return-anything-why-is-there-output-in-the-console"><a class="header" href="#so-if-print-does-not-return-anything-why-is-there-output-in-the-console">So if <code>print</code> does not <code>return</code> anything, why is there output in the console?</a></h2>
 <p>Additionally, why do our functions that actually return things not show up in the console? Why do we need to use <code>print</code> afterwards?</p>
 <p>So here is where the black box analogy can struggle: the <code>print</code> function actually affects things <em>outside</em> of the function itself. Basically, unlike our <code>add</code> function up there which was only touching the <code>a</code> and <code>b</code> variables it defined, the <code>print</code> function affected things that were not in the input, and used those <em>side effects</em> to make things appear in our console. If that sounds confusing, don't worry, it is a bit tricky. But basically, we can instead visualize our <code>print</code> function with the concept of hidden inputs and outputs:</p>
 <p><img src="python/basics/../img/print-correct.svg" alt="Print Function, better Visualization" /></p>
@@ -496,17 +526,20 @@ print(out)
 <li>You can visualize those other things as hidden inputs/outputs, even though Python does not actually have the concept of hidden inputs and outputs</li>
 </ol>
 <h2 id="wow-functions-sound-like-a-real-pain-i-think-ill-avoid-them"><a class="header" href="#wow-functions-sound-like-a-real-pain-i-think-ill-avoid-them">Wow! Functions sound like a real pain! I think I'll avoid them...</a></h2>
-<p>NO! Functions are way to useful to let some new keywords and hidden inputs/outputs to scare you away. They let you define things in one place and use them over and over. The <code>add</code> example seems pointless, but that is because Python gives you a builtin <code>add</code> function, the <code>+</code>, so it is kind of redundant. But if we were doing something even slight complicated like the volume of a cylinder function I wrote earlier, we can reuse that logic over and over to save ourselves time and make our code cleaner and easier to <em>maintain</em>:</p>
+<p>NO! Functions are way to useful to let some new keywords and hidden inputs/outputs to scare you away. They let you define things in one place and use them over and over. The <code>add</code> example seems pointless, but that is because Python gives you a builtin <code>add</code> function, the <code>+</code>, so it is kind of redundant. But if we were doing something even slightly complicated like the volume of a cylinder function I wrote earlier, we can reuse that logic over and over to save ourselves time and make our code cleaner and easier to <em>maintain</em>:</p>
 <pre><code class="language-python">def areaOfTriangle(base, height):
     return (1/2) * base * height
 
 vol1 = areaOfTriangle(4, 10)
 print(vol1)
+print(areaOfTriangle(3, 4))
 </code></pre>
 <p>Output:</p>
 <pre><code>20.0
+6.0
 </code></pre>
-<p>This is still pretty basic, but it is easier to read, and most importantly if we ever need to change the logic for <code>areaOfTriangle</code>, its already all in one spot which makes things easier.</p>
+<p>This is still pretty basic, but it is easier to read, and most importantly if we ever need to change the logic for <code>areaOfTriangle</code>, its already all in one spot which makes things easier. </p>
+<p>There are many, <em>many</em> more advantages functions have, and as we progress they will become apparent</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="some-examples"><a class="header" href="#some-examples">Some Examples</a></h1>
 <p>We just went over a lot, so I will go through some examples here to try to solidify the concepts a bit more. Even with the elementary things I just showed, we can still do a lot!</p>
 <h2 id="comments"><a class="header" href="#comments">Comments</a></h2>
