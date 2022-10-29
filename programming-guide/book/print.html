@@ -526,7 +526,7 @@ print(out)
 <li>You can visualize those other things as hidden inputs/outputs, even though Python does not actually have the concept of hidden inputs and outputs</li>
 </ol>
 <h2 id="wow-functions-sound-like-a-real-pain-i-think-ill-avoid-them"><a class="header" href="#wow-functions-sound-like-a-real-pain-i-think-ill-avoid-them">Wow! Functions sound like a real pain! I think I'll avoid them...</a></h2>
-<p>NO! Functions are way to useful to let some new keywords and hidden inputs/outputs to scare you away. They let you define things in one place and use them over and over. The <code>add</code> example seems pointless, but that is because Python gives you a builtin <code>add</code> function, the <code>+</code>, so it is kind of redundant. But if we were doing something even slightly complicated like the volume of a cylinder function I wrote earlier, we can reuse that logic over and over to save ourselves time and make our code cleaner and easier to <em>maintain</em>:</p>
+<p>NO! Functions are way to useful to let some new keywords and hidden inputs/outputs to scare you away. They let you define things in one place and use them over and over. The <code>add</code> example seems pointless, but that is because Python gives you a builtin <code>add</code> function, the <code>+</code>, so it is kind of redundant. But if we were doing something even slightly complicated like the area of a triangle function I wrote earlier, we can reuse that logic over and over to save ourselves time and make our code cleaner and easier to <em>maintain</em>:</p>
 <pre><code class="language-python">def areaOfTriangle(base, height):
     return (1/2) * base * height
 
@@ -543,7 +543,65 @@ print(areaOfTriangle(3, 4))
 <div style="break-before: page; page-break-before: always;"></div><h1 id="some-examples"><a class="header" href="#some-examples">Some Examples</a></h1>
 <p>We just went over a lot, so I will go through some examples here to try to solidify the concepts a bit more. Even with the elementary things I just showed, we can still do a lot!</p>
 <h2 id="comments"><a class="header" href="#comments">Comments</a></h2>
-<p>Before we get started</p>
+<p>Before we get started, I wanted to discuss one more feature pretty much every programming language has, Python included: comments!</p>
+<p>Here is an example:</p>
+<pre><code class="language-python"># this is adding two numbers together (duh?)
+what = 1 + 1
+</code></pre>
+<p>The comment is completely ignored by Python! It will not affect the program. You may be wondering why is this useful, here are a few reasons:</p>
+<ol>
+<li>Lets you write a note that explains what a line, function, or piece of code does:</li>
+</ol>
+<pre><code class="language-python"># computes the volume of a cylinder with radius a and height b, approximated to 2 significant figures
+def someFunction(a, b):
+    # 3.14 is an approximation of PI
+    return 3.14 * a * a * b
+</code></pre>
+<ol start="2">
+<li>Lets you &quot;toggle&quot; a line of code for debugging purposes</li>
+</ol>
+<pre><code class="language-python">a = 1
+b = 2
+b = b + a + 3
+# rather than delete this line and have to retype it, I can just comment it out temporarily
+# b = a + 4
+print(a + b)
+</code></pre>
+<p>Output:</p>
+<pre><code>7
+</code></pre>
+<ol start="3">
+<li>Documentation of code. I won't show an example right now as it is out of scope, but basically documentation of what the code does is very often done in the comments of the code, and an external tool then takes that code and turns it into a little website of sorts that can be used as a reference for other developers</li>
+</ol>
+<p>These examples may seem kind of pointless right now, but imagine if you are in a codebase with thousands of functions and millions of lines of code (tons of these exist); you'd really want to be able to know what some part of the code does without having to read every line. Even in a small codebase it is very useful. Also, just because you are the sole author/contributor doesn't give you a license to stop commenting: you should still comment in case:</p>
+<ol>
+<li>Another person needs to take over your code or join in</li>
+<li>Another person needs to interface with your code</li>
+<li>You want to understand what the hell you wrote 10 months down the line :)
+You'd be surprised how easy it is to forget!</li>
+</ol>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<p>Ok let's go. Feel free to read through and copy paste which ones you find interesting; you do not have to run everything, just read through and take note of anything interesting</p>
+<pre><code class="language-python"># let's get some comment etiquette out of the way
+# this is the correct place to comment, above a line of code
+a = 3 + 3
+a = 3 + 3 # do not comment after a line, it is harder to read
+
+# remember that functions do not need to have parameters:
+def sayGoodbye():
+    print(&quot;goodbye&quot;)
+
+def sayHelloBefore(string):
+    print(&quot;Hello &quot; + string)
+
+# the pass keyword does nothing, helpful because Python requires every function to have a body but sometimes we wan't something empty as a placeholder as we fill things in
+def empty():
+    pass
+
+ret = empty()
+# Output: None
+print(ret)
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="basics-1"><a class="header" href="#basics-1">Basics</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hello-world-1"><a class="header" href="#hello-world-1">Hello World</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="basics-2"><a class="header" href="#basics-2">Basics</a></h1>

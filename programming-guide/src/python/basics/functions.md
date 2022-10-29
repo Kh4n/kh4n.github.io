@@ -119,7 +119,7 @@ For now, just know that:
 3. You can visualize those other things as hidden inputs/outputs, even though Python does not actually have the concept of hidden inputs and outputs
 
 ## Wow! Functions sound like a real pain! I think I'll avoid them...
-NO! Functions are way to useful to let some new keywords and hidden inputs/outputs to scare you away. They let you define things in one place and use them over and over. The `add` example seems pointless, but that is because Python gives you a builtin `add` function, the `+`, so it is kind of redundant. But if we were doing something even slightly complicated like the volume of a cylinder function I wrote earlier, we can reuse that logic over and over to save ourselves time and make our code cleaner and easier to *maintain*:
+NO! Functions are way to useful to let some new keywords and hidden inputs/outputs to scare you away. They let you define things in one place and use them over and over. The `add` example seems pointless, but that is because Python gives you a builtin `add` function, the `+`, so it is kind of redundant. But if we were doing something even slightly complicated like the area of a triangle function I wrote earlier, we can reuse that logic over and over to save ourselves time and make our code cleaner and easier to *maintain*:
 ```python
 def areaOfTriangle(base, height):
     return (1/2) * base * height
