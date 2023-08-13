@@ -9,6 +9,7 @@
     - [More on Variables](python/basics/variables.md)
     - [Functions](python/basics/functions.md)
     - [Some Examples](python/basics/some-examples.md)
+    - [Errors](python/basics/errors.md)
 
 # C: Computer and OS Internals
 - [Basics](c/basics-intro.md)

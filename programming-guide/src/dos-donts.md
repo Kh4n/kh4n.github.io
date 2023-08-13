@@ -34,6 +34,9 @@ There is a reason I chose these languages first, as I believe they are an excell
 - Any super old language (Cobol, Fortran, etc.): it is not worth your time at this point. Stick to the basics, you can always come back to these
 - Haskell: this is a language that is very cool and also important to learn to a certain level, but again: not right now. Learn the basics, then come back and understand what a monad is and how you have actually been using it forever without actually knowing what it was called :)
 
+## DO NOT treat this as a Python, C, or Java guide
+I am using those languages as tools to help us learn key programming concepts. I will not be going super in depth for any of them, and you should look online for supplementary knowledge after you finish the guide for which language(s) you want to learn. Java will probably be covered the most thoroughly, simply because we have learned enough of the basics at that point. All of the OOP available in Python will be skipped, as we are waiting until Java to learn that. Same with list comprehensions and whatnot: just waiting until we have a little more experience.
+
 ## DO NOT get frustrated if you learn one thing easily, but the next thing is hard
 Different people learn things at different rates. You may excel at design and debugging, but suck at data structures and algorithms. There is nothing wrong with that; you are not a worse programmer because of it. Just make sure you understand both, and when you are actually on the job or working on a project you will have people you can rely on that are better at things you are not so good at. This is why we work on teams. 
 

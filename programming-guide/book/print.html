@@ -5,8 +5,10 @@
         <meta charset="UTF-8">
         <title>(WIP - NOT COMPLETE) My Complete Guide to Programming</title>
         <meta name="robots" content="noindex" />
+
+
         <!-- Custom HTML head -->
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
@@ -17,25 +19,29 @@
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
         <link rel="stylesheet" href="css/print.css" media="print">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
         <link rel="stylesheet" href="fonts/fonts.css">
+
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -51,7 +57,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -63,12 +69,14 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -76,16 +84,38 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="pedagogy.html">Pedagogy</a></li><li class="chapter-item expanded affix "><a href="dos-donts.html">Do's and Dont's</a></li><li class="chapter-item expanded affix "><li class="part-title">Python: Basics of Programming</li><li class="chapter-item expanded "><a href="python/basics-intro.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="python/basics/hello-world.html"><strong aria-hidden="true">1.1.</strong> Hello World</a></li><li class="chapter-item expanded "><a href="python/basics/hello-world-explained.html"><strong aria-hidden="true">1.2.</strong> What just happened?</a></li><li class="chapter-item expanded "><a href="python/basics/variables.html"><strong aria-hidden="true">1.3.</strong> More on Variables</a></li><li class="chapter-item expanded "><a href="python/basics/functions.html"><strong aria-hidden="true">1.4.</strong> Functions</a></li><li class="chapter-item expanded "><a href="python/basics/some-examples.html"><strong aria-hidden="true">1.5.</strong> Some Examples</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">C: Computer and OS Internals</li><li class="chapter-item expanded "><a href="c/basics-intro.html"><strong aria-hidden="true">2.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="c/basics/hello-world.html"><strong aria-hidden="true">2.1.</strong> Hello World</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Java: Software Design</li><li class="chapter-item expanded "><a href="java/basics-intro.html"><strong aria-hidden="true">3.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="java/basics/hello-world.html"><strong aria-hidden="true">3.1.</strong> Hello World</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="pedagogy.html">Pedagogy</a></li><li class="chapter-item expanded affix "><a href="dos-donts.html">Do's and Dont's</a></li><li class="chapter-item expanded affix "><li class="part-title">Python: Basics of Programming</li><li class="chapter-item expanded "><a href="python/basics-intro.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="python/basics/hello-world.html"><strong aria-hidden="true">1.1.</strong> Hello World</a></li><li class="chapter-item expanded "><a href="python/basics/hello-world-explained.html"><strong aria-hidden="true">1.2.</strong> What just happened?</a></li><li class="chapter-item expanded "><a href="python/basics/variables.html"><strong aria-hidden="true">1.3.</strong> More on Variables</a></li><li class="chapter-item expanded "><a href="python/basics/functions.html"><strong aria-hidden="true">1.4.</strong> Functions</a></li><li class="chapter-item expanded "><a href="python/basics/some-examples.html"><strong aria-hidden="true">1.5.</strong> Some Examples</a></li><li class="chapter-item expanded "><a href="python/basics/errors.html"><strong aria-hidden="true">1.6.</strong> Errors</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">C: Computer and OS Internals</li><li class="chapter-item expanded "><a href="c/basics-intro.html"><strong aria-hidden="true">2.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="c/basics/hello-world.html"><strong aria-hidden="true">2.1.</strong> Hello World</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Java: Software Design</li><li class="chapter-item expanded "><a href="java/basics-intro.html"><strong aria-hidden="true">3.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="java/basics/hello-world.html"><strong aria-hidden="true">3.1.</strong> Hello World</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
@@ -94,7 +124,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -111,6 +141,7 @@
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+
                     </div>
                 </div>
 
@@ -124,8 +155,9 @@
                         </ul>
                     </div>
                 </div>
+
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -283,6 +315,8 @@
 <li>Any super old language (Cobol, Fortran, etc.): it is not worth your time at this point. Stick to the basics, you can always come back to these</li>
 <li>Haskell: this is a language that is very cool and also important to learn to a certain level, but again: not right now. Learn the basics, then come back and understand what a monad is and how you have actually been using it forever without actually knowing what it was called :)</li>
 </ul>
+<h2 id="do-not-treat-this-as-a-python-c-or-java-guide"><a class="header" href="#do-not-treat-this-as-a-python-c-or-java-guide">DO NOT treat this as a Python, C, or Java guide</a></h2>
+<p>I am using those languages as tools to help us learn key programming concepts. I will not be going super in depth for any of them, and you should look online for supplementary knowledge after you finish the guide for which language(s) you want to learn. Java will probably be covered the most thoroughly, simply because we have learned enough of the basics at that point. All of the OOP available in Python will be skipped, as we are waiting until Java to learn that. Same with list comprehensions and whatnot: just waiting until we have a little more experience.</p>
 <h2 id="do-not-get-frustrated-if-you-learn-one-thing-easily-but-the-next-thing-is-hard"><a class="header" href="#do-not-get-frustrated-if-you-learn-one-thing-easily-but-the-next-thing-is-hard">DO NOT get frustrated if you learn one thing easily, but the next thing is hard</a></h2>
 <p>Different people learn things at different rates. You may excel at design and debugging, but suck at data structures and algorithms. There is nothing wrong with that; you are not a worse programmer because of it. Just make sure you understand both, and when you are actually on the job or working on a project you will have people you can rely on that are better at things you are not so good at. This is why we work on teams. </p>
 <p>It is still important to know all aspects of programming, mainly because if you skip things you will never know when something you are working on is actually more complicated than you are treating it, or that you are making a design mistake that is gonna bite you months down the road, and bite you <strong>hard</strong>. </p>
@@ -466,7 +500,7 @@ def sayHello():
 def areaOfTriangle(base, height):
     return (1/2) * base * height
 </code></pre>
-<p>Note that the code in the function does not execute until we actually call it, which we do by adding a set of parentheses enclosing our <em>arguments</em>. This is an important distinction! When the variables are in the first set of parentheses after the function name (the <code>def</code> part), commonly referred to the <em>definition</em> of the function (hence the keyword &quot;def&quot;) they are called parameters, but when you use variables to call a function, they are called <em>arguments</em>.</p>
+<p>Note that the code in the function does not execute until we actually call it, which we do by adding a set of parentheses enclosing our <em>arguments</em>. This is an important distinction! When the variables are in the first set of parentheses after the function name (the <code>def</code> part), commonly referred to the <em>definition</em> of the function (hence the keyword &quot;def&quot;) they are called parameters, but when you use variables or values to call a function, they are called <em>arguments</em>.</p>
 <h2 id="how-to-visualize-functions"><a class="header" href="#how-to-visualize-functions">How to visualize functions</a></h2>
 <p>I recommend using a &quot;black box&quot; method. That is, think of the function as a black box which takes some input and magically spits out something. So our add function might look like this:
 <img src="python/basics/../img/add.svg" alt="Addition Function" /></p>
@@ -585,7 +619,9 @@ You'd be surprised how easy it is to forget!</li>
 <pre><code class="language-python"># let's get some comment etiquette out of the way
 # this is the correct place to comment, above a line of code
 a = 3 + 3
-a = 3 + 3 # do not comment after a line, it is harder to read
+a = 3 + 3 # do not comment after a line, it is harder to read, and many style guides have strict line length limit (120 is typical)
+# I will often put comments on the same line in my examples just to make it clear what I am referencing
+# do as I say, not as I do :)
 
 # remember that functions do not need to have parameters:
 def sayGoodbye():
@@ -602,6 +638,170 @@ ret = empty()
 # Output: None
 print(ret)
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="errors"><a class="header" href="#errors">Errors</a></h1>
+<p>Up until this point I have asked you to copy and paste all of the examples in to you editor. The reason for this is that I was not ready to introduce the concept of <strong>errors</strong> yet, which is when your program does something wrong and the computer tells you that you messed up somewhere. After this section, I will all but stop telling you to paste from the guide. Please type out every example unless I explicitly tell you otherwise.</p>
+<p>Many programmers dread errors in the their code. I'm here to tell you that you should not fear errors at all; in fact they can be incredibly useful: the computer is your <em>friend</em>, telling you where you messed up, many times before you even ran your code.</p>
+<h2 id="our-first-error"><a class="header" href="#our-first-error">Our first error</a></h2>
+<p>Let's cause an error:</p>
+<pre><code class="language-python">print(&quot;hello world) # oops! forgot a closing quote
+</code></pre>
+<p>Type this into your editor and click run. You should see something like the following (may be slightly different):</p>
+<pre><code>  File &quot;main.py&quot;, line 1
+    print(&quot;hello world)
+          ^
+SyntaxError: unterminated string literal (detected at line 1)
+</code></pre>
+<p>Let's analyze this</p>
+<pre><code>File &quot;main.py&quot;, line 1
+</code></pre>
+<p>means an error on line 1, pretty straightforward</p>
+<pre><code>    print(&quot;hello world)
+          ^
+SyntaxError: unterminated string literal (detected at line 1)
+</code></pre>
+<p>This is where things get slightly confusing. It is complaining about an &quot;unterminated string literal&quot;. Simple enough: we didn't specify where our string would end (with a matching quote).</p>
+<p>But why did it point to the start of the string? The reason for this is that Python tries to point you to the part of the string that <em>was</em> correct. Other languages will point to the end of string with a message like <code>expected one of '&quot;',... but got ')'</code>. This is a somewhat common theme with Python.</p>
+<p>The last confusing part is <code>SyntaxError</code>: an error in our &quot;Syntax&quot; presumably. You can think of this like a grammatical error or misspelling in language: you are not following the rules that the language follows, so the computer cannot tell what you want to do.</p>
+<p>Let's look at some more syntax errors:</p>
+<pre><code class="language-python">def myFunction: # forgot the parentheses!
+    pass
+</code></pre>
+<p>Error message:</p>
+<pre><code>  File &quot;main.py&quot;, line 1
+    def myFunction: # forgot the parentheses!
+                  ^
+SyntaxError: invalid syntax
+</code></pre>
+<p>Similar to the above, but a lot less helpful. This time it told us <em>what</em> went wrong (<code>invalid syntax</code>) but not <em>why</em> (eg. <code>missing parentheses</code>). Sometimes error messages are great, sometimes they aren't. It takes a lot of effort for developers who create these programming languages to write good messages for <em>every</em> possible error. This unfortunately means that we need to use our critical thinking skills sometimes and inspect the error. <strong>Try correcting this error on your own.</strong></p>
+<p>Think you got it? Most likely this is what we intended:</p>
+<pre><code class="language-python">def myFunction(): # better! a function with 0 parameters
+    pass
+</code></pre>
+<h2 id="traceback-most-recent-call-last"><a class="header" href="#traceback-most-recent-call-last">Traceback (most recent call last)</a></h2>
+<p>One of the most common error forms in Python is the following:</p>
+<pre><code class="language-python">a = 3 / 0
+</code></pre>
+<p>Error:</p>
+<pre><code>Traceback (most recent call last):
+  File &quot;main.py&quot;, line 1, in &lt;module&gt;
+    a = 3 / 0
+ZeroDivisionError: division by zero
+</code></pre>
+<p>In this case we divided by 0 which is undefined in math, so Python says that is an error (because it does not know what you wanted the value of <code>a</code> to be). Other languages may assign a <code>NaN</code> (not a number) instead, which Python does not.</p>
+<p>All <code>Traceback</code> means that Python is telling you the errors in the order it received them, &quot;most recent&quot; meaning the last function call it encountered before it stopped processing your code. If your code was not in a function (like in the main body) it will say something like <code>in &lt;module&gt;</code>.</p>
+<p>Here is a better example to illustrate this:</p>
+<pre><code class="language-python">def a():
+    b()
+
+def b():
+    c()
+
+def c():
+    return 3 / 0
+
+print(a())
+</code></pre>
+<p>Error:</p>
+<pre><code>Traceback (most recent call last):
+  File &quot;main.py&quot;, line 10, in &lt;module&gt;
+    print(a())
+  File &quot;main.py&quot;, line 2, in a
+    b()
+  File &quot;main.py&quot;, line 5, in b
+    c()
+  File &quot;main.py&quot;, line 8, in c
+    return 3 / 0
+ZeroDivisionError: division by zero
+</code></pre>
+<p>As you can see Python listed (&quot;traced&quot;) the error through each function call, so you can see that it called</p>
+<ul>
+<li><code>print(a())</code> which called</li>
+<li><code>b()</code> which called </li>
+<li><code>c()</code> which did</li>
+<li><code>return 3 / 0</code> which was the error</li>
+</ul>
+<h2 id="sample-errors"><a class="header" href="#sample-errors">Sample errors</a></h2>
+<p>As we progress I will introduce more errors that are possible, but for now here is a small sampling based on concepts we have seen. For each example, see if you can fix them (solutions at the bottom):</p>
+<pre><code class="language-python">a = &quot;unterminated string
+</code></pre>
+<pre><code class="language-python">def myEmptyFunc():
+
+print(&quot;hello!&quot;)
+</code></pre>
+<pre><code class="language-python">def func():
+print(&quot;hello!&quot;)
+</code></pre>
+<pre><code class="language-python">PI = 3. 14
+</code></pre>
+<pre><code class="language-python">myHardToTypeVariable1 = 2
+myHardToTypeVariable2 = 3
+c = myHardToTypeVariable1 + myHardToTypeVaraible2
+</code></pre>
+<p>And for a tricky one! See if you can use some resources online to solve this one:</p>
+<pre><code class="language-python">currentYear = 2023
+myStr = &quot;Current year: &quot; + currentYear
+print(myStr)
+</code></pre>
+<p><em>Hint</em>: we know that this works:</p>
+<pre><code class="language-python">print(&quot;Rings: &quot; + &quot;4&quot;)
+</code></pre>
+<p>So is there some way for us to turn <code>4</code> into <code>&quot;4&quot;</code>?</p>
+<h2 id="why-the-computer-cant-and-shouldnt-correct-us"><a class="header" href="#why-the-computer-cant-and-shouldnt-correct-us">Why the computer can't (and shouldn't) &quot;correct&quot; us</a></h2>
+<p>Let's get something out of the way quickly: many people have the following complaint/question:</p>
+<blockquote>
+<p>&quot;If the computer knew what was wrong, why didn't it just fix it for me&quot;</p>
+</blockquote>
+<p>There are two main reasons why this both not want you want <em>and</em> not possible in general:</p>
+<ol>
+<li>We compared this error to a misspelling or grammatical error in language. How often has your phone corrected a message you were typing incorrectly? Maybe you meant to use some obscenity, but your phone decided you meant &quot;duck&quot; instead? Or perhaps you were typing a word it did not recognize, like a proper noun, or some form of slang? In the case of the phone this is relatively harmless; you can just issue a correction or edit the error yourself. But in programming this could be catastrophic: you may write a large piece of code with a small mistake, and the computer fixes it for you, only it does it wrong. Now you are in the worst possible situation: you think your code works, but it doesn't. You ship this program to customers, and maybe the app crashes, or it leaks their data. This would suck.</li>
+<li>In the general case, more complicated errors may not be fixable by the computer because the code is too complex to analyze. I won't get it into details here but parsing and correcting code is wildly complicated, a challenge reserved mostly for <em>probabilistic</em>* solutions like AI, which can only guarantee being right a percentage of the time (hence the term &quot;probabilistic&quot; as in &quot;probably&quot;).</li>
+</ol>
+<p>It's a big red flag for me when a programmer (especially one with experience) says they want the computer to fix the mistake for them. You absolutely do not want this. The computer is here to tell you what went wrong and why. The solution is on you, so you can tell the computer what you actually meant. As you learn more programming this will (hopefully) become more and more clear.</p>
+<h2 id="solutions"><a class="header" href="#solutions">SOLUTIONS</a></h2>
+<pre><code class="language-python"># a = &quot;unterminated string
+a = &quot;unterminated string&quot;
+</code></pre>
+<pre><code class="language-python"># def myEmptyFunc():
+#
+# print(&quot;hello!&quot;)
+def myEmptyFunc():
+    pass
+print(&quot;hello!&quot;)
+</code></pre>
+<pre><code class="language-python"># def func():
+# print(&quot;hello!&quot;)
+def func():
+    print(&quot;hello!&quot;)
+</code></pre>
+<pre><code class="language-python"># PI = 3. 14
+PI = 3.14
+</code></pre>
+<pre><code class="language-python"># myHardToTypeVariable1 = 2
+# myHardToTypeVariable2 = 3
+# c = myHardToTypeVariable1 + myHardToTypeVaraible2
+myHardToTypeVariable1 = 2
+myHardToTypeVariable2 = 3
+c = myHardToTypeVariable1 + myHardToTypeVariable2
+</code></pre>
+<p>For the tricky one, here is a not so great solution:</p>
+<pre><code class="language-python"># currentYear = 2023
+# myStr = &quot;Current year: &quot; + currentYear
+# print(myStr)
+currentYear = &quot;2023&quot;
+myStr = &quot;Current year: &quot; + currentYear
+print(myStr)
+</code></pre>
+<p>But here is something much better:</p>
+<pre><code class="language-python">currentYear = 2023
+myStr = &quot;Current year: &quot; + str(currentYear)
+print(myStr)
+</code></pre>
+<p>We used a new function called <code>str(...)</code> which in the &quot;black box&quot; method of visualizing functions looks like:</p>
+<pre><code>number -&gt; str -&gt; number as string
+</code></pre>
+<p>Allowing us to add it with another string (usually called &quot;concatenation&quot;) as expected. If doesn't make 100% sense to you that is ok, we will go over types (the core of the issue here) a bit later. Just know that if things are the same kind (like numbers to numbers, strings to strings) we can do operations with them, otherwise we need to convert. We can't add a number to a string, because what would that mean exactly? Numbers have many different representations (eg. how many decimals to display), so there is not a default provided by Python: you must explicitly convert it every time. Other languages will do a basic conversion for you as a default. One approach is not necessarily better than the other, though Python's explicit nature in this regard can actually be helpful for beginners.</p>
+<h1 id="addendum"><a class="header" href="#addendum">Addendum</a></h1>
+<p>*Contrary to what many believe, it is actually possible for a computer to &quot;prove&quot; that a piece of code is correct, given a bare set of assumptions. This is about as close as you can get to a computer knowing every part of you code is correct and telling you exactly what went wrong. Doing this, however, is expensive, tedious, and exceedingly difficult, and is reserved only for &quot;mission critical&quot; applications such as flight software, missile guidance, space flight software, etc., where a failure in code can have a <em>truly</em> catastrophic outcome.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="basics-1"><a class="header" href="#basics-1">Basics</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hello-world-1"><a class="header" href="#hello-world-1">Hello World</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="basics-2"><a class="header" href="#basics-2">Basics</a></h1>
@@ -611,18 +811,21 @@ print(ret)
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+
+
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
             </nav>
 
         </div>
 
         <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
+        <script>
             const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
             const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
             const socket = new WebSocket(wsAddress);
@@ -637,21 +840,30 @@ print(ret)
                 socket.close();
             }
         </script>
-        <script type="text/javascript">
+
+
+
+        <script>
             window.playground_copyable = true;
         </script>
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script type="text/javascript">
+
+        <script>
         window.addEventListener('load', function() {
             window.setTimeout(window.print, 100);
         });
         </script>
+
+    </div>
     </body>
 </html>

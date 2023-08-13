@@ -45,7 +45,7 @@ def areaOfTriangle(base, height):
     return (1/2) * base * height
 ```
 
-Note that the code in the function does not execute until we actually call it, which we do by adding a set of parentheses enclosing our *arguments*. This is an important distinction! When the variables are in the first set of parentheses after the function name (the `def` part), commonly referred to the *definition* of the function (hence the keyword "def") they are called parameters, but when you use variables to call a function, they are called *arguments*.
+Note that the code in the function does not execute until we actually call it, which we do by adding a set of parentheses enclosing our *arguments*. This is an important distinction! When the variables are in the first set of parentheses after the function name (the `def` part), commonly referred to the *definition* of the function (hence the keyword "def") they are called parameters, but when you use variables or values to call a function, they are called *arguments*.
 
 ## How to visualize functions
 I recommend using a "black box" method. That is, think of the function as a black box which takes some input and magically spits out something. So our add function might look like this:

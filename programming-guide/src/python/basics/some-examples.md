@@ -46,7 +46,9 @@ Ok let's go. Feel free to read through and copy paste which ones you find intere
 # let's get some comment etiquette out of the way
 # this is the correct place to comment, above a line of code
 a = 3 + 3
-a = 3 + 3 # do not comment after a line, it is harder to read
+a = 3 + 3 # do not comment after a line, it is harder to read, and many style guides have strict line length limit (120 is typical)
+# I will often put comments on the same line in my examples just to make it clear what I am referencing
+# do as I say, not as I do :)
 
 # remember that functions do not need to have parameters:
 def sayGoodbye():
