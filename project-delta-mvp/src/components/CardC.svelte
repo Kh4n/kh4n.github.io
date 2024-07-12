@@ -15,7 +15,7 @@
                 {card.source}
                 {card.subtype}
                 {card.speed}
-                {card.stats}
+                {card.stats.type}
                 {card.rulesTxt}
                 {card.faceDown}
             {/if}
