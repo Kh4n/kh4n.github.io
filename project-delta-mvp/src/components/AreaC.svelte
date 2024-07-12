@@ -4,6 +4,7 @@
     import CardC from "./CardC.svelte";
     export let area: Card[];
     export let name: string;
+    export let cols: number = 6;
 
     function handle(e) {
         area = e.detail.items;
@@ -16,7 +17,8 @@
         use:dndzone={{ items: area }}
         on:consider={handle}
         on:finalize={handle}
-        class="grid min-h-[10rem] min-w-[20rem] grid-cols-6 gap-2"
+        class="grid min-h-[10rem] min-w-[20rem] gap-2"
+        style="grid-template-columns: repeat({cols}, minmax(0, 1fr))"
     >
         {#each area as card (card.id)}
             <CardC {card} />
