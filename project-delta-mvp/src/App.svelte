@@ -1,6 +1,5 @@
 <script lang="ts">
     import AreaC from "./components/AreaC.svelte";
-    import CardC from "./components/CardC.svelte";
     import FieldC from "./components/FieldC.svelte";
     import { BATTLEFIELD_SIZE, Card, type PlayArea } from "./game-state";
 
@@ -24,7 +23,7 @@
         );
     }
 
-    let playArea: PlayArea = {
+    let player: PlayArea = {
         battleField: [...cards],
         channeled: [],
         combatArea: [],
@@ -35,7 +34,7 @@
         voidPile: [],
     };
 
-    let playArea2: PlayArea = {
+    let opponent: PlayArea = {
         battleField: [],
         channeled: [],
         combatArea: [],
@@ -47,17 +46,19 @@
     };
     let dream: Card[] = [];
 
-    console.log(playArea);
+    console.log(player);
 </script>
 
 <div class="flex flex-row gap-2 p-2">
-    <div class="shrink-0">
-        <FieldC bind:playArea />
-    </div>
     <div class="shrink-0 rounded border border-black p-2">
-        <AreaC name="Dream" bind:area={dream} cols={3} />
+        <AreaC name="Dream" bind:area={dream} col={1} />
     </div>
-    <div class="shrink-0">
-        <FieldC bind:playArea={playArea2} />
+    <div class="flex flex-col gap-1">
+        <div class="shrink-0 border-b border-black pb-1">
+            <FieldC bind:playArea={opponent} />
+        </div>
+        <div class="shrink-0">
+            <FieldC bind:playArea={player} />
+        </div>
     </div>
 </div>

@@ -38,7 +38,7 @@
             {:else if i === deck.length - 2}
                 <CardC
                     card={c}
-                    extraClasses="w-2 overflow-hidden border-r-0 rounded-r-none"
+                    extraClasses="!w-2 overflow-hidden border-r-0 rounded-r-none"
                 />
             {:else}
                 <div />

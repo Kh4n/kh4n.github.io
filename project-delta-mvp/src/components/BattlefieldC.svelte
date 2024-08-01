@@ -13,7 +13,7 @@
 </script>
 
 <div>
-    Battlefield
+    Reality
     <div
         use:dndzone={{ items: area, dropFromOthersDisabled: dropDisabled }}
         on:consider={handle}
