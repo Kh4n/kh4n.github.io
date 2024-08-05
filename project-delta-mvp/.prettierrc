@@ -1,6 +1,6 @@
 {
-    "trailingComma": "all",
-    "tabWidth": 4,
-    "useTabs": false,
-    "quoteProps": "preserve"
+  "trailingComma": "all",
+  "tabWidth": 4,
+  "useTabs": false,
+  "quoteProps": "preserve"
 }

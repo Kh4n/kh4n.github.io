@@ -17,10 +17,15 @@
         use:dndzone={{ items: area }}
         on:consider={handle}
         on:finalize={handle}
-        class="grid min-h-[10rem] min-w-[10rem] gap-2"
+        class="grid min-h-[8.5rem] min-w-[6rem] gap-x-1"
         style="grid-template-columns: repeat({col}, minmax(0, 1fr))"
     >
-        {#each area as card (card.id)}
+        {#each area as card, i (card.id)}
+            <!-- {#if Math.floor(i / 6) == Math.floor(area.length / 6)}
+                <CardC {card} extraClasses="!h-[4.25rem]" />
+            {:else}
+                <CardC {card} />
+            {/if} -->
             <CardC {card} />
         {/each}
     </div>

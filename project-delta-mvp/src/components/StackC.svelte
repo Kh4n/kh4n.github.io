@@ -30,7 +30,7 @@
         use:dndzone={{ items: deck }}
         on:consider={consider}
         on:finalize={handle}
-        class="flex h-40 w-28 rounded shadow-inner"
+        class="flex h-[8.5rem] w-[6rem] rounded shadow-inner"
     >
         {#each deck as c, i (c.id)}
             {#if i === deck.length - 1}

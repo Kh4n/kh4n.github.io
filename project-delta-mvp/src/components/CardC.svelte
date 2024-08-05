@@ -5,7 +5,7 @@
     export let extraClasses: string = "";
 </script>
 
-<div class="h-40 w-[7rem] rounded border border-black {extraClasses}">
+<div class="h-[8.5rem] w-[6rem] rounded border border-black {extraClasses}">
     {card.name}
     {card.cost}
     <!-- {card.source}
