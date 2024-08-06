@@ -1,9 +1,7 @@
 import type { Tuple } from "./util";
 
-type Source = "something";
-type Subtype = "human" | "wizard";
-type Speed = "n" | "y";
-type Stats = UnitStats | ItemStats;
+type Source = string;
+// type Type = "Unit" | "Item" | "Spell" | "Claim" | "Unit Spell"
 
 export const BATTLEFIELD_ROWS = 2;
 export const BATTLEFIELD_COLS = 6;
@@ -29,11 +27,13 @@ export class Card extends Id {
         public name: string,
         public cost: number,
         public source: Source,
-        public subtype: Subtype[],
-        public speed: Speed,
-        public stats: Stats,
-        public rulesTxt: string,
-        public faceDown: boolean,
+        public type: string,
+        public subtype: string,
+        public speed: number,
+        public offense: number,
+        public defense: number,
+        public rulesText: string,
+        public flavorText: string
     ) {
         super();
     }

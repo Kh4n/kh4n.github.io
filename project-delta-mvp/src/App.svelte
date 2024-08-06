@@ -1,48 +1,16 @@
 <script lang="ts">
+    import { getCards } from "./card-data";
     import AreaC from "./components/AreaC.svelte";
     import FieldC from "./components/FieldC.svelte";
     import FieldOppC from "./components/FieldOppC.svelte";
     import { BATTLEFIELD_SIZE, Card, type PlayArea } from "./game-state";
+    import { onMount } from "svelte";
 
     let cards: Card[] = [];
     let cardsOpp: Card[] = [];
-    for (let i = 0; i < BATTLEFIELD_SIZE; ++i) {
-        cards.push(
-            new Card(
-                "card" + i,
-                i,
-                "something",
-                ["human"],
-                "n",
-                {
-                    type: "unit",
-                    n1: 12,
-                    n2: 12,
-                },
-                "string",
-                false,
-            ),
-        );
-        cardsOpp.push(
-            new Card(
-                "card" + i,
-                i,
-                "something",
-                ["human"],
-                "n",
-                {
-                    type: "unit",
-                    n1: 12,
-                    n2: 12,
-                },
-                "string",
-                false,
-            ),
-        );
-    }
 
     let player: PlayArea = {
-        reality: [...cards],
+        reality: [],
         channeled: [],
         combatArea: [],
         deck: [],
@@ -53,7 +21,7 @@
     };
 
     let opponent: PlayArea = {
-        reality: [...cardsOpp],
+        reality: [],
         channeled: [],
         combatArea: [],
         deck: [],
@@ -64,7 +32,12 @@
     };
     let dream: Card[] = [];
 
-    console.log(player);
+    onMount(async function () {
+        let cards = await getCards();
+        // console.log(cards);
+        player.reality = cards.slice(0, 12);
+        opponent.reality = cards.slice(12, 24);
+    });
 </script>
 
 <div class="flex h-screen max-h-screen min-w-[65rem] flex-row gap-2 p-1">
