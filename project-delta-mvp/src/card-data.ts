@@ -23,7 +23,7 @@ const EXPECTED_HEADER = [
 ]
 
 export async function getCards() {
-    let cd = await (await fetch(csvUrl)).text()
+    const cd = await (await fetch(csvUrl)).text()
     let cards = parse(cd) as string[][]
     cards = cards.filter(function(e) {
         return e.length > 0

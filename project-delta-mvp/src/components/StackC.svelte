@@ -1,48 +1,64 @@
 <script lang="ts">
     import { type Card } from "../game-state";
-    import { dndzone } from "svelte-dnd-action";
+    import {
+        dndzone,
+        SHADOW_ITEM_MARKER_PROPERTY_NAME,
+    } from "svelte-dnd-action";
     import CardC from "./CardC.svelte";
+    import { dragTransform } from "../common";
 
     export let deck: Card[];
     export let name: string;
+    export let dragType: string;
 
-    // TODO: mega inefficient
-    function comparator(a: Card, b: Card) {
-        let aIn = deck.find((v) => v.id === a.id);
-        let bIn = deck.find((v) => v.id === b.id);
-        if (aIn && bIn) return 0;
-        if (aIn && !bIn) return -1;
-        if (!aIn && bIn) return 1;
-        return 0;
+    function placeAtEnd(orig: Card[], updated: Card[]) {
+        for (let i = 0; i < updated.length - 1; ++i) {
+            let cur = updated[i];
+            let ind = orig.findIndex((v) => v.id === cur.id);
+            if (ind === -1) {
+                let tmp = updated[updated.length - 1];
+                updated[updated.length - 1] = cur;
+                updated[i] = tmp;
+                return updated;
+            }
+        }
+        return updated;
     }
 
     function handle(e) {
-        deck = e.detail.items.sort(comparator);
-    }
-    function consider(e) {
-        deck = e.detail.items.sort(comparator);
+        deck = placeAtEnd(deck, e.detail.items);
     }
 </script>
 
 <div>
     {name}
-    <div
-        use:dndzone={{ items: deck }}
-        on:consider={consider}
-        on:finalize={handle}
-        class="flex h-[8.5rem] w-[6rem] rounded shadow-inner"
-    >
-        {#each deck as c, i (c.id)}
-            {#if i === deck.length - 1}
-                <CardC card={c} />
-            {:else if i === deck.length - 2}
+    <div class="flex w-[9rem] rounded shadow-inner">
+        {#if deck.length > 1}
+            <div>
                 <CardC
-                    card={c}
-                    extraClasses="!w-2 overflow-hidden border-r-0 rounded-r-none text-nowrap"
+                    card={deck[deck.length - 2]}
+                    extraClasses={"-mr-[8rem] -z-10 relative pointer-events-none"}
                 />
-            {:else}
-                <div />
-            {/if}
-        {/each}
+            </div>
+        {/if}
+        <div
+            use:dndzone={{
+                items: deck,
+                type: dragType,
+                transformDraggedElement: dragTransform,
+                dropAnimationDisabled: true,
+            }}
+            on:consider={handle}
+            on:finalize={handle}
+            class="flex h-[6rem] w-[8.5rem]"
+        >
+            {#each deck as c, i (c.id)}
+                {#if i === deck.length - 1}
+                    <CardC card={c} />
+                {:else}
+                    <div />
+                {/if}
+            {/each}
+        </div>
     </div>
 </div>

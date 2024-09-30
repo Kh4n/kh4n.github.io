@@ -2,11 +2,27 @@
     import { BATTLEFIELD_SIZE, type Card } from "../game-state";
     import CardC from "./CardC.svelte";
     import { dndzone } from "svelte-dnd-action";
+    import { dragTransform } from "../common";
 
     export let area: Card[];
+    export let dragType: string;
+
+    const ordering = {
+        "Unit": 0,
+        "Item": 1,
+        "Claim": 2,
+    };
+    function getOrder(c: Card) {
+        if (ordering[c.type] === undefined) return 100;
+        return ordering[c.type];
+    }
+
+    function comparator(a: Card, b: Card) {
+        return getOrder(a) - getOrder(b);
+    }
 
     function handle(e) {
-        area = e.detail.items;
+        area = e.detail.items.sort(comparator);
     }
 
     $: dropDisabled = area.length >= BATTLEFIELD_SIZE;
@@ -15,33 +31,21 @@
 <div>
     Reality
     <div
-        use:dndzone={{ items: area, dropFromOthersDisabled: dropDisabled }}
+        use:dndzone={{
+            items: area,
+            dropFromOthersDisabled: dropDisabled,
+            type: dragType,
+            flipDurationMs: 200,
+            transformDraggedElement: dragTransform,
+            dropAnimationDisabled: true,
+        }}
         on:consider={handle}
         on:finalize={handle}
-        class="grid max-h-[13.25rem] min-h-[12rem] min-w-[20rem] grid-cols-6 gap-x-1 overflow-hidden"
+        style="grid-template-columns: repeat(6, 8.5rem);"
+        class="grid max-h-[13.25rem] min-h-[12rem] min-w-[51rem] gap-x-1"
     >
         {#each area as c, i (c.id)}
-            <!-- {#if i >= 6 || area.length <= 6} -->
             <CardC card={c} />
-            <!-- {:else}
-                <CardC
-                    card={c}
-                    extraClasses="!h-[2rem] border-b-0 rounded-b-none"
-                />
-            {/if} -->
         {/each}
     </div>
-    <!-- <div
-        use:dndzone={{ items: area, dropFromOthersDisabled: dropDisabled }}
-        on:consider={handle}
-        on:finalize={handle}
-        class="flex min-w-[6rem] flex-row"
-    >
-        {#each area as c, i (c.id)}
-            <CardC card={c} extraClasses="" />
-            {#if i >= 6}
-                <div class="h-0 basis-full" />
-            {/if}
-        {/each}
-    </div> -->
 </div>

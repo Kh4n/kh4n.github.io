@@ -1,22 +1,9 @@
-import type { Tuple } from "./util";
-
 type Source = string;
 // type Type = "Unit" | "Item" | "Spell" | "Claim" | "Unit Spell"
 
 export const BATTLEFIELD_ROWS = 2;
 export const BATTLEFIELD_COLS = 6;
 export const BATTLEFIELD_SIZE = BATTLEFIELD_ROWS * BATTLEFIELD_COLS;
-
-interface UnitStats {
-    type: "unit";
-    n1: number;
-    n2: number;
-}
-
-interface ItemStats {
-    type: "item";
-    n: number;
-}
 
 class Id {
     public readonly id: number = Math.random();
