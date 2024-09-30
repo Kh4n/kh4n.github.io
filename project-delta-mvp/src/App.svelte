@@ -85,9 +85,17 @@
             Waiting for other player
         </button>
     {/if}
-    <div class="flex h-screen max-h-screen min-w-[65rem] flex-row gap-2 p-1">
-        <div class="shrink-0 rounded border border-black">
-            <AreaC name="Dream" dragType="" bind:area={dream} col={1} />
+    <div
+        class="flex h-screen max-h-screen min-w-[65rem] flex-row gap-2 p-1 pl-24 pt-24"
+    >
+        <div class="rounded border border-black">
+            <AreaC
+                name="Dream"
+                dragType="player"
+                isDream={true}
+                bind:area={dream}
+                col={1}
+            />
         </div>
         <div class="flex flex-col gap-1">
             <div class="shrink-0 border-b border-black pb-1">

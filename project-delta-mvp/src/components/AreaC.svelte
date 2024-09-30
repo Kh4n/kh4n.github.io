@@ -8,6 +8,7 @@
     export let name: string;
     export let col: number = 6;
     export let dragType: string;
+    export let isDream: boolean = false;
 
     function handle(e) {
         area = e.detail.items;
@@ -25,8 +26,10 @@
         }}
         on:consider={handle}
         on:finalize={handle}
-        class="grid min-h-[6rem] min-w-[8.5rem] gap-x-1"
-        style="grid-template-columns: repeat({col}, minmax(0, 8.5rem))"
+        class="grid {isDream
+            ? 'min-h-[6rem]'
+            : 'min-h-[6rem]'} min-w-[8.5rem] gap-x-1"
+        style="grid-template-columns: repeat({col}, 8.5rem)"
     >
         {#each area as card, i (card.id)}
             <CardC {card} />
