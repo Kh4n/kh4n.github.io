@@ -78,6 +78,7 @@
                 case "state_change": {
                     state.player = data.state.opponent;
                     state.opponent = data.state.player;
+                    state.dream = data.state.dream;
                     break;
                 }
                 case "end_turn": {
