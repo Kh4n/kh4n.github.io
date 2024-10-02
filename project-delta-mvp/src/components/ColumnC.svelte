@@ -6,20 +6,19 @@
 
     export let area: Card[];
     export let name: string;
-    export let col: number = 6;
     export let dragType: string;
-    export let isDream: boolean = false;
 
     function handle(e) {
         area = e.detail.items;
     }
 
     function updateCard() {
+        console.log("here");
         area = area;
     }
 </script>
 
-<div>
+<div class="flex h-full flex-col">
     {name}
     <div
         use:dndzone={{
@@ -30,12 +29,9 @@
         }}
         on:consider={handle}
         on:finalize={handle}
-        class="grid {isDream
-            ? 'min-h-[66rem]'
-            : 'min-h-[6rem]'} min-w-[8.5rem] gap-x-1"
-        style="grid-template-columns: repeat({col}, 8.5rem)"
+        class="flex h-full min-w-[8.5rem] max-w-[8.5rem] flex-col gap-x-1"
     >
-        {#each area as card, i (card.id)}
+        {#each area as card (card.id)}
             <CardC {card} {updateCard} />
         {/each}
     </div>

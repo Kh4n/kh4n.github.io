@@ -1,9 +1,6 @@
 <script lang="ts">
     import { type Card } from "../game-state";
-    import {
-        dndzone,
-        SHADOW_ITEM_MARKER_PROPERTY_NAME,
-    } from "svelte-dnd-action";
+    import { dndzone } from "svelte-dnd-action";
     import CardC from "./CardC.svelte";
     import { dragTransform } from "../common";
 
@@ -28,6 +25,10 @@
     function handle(e) {
         deck = placeAtEnd(deck, e.detail.items);
     }
+
+    function updateCard() {
+        deck = deck;
+    }
 </script>
 
 <div>
@@ -38,6 +39,7 @@
                 <CardC
                     card={deck[deck.length - 2]}
                     extraClasses={"-mr-[8rem] -z-10 relative pointer-events-none"}
+                    {updateCard}
                 />
             </div>
         {/if}
@@ -54,7 +56,7 @@
         >
             {#each deck as c, i (c.id)}
                 {#if i === deck.length - 1}
-                    <CardC card={c} />
+                    <CardC card={c} {updateCard} />
                 {:else}
                     <div />
                 {/if}

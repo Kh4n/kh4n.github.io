@@ -25,6 +25,10 @@
         area = e.detail.items.sort(comparator);
     }
 
+    function updateCard() {
+        area = area;
+    }
+
     $: dropDisabled = area.length >= BATTLEFIELD_SIZE;
 </script>
 
@@ -45,7 +49,7 @@
         class="grid max-h-[13.25rem] min-h-[12rem] min-w-[51rem] gap-x-1"
     >
         {#each area as c, i (c.id)}
-            <CardC card={c} />
+            <CardC card={c} {updateCard} />
         {/each}
     </div>
 </div>

@@ -1,10 +1,11 @@
 <script lang="ts">
     import RealityC from "./RealityC.svelte";
     import StackC from "./StackC.svelte";
-    import type { PlayArea } from "../game-state";
+    import type { Card, PlayArea } from "../game-state";
     import AreaC from "./AreaC.svelte";
 
     export let playArea: PlayArea;
+    export let hand: Card[];
 </script>
 
 <div class="flex flex-col gap-1">
@@ -30,11 +31,7 @@
                 <RealityC dragType="player" bind:area={playArea.reality} />
             </div>
             <div class="rounded border border-black p-1">
-                <AreaC
-                    name="Hand"
-                    dragType="player"
-                    bind:area={playArea.hand}
-                />
+                <AreaC name="Hand" dragType="player" bind:area={hand} />
             </div>
         </div>
         <div class="flex h-fit flex-col gap-1 rounded border border-black p-1">
