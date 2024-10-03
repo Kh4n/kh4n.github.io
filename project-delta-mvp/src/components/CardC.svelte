@@ -39,7 +39,7 @@
         "linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.65))";
     const backgroundSize =
         "background-size: cover; background-repeat: no-repeat";
-    $: backgroundStyle = `background: ${linearGradient}, url('/img/${card.name}.png'), url('/_FALLBACK.png'); ${backgroundSize};`;
+    $: backgroundStyle = `background: ${linearGradient}, url('img/${card.name}.png'), url('_FALLBACK.png'); ${backgroundSize};`;
     $: isShadow = card[SHADOW_ITEM_MARKER_PROPERTY_NAME];
     $: style = `baseStyle ${
         disableHover || isShadow || !isExpanded ? "" : "hoverStyle"
