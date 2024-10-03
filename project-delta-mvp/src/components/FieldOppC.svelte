@@ -7,48 +7,52 @@
     export let playArea: PlayArea;
 </script>
 
-<div class="flex flex-row gap-1">
-    <div class="flex flex-col">
+<div class="flex flex-col gap-1">
+    <div class="flex flex-row gap-1">
         <div class="max-w-fit rounded border border-black p-1">
             <RealityC dragType="opponent" bind:area={playArea.reality} />
         </div>
-        <div class="flex min-w-fit flex-row">
-            <div class="h-fit rounded border border-black p-1">
-                <AreaC
-                    name="Combat"
+        <div class="h-fit rounded border border-black p-1">
+            <div class="flex flex-row gap-1">
+                <StackC
+                    name="Channeled"
                     dragType="opponent"
-                    bind:area={playArea.combatArea}
+                    bind:deck={playArea.channeled}
+                />
+                <StackC
+                    name="Void"
+                    dragType="opponent"
+                    bind:deck={playArea.voidPile}
                 />
             </div>
-            <div class="h-fit rounded border border-black p-1">
+            <div class="flex flex-row gap-1">
                 <StackC
-                    name="Memory"
+                    name="Random"
                     dragType="opponent"
-                    bind:deck={playArea.memDiscard}
+                    bind:deck={playArea.randomZone}
+                />
+                <StackC
+                    name="Deck"
+                    dragType="opponent"
+                    bind:deck={playArea.deck}
                 />
             </div>
         </div>
     </div>
-    <div class="h-fit rounded border border-black p-1">
-        <div class="flex flex-row gap-1">
-            <StackC
-                name="Channeled"
+    <div class="flex min-w-fit flex-row gap-1">
+        <div class="h-fit rounded border border-black p-1">
+            <AreaC
+                name="Combat"
                 dragType="opponent"
-                bind:deck={playArea.channeled}
-            />
-            <StackC
-                name="Void"
-                dragType="opponent"
-                bind:deck={playArea.voidPile}
+                bind:area={playArea.combatArea}
             />
         </div>
-        <div class="flex flex-row gap-1">
+        <div class="h-fit rounded border border-black p-1">
             <StackC
-                name="Random"
+                name="Memory"
                 dragType="opponent"
-                bind:deck={playArea.randomZone}
+                bind:deck={playArea.memDiscard}
             />
-            <StackC name="Deck" dragType="opponent" bind:deck={playArea.deck} />
         </div>
     </div>
 </div>

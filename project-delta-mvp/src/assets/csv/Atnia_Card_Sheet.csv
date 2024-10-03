@@ -1,0 +1,1154 @@
+Golem,0,,Unit,"Item, Automaton",0,0,0,,,y,,,,#created,
+Knight of Redemption,1,<ez>,Unit,Human Knight,0,1,1,Spellcraft: Give ~ +1<offense> +1<defense> this round.,,y,,,,#created,
+Spare Supplies,1,,Item,,0,,2,"Stacking
+X = The number of stack mods on ~.
+Skill <infinite> | X<energy>, discard<reality> ~: Draw X cards.",,y,,,,#created,
+Energy Flask,1,,Item,,0,,2,"Stacking
+Round Start: Discard ~ to +1<energy> for each stack mod on ~.",,y,,,,#created,
+Three Paths,1,,Spell,,1,,1,"Choose one --
+- Deal 1 damage to target <reality><dream> card or player.
+- Cache the top card of your deck.
+- Give target <reality><dream> unit +2<offense> +2<defense> this round.",,y,,find a better name for this?,,#created,
+Zombie,1,a,Unit,,0,1,1,,,y,,,,#created,
+Blood Zombie,1,<am>,Unit,Zombie Abomination,0,1,1,,,y,,,,,
+Law-Mage,1,<eo>,Unit,Arbiter,0,1,1,Flying,,y,,,,,
+Night Horror,1,<az>,Unit,Nightmare,0,0,1,"~ has +X<offense>
+X = Half the number of allied <memory><void> spells and nightmares, rounded down.",,y,,,,,
+"Pyrus, Returned",2,e,Unit,Inkblood Archmage,-1,2,3,"Arrive: Destroy all other allied <reality> inkbloods to deal damage equal to twice the number that died this round to target <reality> card or player.
+Enemy <any> cards cost 1<energy> more.","A man named Pyrus sought imortality, so a new man named Pyrus was created.
+
+Idk this is kinda bullshit text but whatever",y,,,,#created,
+Survivor,2,<mo>,Unit,Outlander,0,2,2,,,y,,,,,
+Atnia,,aemoz,Reminder,Starting Location,,,,"You may draw from any deck.
+Your source requirements are reduced by 2.
+If a card would be put on the bottom of a deck, remove it from the game instead.",,n,,,,,
+Memory Wraith,1,aa,Unit,Nightmare,0,4,4,Forget 5,,y,#memory2 #threat,,,,
+Lekvian Butler,1,aaaa,Unit,Vampire Abomination,0,1,1,Arrive: Draw 1 and take 2 damage.,,y,#lifechange1 #aggro,,,,
+Squiggly Slime,1,a,Unit,,0,1,1,Wenever an allied card dies: Give ~ a +1<offense> +1<defense> mod.,,y,#countes1 #dies2,,,,
+The Departed,1,aaa,Unit,Abomination,0,1,1,Depart: Draw 1.,,y,#^Depart,,,,
+Deathless Zombie,1,aa,Unit,Zombie Nightmare,-1,2,1,<memory> | You may play ~ from memory if you have 8+ total allied <memory><void> cards.,,y,,,,,
+Void Hound,1,a,Unit,Abomination,0,0,1,"Arrive: Deal 3 damage to each player.
+Dies: Each player discards a <hand> card.",,y,#lifechange1 #discard<hand>1,,,,
+Nameless Vampire,1,aaa,Unit,Vampire Abomination,0,0,2,"On a Roll
+Whenever you gain or lose life from your cards' effects: Give ~ +2<offense> this round.",,y,#lifechange2,,,,
+Familiar Shadow,1,aaaa,Unit,Abomination,0,12,12,"X = Your life total.
+~ has -X<offense> -X<defense>.",,y,#lifechange2,,,,
+"Gaston, Lekvian Squire",1,a,Unit,Vampire Knight,0,1,2,"Arrive: Take 3 damage.
+Depart: Gain 5 life.",,y,#lifechange1,,,,
+Goblin Bomber,1,a,Unit,Abomination,-1,2,1,Dies: Deal 1 damage to each opponent.,,y,,,,,
+Abominable Abomination,1,aa,Unit,Abomination,0,3,2,Arrive: Discard a <hand><channel><reality> unit.,,y,,,,,
+Recurring Menace,1,aaaa,Unit,Zombie Abomination,-1,2,1,<memory> | When your third unit dies in a round: Summon ~ from memory.,,y,#dies2 #memory2,,,,
+Forsaken Warlock,2,aa,Unit,Warlock,2,2,1,"Arrive: Choose one --
+- Each player discards a <reality> unit.
+- Give target unit lifesteal this round.
+- Draw 1.",,y,#int #lifechange1,,,,
+Warlock Hoarder,2,aaa,Unit,Warlock,-1,2,3,<infinite> Attack: Discard any number of <reality> cards to create that many Spare Supplies cards.,,y,#Board_Discard1 #items1,,,,
+Battlefield Scavenger,2,a,Unit,Merchant,-1,3,1,Arrive: Cache the top card of your deck for each unit that died this round.,,y,#dies2,,,,
+Gelatinous Cube,2,aaa,Unit,Abomination,0,1,1,Attack: Discard any number of <reality> cards to give ~ that many +1<offense> +1<defense> mods.,,y,#Board_Discard1 #mods1 #attacktrigger,,,,
+Greg and the BrainZ,2,aa,Unit,Zombie,0,0,1,Arrive or Depart: Create a Zombie card (1/1 unit).,,y,#^arrive #^Depart #aristo,,,,
+Zombie Necromancer,2,aa,Unit,Zombie,-1,1,2,"Whenever another allied noncreated unit dies, create a Zombie (1/1 unit).",,y,#aristocrats #dies2,,,,
+Abominable Egg,2,aaa,Unit,Abomination,0,0,1,Dies: Create a Golem card with four +1<offense> +1<defense> mods.,,n,#aristocrats #^dies,,,,
+Void Knight,2,aaaa,Unit,Abomination,0,2,1,Arrive: You may discard a <reality> unit to summon a unit with base <energy> cost up to 2 greater from your hand.,,y,#aristocrats #Board_Discard1,,,,
+Blood Channeler,2,a,Unit,Vampire Cleric,0,1,1,"Lifesteal.
+Whenever an allied unit dies: Deal 1 damage to opponents.",,y,#aristocrats,,,,
+Two Zombies in a Trench Coat,2,a,Unit,Zombie,0,1,1,Dies: Create two 1/1 zombie units.,,y,#^dies,,,,
+Old Zombiemancer,2,aaa,Unit,Warlock,0,2,2,Spellcraft: Create a Blood Zombie card.,,y,#Spells2,,,,
+Doomsday Prophet,2,aaaa,Unit,,-3,0,4,"The attacking player controls how ~ blocks.
+Round End: Destroy all units.",,y,#int #sweeper,,,,
+Zombieball,2,aa,Unit,Zombie,0,1,1,Skill <infinite> | Flip ~: +1<energy> for each allied <reality> zombie.,,y,,,,,
+Clingy Spirit,2,a,Unit,,1,3,2,Round Start: Recall ~ from your memory.,,y,,,,,
+Guile,2,aaa,Unit,Wizard,0,2,3,<infinite> Attack: Discard the unit to ~'s right to summon another unit with base <energy> cost 3 or less from your memory in it's place.,,y,,,,,
+Lentolm Raven,2,a,Unit,,2,3,1,"Flying
+Arrive: Create a Spare Supplies card.",,y,,,,,
+Haunted Warlock,2,aaaa,Unit,Nightmare Abomination,0,1,3,"On a Roll
+~ has +X<offense>.
+X = The number of units that died this round.",,y,#dies2,,,,
+Lekvian Valet,3,aa,Unit,Abomination,0,3,4,Strike: Draw 1 and take 2 damage.,,y,#lifechange1 #striketrigger,,,,
+Recruiter of the Dead,3,aaaa,Unit,,-1,2,1,Arrive: Summon target <memory> nonspell card with base <energy> cost 2 or less.,,y,#memory2 #aristocrats #^arrive,,,,
+Prospector Zombie,3,aaa,Unit,Zombie,-1,3,3,Attack: Discard any number of <reality> cards to +1<energy> for each.,,y,#Board_Discard1,,,,
+Death Elemental,3,aa,Unit,Abomination,0,0,1,"On a Roll
+X = The amount of life you lost this round.
+~ has +X<offense> +X<defense>.",,y,#lifechange2,,,,
+Void Summoner,3,aaaa,Unit,Wizard,-1,1,1,Arrive: Create a Golem. Give it a +1<offense> +1<defense> mod for each allied <memory><void> unit.,,y,#memory2 #mods1 #^arrive,,,,
+"Horstace, Royal Tax Collector",3,aaaa,Unit,Vampire Noble,0,1,3,"Lifesteal
+Round End: Deal 2 damage to opponents.",,y,,,,,
+Spirit Guide,3,aaaa,Unit,Cleric,0,3,3,"Arrive: Discard a <reality> unit, then summon it from memory.",,y,#Board_Discard1 #dies2,#1,,,
+Rift Arcanist,3,aaa,Unit,,0,1,4,Attack: Summon target <memory> allied unit with base <energy> cost less than or equal to ~'s offense.,,y,#memory2 #aristocrats #^attack,,,,
+Enraged Warlock,3,aaaa,Unit,Warlock,-1,3,3,Whenever an enemy card dies: You may cache target <memory> allied spell.,,y,#Cache #int2,,,,
+Zombie General,3,aa,Unit,,0,2,2,Other allied <reality> zombies have +1<offense> +1<defense>,,y,,,,,
+Goblin Scout,3,aaa,Unit,,0,2,4,"Swiftness
+Attack: You may discard a <reality> card to summon target allied <memory> card with base <energy> cost 2 or less.",,y,,,,,
+Rosilie D'Avron,3,a,Unit,Vampire,1,3,1,"Flying, Lifesteal
+Arrive: Draw 1",,y,#^arrive,,,,
+Corrupted Ancient,4,aaa,Unit,Abomination,-3,3,3,Arrive: Summon a unit of each base <energy> cost from your memory.,,y,#^Arrive #memory2,,,,
+Eudoxia Unshackled,4,aaaa,Unit,Zombie Paladin,-3,4,4,"Forget 6
+Arrive: Target player's life total becomes 10.",,y,#int #Forget #memory2,,,,
+Void Drake,4,aa,Unit,Dragon Abomination,0,5,5,"Flying
+Recast | 2<energy>, <arca><arca>, Discard 2 <reality> units.",,y,#Board_Discard1 #memory2,,,,
+Volcanic Giant,4,aa,Unit,,-1,5,5,"X = Your life total minus 6.
+Augment | <arca><arca>, X<energy> -- Arrive: Gain 3 life.",,y,#lifechange2,,,,
+Spooky Wraith,5,aa,Unit,Abomination,1,3,1,"Flying
+<any> | ~ costs X<energy> less.
+X = The amount of damage you took from your cards this round.",,y,,,,,
+Zombie Giant,6,a,Unit,Zombie Nightmare,0,6,6,<any> | ~ costs 1<energy> less for each allied <memory><void> unit.,,y,,,,,
+Eclectic Giant,8,a,Unit,,0,8,8,"Overwhelm
+<any> | ~ costs 1<energy> less for each card you resolved, drew, recalled, discarded, cached, and/or destroyed, this round.",,y,,,,,
+Dangerous Prowler,2,a,Unit,Abomination,1,2,3,"Arrive: The next time you take damage from your cards, deal that much damage to opponents.
+Exploration",,y,,,,,
+Void Demon,4,aaa,Unit,Abomination,-1,3,3,Arrive: Deal damage to each player equal to half their life total.,,y,,,,,
+Spire Hunter,1,aaaa,Unit,Abomination,1,1,2,"Flying
+~ gains +2<offense> while you have 7 or less life.
+Exploration",,y,,,,,
+Get Back In There,1,aa,Spell,,-1,,3,"Summon target <memory> unit with base <energy> cost 3 or less. 
+Recast 1<energy>, <arca><arca>, Discard 2 <reality> cards.",,y,#reanimate1 #memory2,,,,
+Pact of Consumption,1,aaa,Spell,,2,,2,"Discard any number of <reality> cards to gain twice that much life.
+Draw 1.",,y,#z,,,,
+Zombie's Bite,1,a,Spell,,2,,2,"Deal 1 damage to target <reality><dream> card or player.
+Create a Blood Zombie card (1/1).",,y,,,,,
+Zombie Ritual,1,a,Spell,Zombie,2,,2,.+1<energy> for each allied zombie.,,y,,,,,
+Vanish,1,aa,Spell,,2,,2,Give target unit vanishing this round.,,y,,,,,
+Rummaging,1,aa,Spell,,2,,2,"Discard the top 3 card of your deck, then recall one of them.
+Recast 3<energy><arca><arca><arca>",,y,,,,,
+Arca Insights,1,a,Spell,,0,,2,"Draw 1.
+Take 2 damage.
+Recast 1<energy>, <arca><arca>",,y,,,,,
+Healing Potion,1,a,Spell,,2,,2,"Choose one --
+- Give target <dream><reality> unit +2<defense> this round
+- Gain 2 life.
+Draw 1.",,y,,,,,
+Portal to Dream,1,a,Spell,,2,,3,Summon from your hand or memory a nonspell with base <energy> cost less than or equal your Domain.,,y,,,,,
+Void Snap,1,aaa,Spell,Void,4,,2,Deal 2 damage to target <dream> card or player.,,y,,,,,
+Injury to Insult,1,aaa,Spell,,3,,3,"X = Half the amount of life you lost this round, rounded down.
+Deal X damage to target <dream> card.",,y,,,,,
+Remember the Fallen,2,aaa,Spell,,1,,2,"Recall up to 2 target <memory> units.
+Take 2 damage.",,y,#recall1,,,,
+Headfirst,2,aa,Spell,,0,,3,"Target allied <reality> unit strikes target <reality> card or player, then discard it.",,y,#Board_Discard1 #burn #int,,,,
+Extract Essence,2,aa,Spell,,1,,3,Destroy target allied <reality> card to draw 2 and create an Energy Flask card.,,y,#Board_Discard1 #draw1,,,,
+Squish,2,aa,Spell,,4,,2,Destroy target <dream> card with total offense and defense 4 or less.,,y,#int,,,,
+Absorb,2,aa,Spell,,0,,3,"Draw 2.
+Take 4 damage.
+Gain 1 life for each card you drew this round.",,y,#lifechange1 #draw1,,,,
+Irrefutable Command,2,aa,Spell,,2,,3,Target <reality> unit strikes itself.,,y,,,,,
+Handy Hammer,2,a,Spell,,2,,3,"Choose one --
+- Destroy target <reality> item.
+- Give target unit +2<offense> and lifesteal this round. +1<energy>",,y,,,,,
+Final Strike,2,aa,Spell,,3,,3,Destroy target <dream> unit. Take damage equal to it's offense.,,y,#int,,,,
+Life Manipulation,2,a,Spell,,2,,4,"Choose one --
+- Take 4 damage, +2<energy>
+- Gain 4 life
+Draw 1","\'If you do something and call it manipulation, people will think that it's cooler than it is.' - Nixotica",y,,,,,
+Two Steps Ahead,3,aaa,Spell,,3,,3,"Up to two target <reality> units lose all abilities and get -2/-0 this round.
+Exploration",,y,#int,,,,
+Triple Spell,3,aaa,Spell,,3,,5,Destroy target allied <reality> unit to copy target <dream> spell twice. You may choose new targets for the copies.,,y,#Spells #aristocrats #dies2,,,,
+Eternal Guard,3,aaa,Spell,,0,,3,Summon target <memory> unit and/or target <memory> item with base <energy> costs 2 or less.,,y,#memory2,,,,
+Gravity Well,3,aaa,Spell,Void,1,,3,"Void target <reality> unit. It's controller summons it, then discards it.",,y,#int #aristocrats,,,,
+Ray of Scorn,3,aa,Spell,,-1,,3,Destroy target <reality><dream> unit.,,y,#int,This should probably be moved to another source since arca will be more stack interaction focused,,,
+Dead on Arrival,3,aaa,Spell,,4,,3,Destroy target <dream> card or ability.,,y,,,,,
+Power Vacuum,3,aaa,Spell,,0,,4,Destroy target <reality> allied unit to recall all<reality><dream> units with less <offense>.,,y,,,,,
+Eye for an Eye,4,aaaa,Spell,,-2,,4,"Discard all allied <reality> units.
+Opponents discard that many <reality> units.",,y,#Board_Discard1,,,,
+Enter The Zone,4,aaa,Spell,,-2,,4,"Discard any number of <reality> units. 
+For each discarded unit, you may summon an allied <dream> unit with the same base <energy> cost.",,y,#wincon #Board_Discard1 #memory2 #aristocrats,,,,
+Can O' Army,4,aaa,Spell,Rift,-1,,4,"Summon a 1, 2, and 3 cost unit from your memory.",,y,#memory2 #aristocrats,,,,
+Zombie Spawning,4,aaa,Spell,,-1,,4,Create a 2/2 unit for each allied <memory><void> unit.,,y,#memory2,,,,
+Mind Wipe,4,aaa,Spell,,0,,4,"Target player discards all cards in their hand.
+Augment | <arca><arca> -- ~ can only target you. Draw 1.",,y,#int #discard<hand>,,,,
+Necromancer's Touch,4,aaaa,Spell,,1,,5,Destroy target <reality> allied unit to summon up to two target allied <memory> units.,,y,,,,,
+More Useful Dead,,,,,,,,,,y,,,,,
+Absorb Magic,2,aa,Spell,,4,,3,Destroy target <dream> spell. Take damage equal to it's base <energy> cost.,,y,,,,,
+Lifeforce,1,aaaa,Spell,,3,,3,"Give target <reality> unit +2<offense> +1<defense> this round.
+Take 3 damage.
+Draw 1",,y,,,,,
+Shadowy Deluge,2,aaaa,Spell,,4,,3,"Choose one -- Destroy target <dream>...
+- Item. Take 3 damage.
+- Unit. Take 4 damage.
+- Spell. Take 5 damage.",,y,,,,,
+Night of the Dead,4,aaaa,Spell,Nightmare,-1,,4,Create a Blood Zombie for each allied <memory> spell and nightmare.,,y,,,,,
+Golem Conjuring,2,aaaa,Spell,,1,,3,"Cache target allied <memory> spell. X = it's base <energy> cost.
+Create a Golem (0/0 unit) with X +1<offense> +1<defense> mods.",,y,,,,,
+Dark Wrath,2,aaa,Spell,Nightmare,4,,3,"Deal damage to target <dream> card equal to the number of allied <memory> spells and nightmares.
+Exploration",,y,,,,,
+Arca Spellbook,0,a,Item,Spellbook,0,,3,"Skill <infinite> | Discard<reality> ~: Create a cached , , or .",,y,,,,,
+Borrow Time,1,aaa,Item,,1,,4,"Vanishing
+Arrive: Draw 1 and gain 5 life. 
+Round End: Take 8 damage.",,y,#lifechange1,,,,
+Cram Session,1,aa,Item,,0,,3,"Choose X | A card type.
+Whenever an allied X arrives: Discard the top 2 cards of your deck.",,y,,,,,
+Healing Amulet,1,aaa,Item,,2,,3,Arrive: Draw 1 and gain 3 life.,,n,,,,,
+Pain Conduit,1,aa,Item,,-1,,4,Whenever you take damage from your cards' effects: Deal half that much damage to opponents (rounded up).,,y,,,,,
+Rock O' Pain,1,a,Item,,0,,2,"Arrive: Draw 1
+Arrive or Depart: Deal 2 damage to each player.",,y,,,,,
+The Vanishing,1,aaa,Item,,-1,,3,Allied <any> units gain vanishing and cost 1<energy> less.,,y,#aristocrats,,,,
+Menacing Mirror,1,aaaa,Item,,2,,4,Arrive in dream: ~ becomes a copy of up to one target <reality> allied unit. Destroy that unit.,,y,,,,,
+Prismatic Refractor,1,aaaa,Item,,-1,,3,"Vanishing
+Forget 4
+Whenever you channel a card: +1<energy>.
+You cannot draw cards.",,y,#engine,,,,
+Race to the Bottom,1,a,Item,Quest,0,,5,"Shared
+<down> | Round End - You've lost the most life this round
+<explosion2> : Draw 1 and gain 5 life.
+Hedge: Draw 1",,y,,,,,
+Bring it On,1,a,Item,Quest,0,,5,"Shared
+<down> | Deal 6 damage to an opponent in a round.
+<explosion2> : Opponents draw 2.",,y,,,,,
+Battlemage's Path,1,aaa,Item,Quest,0,,4,"<down> | Sink 4
+<level2> : Your spells cost 1<energy> less.",,y,,,,,
+Rift Conduit,2,aaa,Item,,0,,3,Skill <infinite> | Flip any number of allied units: +1<energy> for each.,,y,,,,,
+Soul Splitter,2,aa,Item,,-1,,4,Whenever an allied unit arrives: Trigger it's <infinite> speed Dies and Depart abilities.,,y,#wincon #aristocrats #dies2 #engine,,,,
+Corrupted Lifeline,2,aaa,Item,Quest,0,,4,"<down> | Sink 3
+<level2> : Deal 6 damage to your opponent, then exchange your life total with theirs.",,y,,#ding,,,
+Phantom Artifact,4,aaaa,Spell,Relic,0,,4,"Delve 4
+Choose X | A number 0-10.
+Cache the top X cards of your deck and take twice X damage.",,y,,,,,
+Phantom Angel,1,ee,Unit,Arbiter,3,1,2,"Flying
+Arrive: Recall target allied <reality> card.
+Whenever an allied card departs: Give ~ +1<offense> +1<defense> this round.",,y,,,,,
+Inkblood Necromancer,1,e,Unit,Inkblood,0,1,1,Dies: Summon another unit with base <energy> cost 3 or less from your memory.,,y,,,,,
+Wizard's Familiar,1,ee,Unit,Bird,0,1,1,"Flying
+~ has +2<offense> +1<defense> as long as you have 3+ spells in your memory.",,y,,,,,
+Temporal Manipulator,1,e,Unit,Wizard,3,2,1,"Breakpoint, Flying",,y,,,,,
+Liase of The two Scrolls,2,eeee,Unit,Arbiter,0,0,3,"Flying
+Spellcraft: Give target <reality> allied unit base stats 3<offense> 3<defense> this round.",,y,#spells2,,,,
+Talent Snatcher,2,eee,Unit,,0,2,3,<infinite> Attack: Give ~ all abilities of target <reality> unit.,,y,#^attack,,,,
+Rolead the Swift,2,ee,Unit,Orc Knight,2,2,2,"Arrive: Choose one --
+- Gain 2 life.
+- ~ strikes opponents.",,y,#^arrive,,,,
+Sir Horus The Prepared,2,eee,Unit,Knight Arbiter,2,2,1,"Arrive: Choose one --
+- Recall target <reality> unit.
+- Give target <reality> unit challenger this round.
+- Draw 1.",,y,#int #recall1 #strike,,,,
+Wolkk Twinspear,2,e,Unit,Human Knight,0,2,2,Double Strike,,y,,,,,
+Solemn Angel,2,eee,Unit,,0,1,3,"Flying
+Whenever you resolve a card targeting ~: Cache the top card of your deck.",,y,#heroic2,,,,
+Knight of the River,2,ee,Unit,Knight,0,1,3,"<level1> | Count | You resolve a card targetting an allied <reality><dream> card.
+<down> | Count 3+
+<level2> | Your cards cost 1<energy> less for each card they target.",,y,#heroic2,,,,
+"Simeon, Patient Forerunner",2,mm,Unit,,0,2,3,"<level1> | Count: You resolve a card.
+<down> | Count 6+
+<level2> : Unflip each allied <reality> unit, refresh an attack, remove all level mods from ~, and return to level 1.",,y,,,,,
+Traveling Soldier,2,ee,Unit,,0,2,2,"Strike: Choose one --
+- Create a Spare Supplies card.
+- Flip or unflip target <reality> card.",,y,,,,,
+Swift Looter,2,ee,Unit,,0,2,3,"Swiftness
+Skill <infinite> | Flip ~: Draw 1, then discard<hand> a card.",,y,#discard<hand>1,,,,
+Interceptor,2,ee,Unit,Arbiter,3,2,1,"Flying
+Arrive: Destroy target <dream> card with base <energy> cost less than ~'s <offense>.",,y,#tempo #int #stop,,,,
+Finishing Move,2,e,Unit,Inkblood,-1,3,1,"Arrive: Target <reality> allied unit strikes another target <reality> unit, then is discarded<reality>.",,y,#inkblood,,,,
+Inkblood Vampire,2,ee,Unit,Inkblood,0,3,2,"Lifesteal.
+Dies: Deal 3 damage to opponents.",,y,,,,,
+Inkblood Pyromancer,2,ee,Unit,Inkblood,-1,2,1,Dies: Deal 2 damage to each unit.,,y,,,,,
+Battle Merchant,2,eee,Unit,,-1,1,3,"X = ~'s <offense>
+Attack: +X<energy>.",,y,,,,,
+Swift Hawk,2,eee,Unit,,0,1,2,"Flying, Swiftness",,y,,,,,
+Experienced Traveler,2,eeee,Unit,,-1,2,2,Arrive or Strike: Create a cached Three Paths.,,y,,,,,
+Liev Grappler,2,ee,Unit,,0,2,2,"Challenger
+Arrive: Create a cached Three Paths.",,y,,,,,
+Wacky Wizard,3,eee,Unit,Knight,0,0,4,"Overwhelm
+Magecraft: Give ~ +2<offense> this round.",,y,,,,,
+Solemn Ranger,3,eee,Unit,Knight,0,2,4,Whenever you resolve a card targeting ~: Summon target allied <memory> nonspell with base <energy> cost 2 or less.,,y,#heroic2 #memory2,,,,
+Yulia of the Lake,3,eeee,Unit,Human Knight,0,3,3,Whenever you resolve a card targeting ~: Create a Knight of Redemption.,,y,#heroic2 #Spells,mentor,,,
+Master Duelist,3,e,Unit,Knight,0,2,3,Arrive: Destroy target <reality><dream> unit with less <offense> than ~.,,y,#strike #int,,,,
+Datrobino,3,e,Unit,Knight,0,3,2,"Whenever an allied spell targets ~: Copy that spell. Choose new targets for the copy, it cannot target ~.",,y,#heroic2,,,,
+Inkblood Warlock,3,e,Unit,Inkblood,-2,4,2,"Arrive: Destroy all other allied units.
+Depart: Void ~ and summon all inkbloods from your memory.",,y,,,,,
+Grand Paladin,3,ee,Unit,Knight,0,2,4,Swiftness,,y,,,,,
+Experienced Combatant,6,eee,Unit,,2,4,4,"Swiftness
+<any> | ~ costs 1<energy> less for each allied combating unit.",,y,,,,,
+Coaxmetal,6,ee,Unit,Nightmare Arbiter,3,3,1,"Flying
+<any> | ~ costs 1<energy> less for each allied <memory><void> nonunit.
+Arrive: Recall target <reality> card.",,y,,,,,
+Simple Traveler,1,z,Unit,,0,2,1,"First Strike
+Exploration",,y,,,,,
+Ancient Mentor,1,eee,Unit,,2,1,2,Arrive: Give another target <reality> allied unit +1<offense> +1<defense> this round.,,y,,,,,
+Hired Bodyguard,1,eee,Unit,,3,1,1,Arrive: Give another target <reality> allied unit +3<defense> this round.,,y,,,,,
+Graceful Arbiter,1,ooo,Unit,Arbiter,4,1,1,"Arrive: Give another target <reality> allied card ""Ward 2<energy>"" this round.",,y,,,,,
+Arbiter Marshal,2,eee,Unit,Arbiter,-1,1,1,"Flying
+Whenever you recall a card: Create a Law-Mage card. (1/1 unit with flying)",,y,,,,,
+Sanctum Skyhunter,2,e,Unit,Knight,0,2,2,"Callenger, Flying",,y,,,,,
+Forgotten Knight,2,ee,Unit,Knight,0,4,4,"Forget 4
+Challenger",,y,,,,,
+Cave Soldier,,,,,,,,,,,,,,,
+Svet Warlord,,,,,,,,,,,,,,,
+The Great Heron,,,,,,,,,,y,,,,,
+Duel of Honor,1,e,Spell,,-1,,4,Target <reality> allied unit and another target <reality> unit each strike each other.,,y,#int,,,,
+Temporary Disappearance,1,ee,Spell,,1,,3,Put target <reality> unit with base <energy> cost 2 or less on top of it's deck.,,y,#int,,,,
+A Trick,1,eee,Spell,,2,,3,"Choose one -- Give target <reality><dream> unit __ this round.
+- +2<defense>
+- +2<offense>
+Draw 1.",,y,#trick,,,,
+Inkblood Conjuring,1,e,Spell,Inkblood,-1,,3,"Destroy target allied inkblood to choose one --
+- Summon another inkblood from your memory.
+- Create a cached Pyrus, Returned.",,y,#inkblood,,"Pyrus, Returned",,
+Break Through,1,ee,Spell,,2,,2,"Choose one --
+- Give target unit +1<offense> and overwhelm this round.",,y,,,,,
+Recruit a Mercenary,1,eeee,Spell,,-2,,2,Draw a unit.,,y,,,,,
+Become Large,1,ee,Spell,,3,,3,"Give target <reality><dream> unit +3<offense> +3<defense> this round.
+Exploration",,y,,,,,
+Drifting Away,1,e,Spell,,4,,2,"Recall target <reality> card. If it's allied, +X<energy>.
+X = The base <energy> cost of the recalled card.",,y,,,,,
+Dropkick,2,ee,Spell,,3,,3,Target <reality> allied unit strikes another target <reality><dream> unit.,,y,#int,,,,
+Challenge!,2,e,Spell,,0,,3,"Give target <reality> unit challenger this round.
+Draw 1.",,y,#int,,,,
+Flank,2,eee,Spell,,2,,3,"Remove target allied unit from combat.
+It strikes target combating enemy unit.
+Exploration",,y,#trick #strike #int,,,,
+Mass Recall,2,eee,Spell,,2,,3,"Recall any number of target <reality> units.
+<any> | ~ costs 1<energy> more for each enemy unit it targets.",,y,#recall1 #int,,,,
+Take a Break,2,e,Spell,,2,,2,Put target <reality> flipped unit on top or bottom of it's owner's deck.,,y,#int,,,,
+Quick Thinking,2,aa,Spell,,4,,3,Void target <dream> card with base <energy> cost 2 or less.,,y,#int #stop,,,,
+Nullify Magic,2,ee,Spell,,4,,2,Put target <dream> nonunit with base <energy> cost 3 or less into it's deck 4th from the top.,,y,#int #stop,,,,
+Mind Trauma,2,eee,Spell,,3,,2,"Recall target <reality> card.
+Opponents discard a <hand> card.",,y,,,,,
+Reflect,2,ee,Spell,,4,,4,"All damage target <reality><dream> card would deal this round is dealt to it's controller instead.
+Exploration",,y,,,,,
+Crush,2,eeee,Spell,,2,,2,Destroy target <reality><dream> unit with less <offense> than an allied unit.,,y,,,,,
+Everyone Forgets,2,ee,Spell,,2,,3,"Forget 4
+Recall up to two target <reality> cards.
+Draw 1.",,y,,,,,
+Enter Formation,2,eee,Spell,,2,,3,"Choose one --
+- Give up to two target <reality> units formation this round. Draw 1.
+- Put target attacking unit on top of it's owner's deck.",,y,,,,,
+Divine Uppercut,2,ee,Spell,,4,,3,"Choose one --
+- Target <reality> allied unit strikes target <reality> card.
+- Recall target <dream> spell. Opponents discard a <hand> card.",,y,,,,,
+Knights' Ambush,2,eee,Spell,,3,,2,"Create a Knight of Redemption card.
++1<energy>
+If you recalled a card this round, copy ~ as you play it.",,y,,,,,
+K.O. Punch,2,e,Spell,,4,,4,Target allied combating unit strikes target enemy combating unit.,,y,,,,,
+Team Up,2,e,Spell,,2,,3,"Give up to two target <reality> units +2<offense> +1<defense> this round.
+Exploration",,y,,,,,
+The Harder They Fall,2,eeee,Spell,,4,,3,"Void target <dream> card with base <energy> cost 4 or greater.
+Exploration
+
+change this to not be void",,y,,,,,
+Cryptic Strike,2,ee,Spell,,4,,3,Put on the bottom of it's deck target <dream> card with base <energy> cost less than or equal to your Domain.,,y,,,,,
+Familiar Fist,2,ee,Spell,,-2,,3,"Target <reality> unit strikes any target it already struck this round.
+Exploration",,y,,#ding,,,
+Unyielding Blade,2,ee,Spell,,4,,3,"Choose One --
+- Prevent all damage target <reality><dream> card would deal this round.
+- Give target <reality> unit Double Strike this round.",,y,,,,,
+Paralyze,2,e,Spell,,4,,3,"Put target attacking unit on top of it's deck.
+Exploration",,y,,,,,
+Speed Check,2,ee,Spell,,4,,3,Put target <dream> card with base speed 1 or more on the bottom of it's deck.,,y,,,,,
+Spectacular Sweep,2,eeee,Spell,,3,,3,Recall up to 2 target <reality><dream> cards.,,y,,,,,
+Try again,2,ee,Spell,,4,,3,"Recall target <dream> card.
+Draw 1.",,y,#stop #int #recall,,,,
+Battle Rage,2,eee,Spell,,1,,3,"Give target <reality> unit +2<offense>, challenger, and overwhelm this round.
+Exploration",,y,#trick,,,,
+Back with Vengeance,3,ee,Spell,,0,,3,"Flip or unflip target <reality> unit.
+Refresh an attack.",,y,,,,,
+Provoke,3,eee,Spell,,4,,3,Two target <reality> units strike each other.,,y,#int #strike1,,,,
+Shatter Object,3,eee,Spell,,4,,3,"Choose one --
+- Destroy target <reality><dream> item.
+- Draw 2.",,y,,,,,
+Moment of Silence,3,oooo,Spell,,-3,,4,"Recall all <dream> cards and abilities.
+End the round.
+Exploration",,y,,,,,
+Wave of Doubt,3,eeee,Spell,,4,,3,Recall any number of target <reality> cards with total base <energy> cost between them of 5 or less.,,y,,,,,
+Surround,3,eeee,Spell,,-3,,4,Each allied unit strikes target <reality> card.,,y,,,,,
+Get Lost,3,eeee,Spell,,4,,3,Put target <dream> card on top of it's deck.,,y,#stop #int #recall,,,,
+Rampage,4,eeee,Spell,,4,,3,Target allied combating unit strikes each enemy combating unit.,,y,#strike1 #int,,,,
+BSOD,4,eee,Spell,,-3,,4,Recall all <reality> cards.,,y,,,,,
+Ambush,5,eeee,Spell,,-1,,3,"Unflip all allied <reality> units.
+Refresh an attack.",,y,,,,,
+Eminus Spellbook,0,e,Item,Spellbook,0,,3,"Skill <infinite> | Discard<reality> ~: Create a cached , , or .",,y,,,,,
+Crystal Ball,0,eee,Item,,-1,,1,"Arrive and Depart: Delve 6.
+Skill <infinite> | 1<energy>: Destroy ~.",,y,,,,,
+Portable Portal,1,ee,Item,,-1,,3,Skill 2<speed> | Flip ~: You may summon a card with base <energy> cost 2 or less from your hand.,,y,,,,,
+Combat Wizardry,1,ee,Item,Relic,0,,3,You may look at and play the top card of your deck as long as an allied unit is attacking or blocking.,,y,,,,,
+Speed 101,1,ee,Item,Spellbook,0,,3,"Arrive: Draw 1.
+Skill <infinite> | Discard<reality> ~: The next card you play gets +3<speed>.",,y,,,,,
+Warrior's Path,1,e,Item,Quest,0,,5,"Shared
+<down> | An allied unit strikes a player
+<explosion2> : Unflip the unit and give it +1/+1 this round.
+Hedge: Draw 1",,y,,,,,
+Sabotage Quest,1,ee,Item,Quest,0,,5,"Sabotage
+<down> | An allied unit strikes a player.
+<explosion2> : Give allied <reality> units +2<offense> this round.",,y,,,,,
+Raiding,2,eee,Item,,-1,,3,<infinite> The first time an allied unit strikes a player each combat: Draw 1.,,y,,,,,
+Soulbook,2,ee,Item,Inkblood,-1,,3,"Whenever another unit dies: ~ becomes a copy of it, except it's an inkblood and gains this ability.",,y,#inkblood,,,,
+Pax Nova Garrison,2,ee,Item,,-1,,4,"Whenever you resolve a unit, create a 1/1 .",,y,,,,,
+Knights' Prowess,2,eee,Item,,0,,3,"X = The number of cards you resolved during combat this round.
+Allied <reality> units have +X<offense> +X<defense>.",,n,,,,,
+Portal to Another Realm,2,ee,Item,,0,,4,Round start: Void target <reality> card. It's controller summons it next time they attack.,,y,#int #blink1,,,,
+Portable Barrier,2,ee,Item,,3,,2,"Other allied <reality> cards have ""Ward -- 2<energy>"".",,y,#int #protection,,,,
+Fight Club,2,ee,Item,,0,,4,Allied <reality> units gain challenger.,,y,,,,,
+Devastating Decoy,3,eeee,Item,,2,,3,"Vanishing
+Arrive: Recall target <reality> unit.
+Allied units have +2<offense>.",,y,#int #trick #aggro #recall1,,,,
+Moat,3,eeee,Item,,-2,,,Enemy <reality> units have -2<offense>.,,y,,,,,
+Acrobat,1,mmm,Unit,,-1,1,2,"Swiftness
+Skill <infinite> | Flip ~: Unflip target <reality> card.",,y,#unflip,,,,
+Shifting Mirage,1,ee,Unit,,-2,1,1,When you recall ~ from anywhere: Draw 1.,,y,#recall2,,,,
+Elusive Egret,1,ee,Unit,,-1,2,1,"Flying
+Player strike: Recall ~.",,y,#recall1,Find a new word instead of bird,,,
+Time Wizard,1,mm,Unit,,-2,1,2,"Swiftness
+Skill <infinite> | Flip ~: Flip or unflip target <reality> unit.",,y,#unflip1,,,,
+Elite Scout,4,mmmm,Unit,Outlander Scout,0,1,1,Attack: Unflip all allied <reality> units.,,y,#unflip1,,,,
+Plucky Scout,1,m,Unit,Scout,1,1,3,Swiftness,,y,,,,,
+Prepared Traveler,1,mm,Unit,Outlander,0,1,2,Arrive: Create a Spare Supplies card.,,y,,,,,
+"Bob, the Lightning Rod",1,mm,Unit,Outlander Scribe,-2,1,1,"When choosing targets for cards or abilities that could target ~, opponents must choose ~ as a target.",,y,,,,,
+Material Spellcaster,2,mmm,Unit,Outlander,2,2,1,"Arrive: Choose one --
+- Unflip target <reality> card.
+- Give target <reality> unit overwhelm this round.
+- Draw 1.",,y,#claims,,,,
+Soup Cook,2,mm,Unit,Outlander,-1,2,2,Arrive: Create 2 Energy Flask cards.,,y,#items1,,,,
+Royal Guard,2,mm,Unit,,3,2,3,"Ward -- 2<energy>
+Arrive: Swap ~ with target allied <reality> unit.",,y,#swap #int #protection #trick,,,,
+Trinket Breaker,2,mm,Unit,Outlander,2,3,2,"Skill 4<speed> | 2<energy>, Discard ~: Destroy target <reality> Item.
+Exploration",,y,#bear #int,,,,
+Knowledge Keeper,2,mmm,Unit,Outlander Scribe,-3,2,2,"Players may only draw cards during the draw phase.
+Exploration",,y,#bear #int #law,,,,
+Wardsmith,2,mm,Unit,Outlander Scribe,-2,1,3,"You gain ""Ward -- 10<energy>"".
+Exploration",,y,#bear #int #law,,,,
+Mind Reader,2,mm,Unit,Human Scribe,2,2,2,"Choose X | A card name.
+X can't be played.",,y,#bear #int #law,,,,
+Aulva Spellsplitter,2,aaa,Unit,Ogre Wizard,-1,1,4,"Your spells cost 2<energy> more.
+Whenever you play a spell: Copy it. You may choose new targets for the copy.",,y,,,,,
+Salt Alliance Tradesman,2,mm,Unit,Goblin Merchant,0,2,3,Your multiple choice and spellbook cards cost 1<energy> less.,I can get you a sweet discount on this shovel if you buy some salt!,y,,,,,
+Migrating Songbird,2,mm,Unit,,1,2,1,"Flying
+Arrive: Create a cached Three Paths.",,y,,,,,
+Embittered Scribe,2,mmm,Unit,Outlander Scribe,-1,2,2,"Choose X | A card type.
+X <any> cards cost 1<energy> more.",,y,#law #bear,,,,
+Prismatic Golem,2,mmm,Unit,,0,0,0,"Overwhelm
+Ward -- 2<energy>
+X = Your Domain.
+~ has +X<offense> +X<defense>.",,y,,,,,
+Skyhaven Merchant,2,mmm,Unit,,0,3,3,When ~ flips: Create a Energy Flask card.,,y,,,,,
+Sanddune Scout,2,mmm,Unit,Scout,0,2,2,<infinite> Attack: Flip or unflip target unit.,,y,,,,,
+Defiant Scribe,2,m,Unit,Outlander Scribe,3,2,3,"First Strike
+Arrive: The next spell an opponent plays costs 2<energy> more.",,y,,,,,
+Friendly Financier,2,mmm,Unit,,1,2,1,Allied skills cost 1<energy> less.,,y,,,,,
+Outlands Burglar,2,mmm,Unit,Outlander,0,1,1,Spellcraft: Discard the top card of your deck and give ~ a +1<offense> +1<defense> mod.,,y,,,,,
+Old Watchman,3,mm,Unit,Outlander,-2,2,1,Arrive: Unflip all allied units.,,y,#unflip1,,,,
+Alliance Rallier,3,mmm,Unit,Outlander,-2,1,1,"Arrive: Unflip allied <reality> units, give any outlanders +1<offense>.",,y,,,,,
+Veteran Warrior,3,mm,Unit,,-1,4,3,<infinite> Attack: Give the unit to ~'s right overwhelm this round.,,y,#aggro,,,,
+Grand Protector,2,eee,Unit,,3,4,4,Arrive: Recall all other allied <reality> units.,,y,#recall,,,,
+Devout Arbiter,3,eo,Unit,Arbiter,3,2,3,"Flying
+Arrive: Void target <dream> card until ~ departs.",,y,#int,,,,
+Tower Thief,3,mmm,Unit,Outlander Arbiter,-2,3,2,Arrive: Void another target <reality> card until ~ departs.,,y,#int,,,,
+Sour Mathematician,3,mmm,Unit,Outlander Scribe,-2,2,2,"Choose X | A number.
+Cards with base <energy> cost X cost 2<energy> more.",,y,#bear #int,,,,
+Ogre Illusionist,3,mmmm,Unit,Ogre,3,3,6,"Swiftness
+Arrive: Swap ~ with target allied unit.",,y,,,,,
+Rugged Mountaineer,3,mmmm,Unit,Outlander,0,3,3,"Swiftness, First Strike",,y,,,,,
+Flying Squirrel,3,m,Unit,,2,3,2,"Flying
+Arrive: Draw 1 and gain 3 life.",,y,#^arrive,,,,
+Colossal Slime,4,zz,Unit,Nightmare,2,4,4,"Ward -- 3<energy>
+<any> | ~ Costs 1<energy> less for each card type among cards in your memory.",,y,#memory2,,,,
+Spectral Reinforcements,5,eee,Unit,,0,4,3,<any> | ~ Costs 2<energy> less for each card you recalled this round.,,y,#recall2,Give this an interesting ability,,,
+Giant Moose,5,mmm,Unit,Giant Moose,0,10,10,Overwhelm,,y,,,,,
+The End,9,m,Unit,,3,20,20,"Overwhelm
+Augment | 1<energy>, <material><material> -- Play ~ only if there are 20+ unique allied <reality><memory><void> cards.",,y,#highlander2,,,,#highlander
+Sudden Strength,1,mmm,Spell,,3,,2,"Give target <reality> unit +3<offense> +3<defense> this round.
+Exploration",,y,#trick,,,,
+Memory Failure,1,mmmm,Spell,,2,,3,Put target <channel> card on the top or bottom of it's owner's deck.,,y,,,,,
+Leave me Alone,1,m,Spell,,3,,3,Destroy target <dream> card or ability that targets a unit.,,y,#int #protection #stop,,,,
+Transfusion,1,ee,Spell,,2,,5,Recall target <reality> allied unit to give another target <reality> unit +4<offense> +4<defense> this round.,,y,#recall1 #trick #blitz,,,,
+Recollect,1,z,Spell,,-1,,2,Recall target card from memory.,,y,,,,,
+Sublimate,1,mm,Spell,,-3,,2,"Void target <reality> card with base <energy> cost 1 or less.
+Exploration",,y,,,,,
+Prismatic Power,1,m,Spell,,2,,3,"X = Your domain.
+Give target <reality> unit X +1<offense> +1<defense> mods.",,y,,,,,
+Currency Conversion,1,mm,Spell,,0,,2,"The next card you play's source requirement is reduced by <arca><eminus><material><oldworld><zelor>.
+Draw 1.",,y,,,,,
+Unfortunate Accident,1,mmm,Spell,,-1,,2,Destroy target <reality> unit with 2<offense> or less.,,y,,,,,
+Ether Wind,1,mm,Spell,,2,,3,"Choose One --
+- 
+- Put target <memory> card on the top or bottom of it's deck. Draw 1.",,y,,,,,
+Siphon Power,2,mm,Spell,,3,,3,"Choose one or both:
+- Give target <reality> unit +2<offense> this round
+- Give target <reality> unit -2<offense> this round
+Exploration",,y,#trick,,,,
+Supply Run,2,mm,Spell,,2,,3,"Draw 1.
+Create a Spare Supplies card.",,y,#items1,,,,
+Trade Insight,2,z,Spell,,-2,,3,Cache the top 2 cards of your deck.,,y,#cache1,,,,
+Forced Retreat,2,mm,Spell,,4,,4,"Choose one -- Remove target <reality> unit from combat and...
+- Flip it
+- Unflip it
+Exploration",,y,#trick,,,,
+Defense Matrix,2,mmm,Spell,,3,,2,"Vanishing
+Arrive: Draw 1.
+Allied <reality><dream> units gain ""Ward -- 2<energy>"".",,y,#protection #int,,,,
+Remove from History,2,mm,Spell,,-1,,3,"Forget 4
+Void target <reality> unit.",,y,#int #Forget1,,,,
+Moose on the Loose,2,mm,Spell,,-1,,3,Each player creates a Giant Moose card (10/10 unit with Overwhelm).,,y,,,,,
+Punishing Strike,2,mm,Spell,,-1,,3,Deal 5 damage to target <reality> flipped card.,,y,#int,,,,
+Distant Titans,2,o,Spell,,2,,4,"Inspect 8. You may cache an inspected card of each base <energy> cost except 0, 1, and 2. Discard the rest.",,y,,,,,
+Wild Tactics,2,mmm,Spell,,2,,2,"Choose one or both --
+- Remove target combating unit from combat.
+- Flip or unflip target combating unit.",,y,,,,,
+Traverse the Dreamscape,2,zzzz,Spell,,-1,,2,"Choose X | A card type.
+Discard the top 4 cards of your deck. Recall up to 2 allied <memory> X.",,y,,,,,
+Savage Snare,2,mm,Spell,,1,,2,"Destroy target <reality> card with <defense> 3 or more.
+Exploration",,y,,,,,
+Geoexplosion,2,m,Spell,,3,,3,"Choose One --
+- Deal 4 damage to target <reality> unit.
+- Discard the top 4 cards of your deck. You may recall up to 2 allied <memory> claims.",,y,,,,,
+Grim Meddling,2,mmm,Spell,,-1,,3,"Choose One --
+- Flip all enemy <reality> units.
+- Give target <reality><dream> unit +3<offense> +3<defense> and swiftness this round.",,y,,,,,
+Thunderous Fury,2,m,Spell,,2,,2,"Choose One --
+- Deal 4 damage to target <reality> unit.
+- Give <reality> target unit +3<offense> and overwhelm this round.",,y,,,,,
+Valorous Triumph,2,mm,Spell,,2,,2,"Choose one or both --
+- Give target unit +2<offense> +2<defense> this round.
+- Give target unit -1<offense> -1<defense> this round.",,y,,,,,
+Bermuda Triangle,2,mmmm,Spell,,4,,3,"Choose X | A card type.
+Void target <reality> card with defense less than the number of allied <reality> X.",,y,,,,,
+Grab Some Friends,2,mmm,Spell,,-1,,2,Draw 2 cards with base <energy> cost 1 and cache them.,,y,,,,,
+Overtime,3,mmm,Spell,,-2,,4,"Unflip all allied <reality> cards.
+Exploration",,y,#unflip1,,,,
+Disappearing Land,3,eee,Spell,,0,,3,,,y,,,,,
+Tactical Maneuver,3,mm,Spell,,2,,3,"Choose one -- __ up to three target <reality> cards.
+- Flip
+- Unflip",,y,#unflip1 #int,,,,
+Prismatic Landscape,3,mmm,Spell,,2,,4,"X = Your Domain
+Summon up to X uhh",,y,,,,,
+Fabled Flames,3,mmm,Spell,,3,,4,"Choose One --
+- Destroy target <reality> unit.
+- Void all <memory> cards and ~.
+Exploration",,y,,,,,
+Sinkhole,2,mmmm,Spell,,4,,2,"Destroy target <reality> card with base <energy> cost 2 or less.
+Exploration",,y,,,,,
+Material Spellbook,0,m,Item,Spellbook,-1,,3,"Skill <infinite> | Discard<reality> ~: Create a cached , , or .",,y,,,,,
+Backup Stash,1,mmmm,Item,,1,,4,Skill <infinite> | Discard<reality> ~: Recall target <channel> card.,,y,,,,,
+Farsight Telescope,1,zzz,Item,,-2,,4,Skill 3<speed> | Flip ~: Discard 1 <hand><channel> card to summon an allied <hand> card with base <energy> cost 3 or less.,,y,#discard<hand>1 #claims1,,,,
+Pancake Diner,1,m,Item,,1,,5,Skill <infinite> | Flip ~: Unflip another target <reality> card.,,y,,,,,
+Ciabhan Quest,1,m,Item,Quest,0,,5,"Shared
+<down> | Resolve a unit.
+<level2> : Draw 1
+<down> | Resolve a spell.
+<level3> | Allied items cost 2<energy> less.",,n,,,,,
+Glimpse Tomorrow,1,mmm,Item,,-1,,3,"Vanishing
+Choose X | A card type.
+Whenever an allied X resolves: Cache the top card of your deck.",,y,#choosetype,,,,
+Book of the World,2,mm,Item,,0,,4,"Whenever you resolve a spell unique from other allied <memory><void> spells, give each <reality> allied unit +1<offense> +1<defense> this round.",,y,#highlander2,,,,#highlander
+Outlands Accountant,2,mmm,Unit,Outlander Scribe,0,2,2,Players may play no more than one card of each type each round.,,y,,,,,
+Zombie Contagion,2,ooo,Item,,-2,,3,"Whenever an allied item arrives, create a 1/1 blood zombie card.",,y,,,,,
+Void Capsule,2,oooo,Item,,3,,5,Arrive: Void target <dream> spell until ~ departs.,,y,#int #stop,,,,
+Bound in the Earth,2,ooo,Item,,-2,,6,Arrive: Void target <reality> unit until ~ departs.,,y,#int,,,,
+Spring of Indecision,2,mm,Item,,0,,4,"You may choose any number of choices when choosing targets for choose one cards.
+Whenever you play a spellbook spell or activate an ability of a spellbook: Copy it.",,y,,,,,
+Staff of Teleportation,2,mm,Item,,0,,3,Whenever you attack: Flip or unflip target <reality> unit.,,y,,,,,
+Doppelgang,2,m,Item,Quest,0,,5,"Shared
+<down> | An allied unit arrives
+<explosion2> : Create a copy of it.
+Hedge: Draw 1, +2<energy>",,y,,,,,
+Old Watchtower,3,mm,Item,,-1,,3,Whenever an allied unit arrives: Unflip all allied <reality> units.,,y,#unflip1,,,,
+Passive Income Scheme,3,oo,Item,,0,,5,The first card you play each round costs 0<energy>.,,y,,,,,
+Worldseal,3,oooo,Item,,-2,,3,"Allied items cost 2<energy> less and gain ""Additional cost | Discard 1 <hand><channel> card.""",,y,#claims1 #discard<hand>1 #engine,Fix this card,,,
+Cursed Eye,,,,,,,,,,y,,,,,
+Frostblade Adept,1,oo,Unit,,0,0,1,"Flying
+Whenever you draw a card: Gived ~ +1<offense> +1<defense> this round.",,y,#draw2,,,,
+Port Pirate,1,oo,Unit,Pirate Arbiter,-2,2,1,"Skill 3<speed> | 2<energy>, Discard<reality> ~: Destroy target <dream> spell or item unless it's controller pays 3<energy>.",,y,#int #bear #stop,,,,
+Falconmaster,2,o,Unit,,-1,0,1,Arrive: Create two Law-Mage cards (1/1 units with flying).,,y,#threat #blink2,,,,
+Old World Spellcaster,2,oo,Unit,Arbiter,2,2,1,"Arrive: Choose one --
+- Void target <reality> card, then it's controller summons it.
+- Give target <reality> unit flying this round.
+- Draw 1.",,y,#int #draw,,,,
+Burning Lich,2,zz,Unit,Nightmare,0,3,1,"First Strike
+<memory> | When you resolve your third spell each round: Summon ~ from your memory.",,y,#multicards2 #memory2,,,,
+Scrap Merchant,2,ooo,Unit,"Item, Automaton",0,1,3,"Choose X | A card type.
+Allied X cost 1<energy> less. This cannot reduce costs below 1<energy>.",,y,,,,,
+Vile Pirate,2,mm,Unit,,0,1,2,"Flying
+When you resolve your 3rd card each round: Give ~ +3<offense> +3<defense> this round.",,y,#multicards2,,,,
+Sage of the Sun,2,oo,Unit,,1,2,3,"Skill <hand><infinite> | <oldworld>: Void ~
+When you draw your 2nd card each round, summon ~ from void.",,y,#draw2,,,,
+Shifting Shadow,2,aaa,Unit,Abomination,-1,2,1,Depart: Summon a unit from your hand with base <energy> cost 3 or less.,,y,#^Depart,,,,
+Myrkur Spellkeeper,2,o,Unit,Wizard,0,2,3,"Flying
+Allied <any> spells cost 1<energy> less (this cannot reduce the cost below 1).",,y,,,,,
+Elder Artificer,2,o,Unit,,0,1,1,Attack: You may discard an <reality> item to summon another allied <memory> item.,,n,,,,,
+Arcane Goldfish,3,oooo,Unit,,2,1,1,~ has +1<offense> +1<defense> for each card in your hand.,,y,,,,,
+Moonlight Assasin,3,mm,Unit,Outlander,-3,3,2,"Arrive: If you've resolved 2+ other cards or a quest this round, destroy target <reality> unit.",,y,#int #multicards,,,,
+Tower Lookout,3,oo,Unit,,-1,1,2,Arrive or Depart: Create a Watchman (2/1 unit with formation).,,y,#blink2,,,,
+Amatuer Illusionist,3,ooo,Unit,Arbiter,2,3,2,"Flying
+Arrive: Void another target <reality> card until round end.",,y,#int #blink1,,,,
+Cryptic Drake,3,o,Unit,,2,4,4,"Flying
+Ward -- 2<energy>",,n,,,,,
+The Displacer,4,oooo,Unit,Blink,-1,3,3,"Arrive: Void each other allied nonblink unit, then summon them.",,y,#blink1,,,,
+Twisted Mindmage,4,ooo,Unit,Abiter,-3,3,2,Arrive: Gain control of target <reality> unit with <offense> 2 or less this round. Unflip it.,,y,#int,,,,
+The Dreamer,4,ooo,Unit,,3,4,4,"Swiftness
+Arrive: Summon to dream target <memory> allied spell.",,y,,,,,
+Blizzard Elemental,5,mmm,Unit,,-1,2,2,"Flying 
+Arrive: Draw 1.
+<any> | ~ Costs 1<energy> less for each allied card resolved this round.",,y,#spells2 #multicards2,,,,
+Gas Giant,6,aa,Unit,Nightmare,0,5,5,<any> | ~ costs 1<energy> less for each allied <memory><void> spell.,,y,,Add another ability,,,
+Inverted Psyche,1,oo,Spell,,2,,3,"Swap target unit's <offense> and <defense> this round. 
+Draw 1
+Exploration",,y,#int #trick,,,,
+Surprise Surveillance,1,o,Spell,,3,,2,"Look at target player's hand.
+Draw 1.",,y,,,,,
+Forbidden Knowledge,1,oooo,Spell,,0,,2,"Forget 5
+Draw two cards.",,y,#Forget #draw,,,,
+Mind Tempest,1,ooo,Spell,,3,,2,"Breakpoint
+Draw 3, then put 2 cards from your hand on top of your deck.",,n,#draw1,,,,
+Gather Supplies,1,o,Spell,,-1,,2,Create a Spare Supplies card and an Energy Flask card.,,y,#items2,,,,
+Airdrop,1,ooo,Spell,,-3,,2,Destroy target item. It's controller creates a 4/4 unit.,,y,,,,,
+Stop Right There!,1,o,Spell,,2,,2,"Target unit gets -3<offense> this round. 
+Draw 1",,y,#int #trick,,,,
+Adapt,1,o,Spell,,3,,2,"Choose One -- Give target <reality> unit __ this round.
+- +3<offense> -3<defense>
+- -3<offense> +3<defense>",,y,#int #trick,,,,
+Extortion,1,oo,Spell,,3,,3,"Destroy target <dream> spell or item unless it's controller pays 2<energy>.
+Exploration",,y,#int #stop,,,,
+Outlast,1,o,Spell,,3,,2,"Target <reality><dream> unit gains ""Ward  2<energy>"" this round.
+Arrive: Draw 1.",,y,#int #protection,,,,
+Twisted Form,1,oooo,Spell,,1,,2,"Give target <reality> unit +2<offense> -1<defense> this round. 
+Draw 1.",,y,#int #removal #trick,,,,
+Smuggle,1,zzz,Spell,,3,,2,"Draw 1
+Cache 2 cards from your hand.",,y,,,,,
+Swift Revenge,1,oo,Spell,,1,,2,"Give target <reality> card -2<defense> this round.
+If an allied card died this round, give it -3<offense> -3<defense> instead.",,y,#int,,,,
+A Difficult Choice,1,oo,Spell,,-1,,3,Choose two target enemy <reality> cards. Their controller discards one of them.,,y,,,,,
+Timeline Collapse,1,oo,Spell,,-3,,3,"Trigger all allied ""round end"" and ""round start"" abilities.",,y,,,,,
+Delightful Gift,1,ooo,Spell,,0,,5,"Augment | <oldworld><oldworld> -- Target opponent gains control of target <reality> allied card.
+Draw 1.",,y,,,,,
+Turtle's Shell,1,o,Spell,,4,,2,"Choose One --
+- Give target <reality><dream> unit -5<offense> +5<defense> this round.
+- Void target <memory> card. Draw 1.",,y,,,,,
+Check Inventory,1,oooo,Spell,,-2,,2,Draw an item.,,y,,,,,
+Shapeshift,1,ooo,Spell,,3,,3,"Choose One --
+- Give target <reality> unit +2<offense> -2<defense> this round.
+- Draw 1. Each player gains 3 life.",,y,,,,,
+Soul Link,2,o,Spell,,3,,3,Swap two target allied <reality> units.,,y,#swap #int,,,,
+Battlefield Warp,2,ooo,Spell,,2,,3,"Choose one --
+- Swap two target attacking units.
+- Swap two target blocking units.
+- Create two Spare Supplies cards.",,y,#swap #int,,,,
+Shiver their Timbers!,2,m,Spell,,2,,2,"Flip or unflip a target <reality> unit for each other card you resolved this round.
+Draw 1.
+
+update this to not involve indefinitely counting cards resolved",,y,#int,,,,
+Repurpose,2,ooo,Spell,,-2,,4,Destroy target <reality> allied item to summon target <memory> item.,,y,#items2,,,,
+Void Shift,2,o,Spell,,4,,2,"Void target <reality> card until round end.
+Recast | 1<energy><oldworld><oldworld>",,y,#blink1,,,,
+Walk the Plank,2,o,Spell,,2,,3,Target player discards a <reality> unit.,,y,#int,,,,
+Unfortunate Timing,2,oooo,Spell,,-3,,3,Give each unit that arrived this round -2<offense> -2<defense> this round.,,y,#int #sweeper,,,,
+Brace for Impact,2,oo,Spell,,4,,4,"Choose one -- Give target <reality> unit base stats __ this round.
+- 1<offense> 5<defense>
+- 5<offense> 1<defense>",,y,#int #trick,,,,
+Fungal Decay,2,o,Spell,,-1,,2,Give target <reality> card -3<offense> -3<defense> this round.,,y,#int,,,,
+Plunder Soul,2,oo,Spell,,0,,2,"Augment | 1<energy>, <arca> -- Take 4 damage.
+Give target <reality> unit -4<offense> -4<defense> this round.",,y,#int #lifechange,,,,
+Transmute Essence,2,oo,Spell,,2,,3,"Void target <reality><dream> allied card. Reveal cards from the top of your deck until you reveal a card of the same type. Summon it, then suffle.",,y,,,,,
+Weight of Knowledge,2,o,Spell,Nightmare,2,,3,Give target <reality> unit -1<offense> -1<defense> this round for each spell in your memory.,,y,,,,,
+Shrinkify,2,oooo,Spell,,3,,2,"Target unit loses all abilities and has base stats 1<offense> 1<defense> this round.
+Exploration",,y,,,,,
+Magnetify,2,oo,Spell,,-2,,3,"Choose One --
+- Recall all <reality> items target player controls.
+- Draw 1. Create 2 Energy Flask cards.",,y,,,,,
+Cyclone,2,oooo,Spell,,0,,4,Destroy all <reality><dream> cards with base <energy> cost 1 or less.,,y,,,,,
+Rotten Deal,3,oooo,Spell,,2,,4,Swap two target <reality> cards of the same type.,,y,#swap #int #trick,,,,
+Contemplate,3,oo,Spell,,2,,3,Draw 2 cards.,,y,#draw1,,,,
+Sudden Tornado,3,ooo,Spell,,-3,,2,"Deal 1 damage to each enemy <reality> card and opponent for each other card you resolved this round, up to 3.",,y,#multicards #burn,,,,
+Knightly Reinforcements,3,eee,Spell,Knight,-2,,3,Create 2 Knight of Redemption cards.,,y,#spells2,Add another word to the name,,,
+Acid Rain,3,ooo,Spell,,-2,,3,Give all <reality> units -2/-2 this round.,,y,#int #sweeper,,,,
+Seismic Sinkhole,3,oo,Spell,,3,,4,"Choose One --
+- Destroy target <reality> item.
+- Draw 2.",,y,,,,,
+Frost Eruption,3,oooo,Spell,,0,,4,Each player discards a <reality> card of each type.,,y,,,,,
+Wretched Ritual,4,oooo,Spell,,-3,,5,Give each unit -4<offense> -4<defense> this round.,,y,#int #sweeper,,,,
+Pick and Ban,4,oooo,Spell,,3,,5,"Search your deck for up to four unique cards and reveal them. Starting with your opponent, take turns choosing cards. Discard the cards your opponent chose, draw the cards you chose.",,y,,,,#Search,
+Old World Spellbook,0,oo,Item,Spellbook,0,,3,"Skill <infinite> | Discard<reality> ~: Create a cached __, Mimic, or Braintower.",,y,,The cards created are subject to change. They should be cards that are just on the fringe of being played normally. I wanted to include a claim as well.,,,
+Trinket,1,oo,Item,,0,,2,"Dies: Draw 1.
+Skill <infinite> | Discard ~: The next item you play this round costs 1<energy> less.",,n,,,,,
+Power of Foresight,1,o,Item,,0,,6,"<level1> | Count -- Round start.
+<down> | Count 3+
+<explosion2> : Draw 3",,y,,,,,
+Book of Negation,1,oo,Item,Spellbook,0,,3,"Skill | 2<energy>, 3<speed> Discard <reality> ~: Destroy target <dream> spell or ability.",,y,,,,,
+Call a Lawyer,1,o,Spell,,2,,2,Draw a Law.,,y,,,,,
+Worn Scroll,1,ooo,Item,,2,,3,"Breakpoint
+Arrive: Draw 1",,y,,,,,
+Embargo,1,ooo,Item,Law,-1,,5,"Choose X | A number.
+When a card arrives with base <energy> cost X: Discard ~ to destroy it.",,y,#int #law,,,,
+Noncompete,1,oo,Item,Law,3,,5,When a card with the same name as a card in reality arrives<reality>: Destroy it.,,y,#int #law,,,,
+Standoff,1,oo,Item,Quest,0,,5,"Shared
+<down> | Resolve a card 
+<explosion2> : Opponents draw 2.",,y,,,,,
+Quest for the Artifact,1,oo,Item,Quest,0,,4,"<down> | Sink 3
+<explosion2> : Draw an item and cache it. +3<energy>",,n,,,,,
+Research Notebook,1,oo,Item,Quest,0,,4,"<level1> | Count: You resolve an item.
+<down> | Count 3+
+<level2> : Whenever you resolve an item: Recall target allied <memory> item with a lower base <energy> cost.",,n,,,,,
+Brainwave,2,zz,Item,,-1,,3,"Your cards cost 1<energy> less for each other allied <dream> card committed as a group below them.
+You cannot draw cards while there are allied cards in dream.",,y,#multicards,,,,
+Accelerated Research,2,ooo,Item,,0,,4,"When you draw your 2nd, 4th, or 6th card each round outside the draw phase: Create a 2/2 unit card.",,y,#draw2 #threat,,,,
+The Plan,2,ooo,Item,,0,,6,"Vanishing.
+Round End: Draw 2.",,y,#draw1,,,,
+Economy of Scale,2,ooo,Item,Law,0,,3,"Choose X | A card type.
+Your X <any> cards cost 1<energy> less (this cannot reduce the cost below 1).",,y,,,,,
+Soul Shield,2,ooo,Item,Law,0,,3,Damage you take from enemy cards and abilities is reduced by 1.,,y,,,,,
+Demonic Mirror,2,oooo,Item,,-2,,8,You may have ~ arrive in dream as a copy of another <reality> card.,,y,,,,,
+Disappearing Orb,2,oo,Item,,4,,4,"Vanishing
+Arrive: Void all allied <reality> cards until ~ Departs<reality>.",,y,#blink1,,,,
+Invisible Haze,2,ooo,Item,,-1,,3,"Vanishing
+Arrive: Draw 1.
+Enemy units lose all abilities.",,y,#int,,,,
+Goblin Security System,2,oo,Item,Law,3,,3,"Allied <reality><dream> items gain +2<defense>.
+Whenever an allied item departs<reality>: Deal 1 damage to opponents.",,y,,,,,
+Out of Mind,2,oo,Item,Law,3,,5,"Choose X | A card name.
+X can't deal damage.",,y,#int #law,,,,
+Betrayal,2,o,Item,Quest,0,,5,"Shared
+<down> | Destroy an enemy card
+<explosion2> : Summon it
+Hedge: Draw 1, +1<energy>",,y,,,,,
+Centrifuge,2,o,Item,,0,,3,Round start: +1<energy> for each allied <reality> item.,,,,,,,
+Book of Secrets,3,ooo,Spell,,3,,4,"Breakpoint
+Delve 4, draw 2.",,y,,,,,
+Confiscate,3,ooo,Spell,,1,,5,Target player gains control of target <reality> card.,,y,,,,,
+Unexpected Gift,3,oooo,Item,,2,,4,"Arrive: Swap ~ with target <reality> card. If it was allied, +4<energy>.",,y,#int,,,,
+Workshop Reactor,4,oooo,Item,,0,,3,"Vanishing
+Allied items cost 2<energy> less.",,y,,,,,
+Glimpse Disaster,4,oo,Spell,,-3,,4,"Each player chooses an allied <reality> card of each type, then discards the rest.",,y,,,,,
+Flame Oracle,1,z,Unit,,0,1,2,"Formation
+Whenever an allied spell or ability deals damage: Give ~ +2<offense> this round.",,y,#burn2,,,,
+Mind Thief,1,zz,Unit,Nightmare,0,2,1,Arrive: Put target <memory> card on top of it's deck.,,y,,#merge,,,
+Flame Elemental,1,z,Unit,,0,2,1,"If you would discard <hand><channel> ~, summon it instead.",,y,#discard<hand>2,,,,
+Arena Daredevil,1,zz,Unit,,0,1,2,"On a Roll
+Whenever you discard a <hand><channel> card: Give ~ +1<offense> +1<defense> this round.",,y,#discard<hand>2,,,,
+Dune Paladin,1,z,Unit,Knight,0,1,2,"On a Roll
+Spellcraft: Give ~ +1<offense> +1<defense> this round.",,y,#Spells2,,,,
+Supply Runner,1,zz,Unit,,0,0,3,"Formation
+Attack: Create a Spare Supplies card.",,y,,,,,
+Nomadic Orc,1,z,Unit,,0,2,1,Arrive: Create a cached Three Paths.,,y,,,,,
+Giant Mantis,1,zzz,Unit,,3,2,1,"Combo with 2+ other cards -- ~ gains first strike
+Exploration",,y,,,,,
+Rugged Battlemaster,1,zz,Unit,,1,0,6,Whenever ~ takes damage: Give ~ +3<offense> this round.,,n,,,,,
+Flame Channeler,2,zzz,Unit,,0,3,2,"Choose X | A card type.
+<infinite> Attack: Flip any number of unflipped allied <reality> X to deal that much damage to opponents.",,y,#burn1,,,,
+Lavasmith,2,zzz,Unit,,-1,1,3,"If an allied spell or ability would deal damage, it deals that much damage +1 instead.",,y,#burn2,,,,
+Forgotten Hunter,2,zzz,Unit,,-1,2,3,Arrive: You may recall target <memory><void> card.,,y,#recall,#merge,,,
+Aton Archivist,2,zzz,Unit,,-2,1,2,"If you would discard a <hand><channel> card, cache it instead.",,y,#discard<hand>2,,,,
+"Togg, Keeper of Stories",2,zzz,Unit,,-1,2,2,"Forget 3
+Arrive: Recall any number of allied <memory> cards, then discard that many <hand><channel> cards.",,y,#discard<hand> #recall,,,,
+Lost Traveler,2,zzzz,Unit,,1,1,3,Whenever you discard<hand> a card: Cache the top card of your deck.,,y,#discard<hand>2 #cache1,,,,
+Wayward Guardian,3,zzz,Unit,,-2,3,3,"Forget 4
+Arrive: Discard all allied <hand><channel> cards to draw 3.",,y,#discard<hand>1 #memory2,,,,
+Svet Sorcerer,2,ee,Unit,Knight,-1,2,2,"Spellcraft: Give ~ +1<offense> +1<defense> this round.
+Skill | 1<energy>: ~ strikes target <reality> unit, then discard ~.",,y,#Spells2,,,,
+Scrapmaster,2,ooo,Unit,,-1,2,1,<infinite> Attack: Summon target <memory> item with base <energy> cost 2 or less.,,y,#items2,,,,
+Vengeful Nomad,2,zz,Unit,Knight,-1,2,2,"Choose X | A card type
+Whenever you resolve a X: Deal 1 damage to opponents.",,y,#int #burn,,,,
+Ping Dude,2,zz,Unit,,-1,3,2,Arrive or Depart: Deal 1 damage to each player.,,n,#int #burn,,,,
+Legion Supply Courier,2,z,Unit,,2,3,2,"Formation
+Arrive: You may cache a card from your hand.",,y,,,,,
+Deconstructor,2,oo,Unit,"Item, Automaton",0,0,0,"On a Roll
+~ has +1<offense> +1<defense> for each allied item.",,n,,,,,
+Reckless Pyromancer,2,zz,Unit,,-1,2,1,Arrive: Deal 2 damage to target <reality> item or player.,,y,,,,,
+Gateway Archer,2,zz,Unit,,-1,2,2,"Choose X | A card type.
+Whenever an allied X arrives: Deal 1 damage to opponents.",,y,#units2,,,,
+Respected Mage,2,zzzz,Unit,,2,2,1,Arrive: Cache target <memory> allied spell.,,y,#memory2,,,,
+Intimidating Turtle,2,zz,Unit,,0,3,2,Arrive: Target unit can't block this round.,,y,,,,,
+Zelor Spellcaster,2,zzz,Unit,,3,2,1,"Arrive: Choose one --
+- Deal 1 damage to target <reality> card.
+- Give target <reality> unit On a Roll this round.
+- Draw 1.",,y,#int #burn,idk if formation fits in zelor,,,
+Frontier Runner,2,z,Unit,Scout,1,3,2,"On a Roll, First strike
+When you discard <hand><channel> ~: create a Spare Supplies card.",,y,#discard<hand>2 #cache1,,,,
+Atonian Phoenix,2,z,Unit,Phoenix,0,2,2,"Flying
+When you discard your third card in a round: Summon ~ from memory.",,y,,,,,
+Ancient Dreamshaper,3,zzz,Unit,,-3,2,1,Arrive: Summon target <memory> allied nonspell that entered memory this round.,,y,#memory2 #aristocrats,"
+add more of these",,,
+Lieutenant Rusker,3,zzzz,Unit,,-3,3,4,"If an enemy <reality><dream> card would take damage more than once in a round, destroy it instead.",,y,#burn2,,,,
+Mesa Guide,3,zz,Unit,,2,3,2,"Swiftness, First Strike
+When ~ leaves your memory: Deal 2 damage to opponents.",,y,#memoryleave,,,,
+Seasoned Loremaster,3,zzzz,Unit,Knight,4,3,2,Arrive: Summon to dream target <memory> allied spell or item with base <energy> cost 2 or less.,,y,#Spells #memory2,,,,
+Ethereal Knight,3,zzz,Unit,Knight,-1,2,2,Whenever you resolve a nonunit: Give allied <reality> units +1<offense> +1<defense> this round.,,y,#Spells2,,,,
+Madman,3,zz,Unit,,1,2,3,"On a Roll, Swiftness
+Augment | 1<energy>, <zelor>, Discard a <hand><channel> card.",,y,,Give another ability,,,
+Murpady,3,zz,Unit,,3,4,2,"On a Roll
+Dies: Deal 2 damage to opponents.",,y,,,,,
+Menacing Dragon,4,zzz,Unit,Dragon,-1,4,4,"Flying
+Arrive: You may flip and deal 2 damage to target <reality> unit.",,y,#int #burn,,,,
+Demolisher Golem,5,zzz,Unit,,1,4,3,"Overwhelm
+<any> | ~ Costs 2<energy> less for each <hand><channel> card you discarded this round.",,y,#discard<hand>2,,,,
+Famous Fighter,1,zzz,Unit,,3,1,1,Combo with X number of other cards -- ~ arrives with X +1<offense> +1<defense> mods.,,y,,,,,
+Amatuer Sentinel,1,zzz,Unit,Knight,0,0,3,Spellcraft: Give ~ +1<offense> this round.,,y,,,,,
+Dedicated Combatant,2,eeee,Unit,Knight,0,2,2,"Spellcraft: Give ~ flying this round. If it already has it, give ~ swiftness this round. If it already has it, draw 1.",,y,,,,,
+Knightly Challenger,2,ez,Unit,Knight,-1,1,1,"Challenger
+Spellcraft: Give ~ a +1<offense> +1<defense> mod.",,y,,,,,
+Wayward Monster,1,zzzz,Unit,,0,2,2,Exploration,,y,,,,,
+Reckless Traveler,1,zzzz,Unit,Nightmare,-1,2,1,"Arrive: Create a Spare Supplies card.
+Exploration",,y,,,,,
+Precognition,1,zz,Spell,,2,,2,"Draw 1.
+Put target <memory> card on top of it's deck.",,y,,,,,
+Molten Image,1,zzz,Spell,,-3,,2,Summon a card with base <energy> cost 4 or less from your hand. It gains vanishing this round.,,y,,,,,
+Training montage,1,z,Spell,,2,,2,"Breakpoint
+Recall target <memory> spell.",,y,#recall #Spells,,,,
+Shepherd's Wish,1,zzz,Spell,,-3,,2,Summon target <memory> spell or item with base <energy> cost 2 or less.,,y,#memory2,,,,
+New Recruit,1,zzzz,Spell,Knight,0,,2,Create a Knight of Redemption card.,,y,,,,,
+Scrap Attack,1,zzz,Spell,,2,,2,"Deal 2 damage to target <reality> unit.
+Augment | 1<energy>, <zelor>, Discard an <reality> item -- Deal 4 damage instead.",,y,#items #burn #int,,,,
+Resupply,1,zzz,Spell,,2,,2,Create 2 Spare Supplies cards.,,y,#cache #items1,,,,
+Trade Voyage,1,zzz,Spell,,-2,,2,"Draw 1.
+Create a Spare Supplies card.",,y,#cache #items1,,,,
+Stash Away,1,zzz,Spell,,1,,2,"Cache target allied <reality><dream> card. It gains ""Augment | 1<energy>"" while cached.
+Draw 1.",,y,#cache1,,,,
+High Voltage,1,zzz,Spell,,2,,3,"Deal damage equal to the number of other allied cards resolved this round to target <reality> card.
+
+fix this card",,y,#int #multicards #burn,,,,
+Unquenchable Fire,1,zz,Spell,,4,,2,"Deal 1 damage to target <reality> card or player.
+Recast 1<energy><zelor><zelor>",,y,#int #burn1,,,,
+Spontaneous Combustion,1,zzzz,Spell,,-2,,3,"Deal 2 damage to target <reality> card.
+If it dies this way, create a Spare Supplies card.",,y,#int #burn #cache1,,,,
+Set Ablaze,1,zz,Spell,,0,,3,Deal 3 damage to target <reality> card.,,y,#int #burn1,,,,
+Fireball,1,zz,Spell,,4,,3,Deal 2 damage to target <reality> card or player.,,y,#int #burn1,,,,
+Insult to Injury,1,z,Spell,,4,,3,Deal 6 damage to target <reality> card that was dealt damage this round.,,y,#removal #burn #burn2,,,,
+Disintegrate,1,zz,Spell,,4,,2,"Next time target <reality> card is dealt damage this round, destroy it. 
+Recast 1<energy>",,y,#int #burn2,,,,
+Ping,1,zzz,Spell,,4,,2,"Deal 1 damage to target <reality> card or player.
+Draw 1.",,y,#int #burn1,,,,
+Moment of Rage,1,zzz,Spell,,3,,2,"Forget 3
+Deal 3 damage to target <reality> card or player.",,y,#burn #int,,,,
+Bonfire,1,zz,Spell,,0,,2,"If you've resolved another ~ this game, deal 2 damage to each enemy <reality><dream> card and opponent. Otherwise, draw 1.
+Shuffle ~ into your deck.",,y,,,,,
+Thought Extraction,1,zzz,Spell,,3,,3,Look at target player's hand. Choose a card from it or their channel zone. They discard it.,,y,,,,,
+Contain,1,zzz,Spell,,2,,3,"Target <reality><dream><memory> card is cached by it's controller. If it's enemy, it costs 2<energy> more while cached.",,y,,,,,
+Thorny Defense,1,zz,Spell,,3,,3,"Give target <reality><dream> unit +2<defense> this round.
+The next time it takes damage this round, deal 2 damage to opponents.",,y,,,,,
+Improvised Armaments,1,ooo,Spell,,1,,3,"Give target <reality><dream> unit +1<offense> +1<defense> this round for each allied <reality> item.
+Draw 1",,y,,,,,
+Bard's Lesson,1,zz,Spell,,-1,,3,Discard <hand><channel> up to 2 cards to recall that many other cards from memory.,,y,#discard<hand>1 #recall1,,,,
+Inspired Encore,1,zz,Spell,,-3,,4,Recall all allied <memory> cards that you discarded<hand><channel> this round.,,y,#discard<hand>2 #recall1,,,,
+Devil's Fury,1,zz,Spell,,4,,2,Deal damage equal to the number of <hand><channel> cards you discarded this round to target <reality> card.,,y,,,,,
+Astral Speculation,2,zzz,Spell,,-2,,3,"Forget 5
+Additional cost: Discard 2 <hand> cards.
+Draw 4",,y,#discard<hand>1,,,,
+Searing Burst,2,zz,Spell,,-2,,2,"Discard any number of <hand><channel> cards to deal that much damage to target <reality> card.
+Recast -- 1<energy><zelor><zelor>",,y,#removal #discard<hand>1 #burn1,,,,
+Flashback,2,zz,Spell,,-1,,3,Summon to dream target <memory> spell with base <energy> cost 3 or less.,,y,#memory2,,,,
+Replenish,2,zz,Spell,,2,,3,"Breakpoint
+Put up to 4 allied <memory> cards on top of your deck in any order.
+Draw 1.",,y,#cache1,,,,
+Recuperate,2,zzz,Spell,,3,,2,"Breakpoint
+Create a Spare Supplies card. +3<energy>",,y,#Spells,,,,
+Dark Aperture,1,zz,Spell,,3,,3,"Cache any number of target allied <reality><dream> cards. They gain ""Augment | 1<energy>"" while cached.",,y,#cache #int #protection,,,,
+Library Raid,2,z,Spell,,2,,2,"Draw 2 cards, then discard a <hand><channel> card.
+Recast 1<energy><zelor>",,y,#discard<hand>1,,,,
+Fatal Error,2,zzz,Spell,,2,,4,Destroy target <reality> item to deal 5 damage to each player who did not control that item.,,y,#items #burn #int,"this is worded weirdly, but even if i change it i still want the ability to kill an enemy Item and take 5",,,
+Visionary's Call,2,zzz,Spell,,0,,3,Cache up to two target <memory> allied spells.,,y,#cache1 #memory2,,,,
+Radiating Force,2,zz,Spell,,3,,3,"Deal 1 damage to each<reality> unit. If any die, repeat this.
+Exploration",,y,#int #sweeper #burn,,,,
+Dangerous Distraction,2,zzz,Spell,,4,,3,"Choose one or both: 
+- Flip target <reality> unit.
+- Deal 1 damage to target <reality> unit or player.",,y,,,,,
+Yeet,2,zzzz,Spell,,-2,,3,"Discard an <hand><channel> allied card to deal damage equal to it's base <energy> cost to target <reality> card.
+Draw 1.",,y,,,,,
+Heat Wave,2,zz,Spell,,1,,3,"Choose One --
+- Deal 1 damage to each <reality> enemy card.
+- Destroy target <reality> item with base <energy> cost 3 or less.",,y,,,,,
+Psychic Intrusion,2,z,Spell,,2,,3,"Each player discards 2 <hand><channel> cards.
+Exploration",,y,,,,,
+Combo Slice,2,zz,Spell,,4,,3,"Deal 2 damage to target <reality> card. If it dies this way, deal 2 damage to it's controller.",,y,,,,,
+Improvised Lightning,2,zz,Spell,,4,,4,"Choose One --
+- Deal 2 damage to target <board> unit or player.
+- Copy target spell or ability. You may choose new targets for the copy.",,y,,,,,
+Flashback Attack,2,zz,Spell,,4,,2,"Deal 2 damage to <reality> card or player.
+Recast | 2<energy>, <zelor>",,y,,,,,
+Reorganize,2,zzz,Spell,,-1,,3,Cache all allied <hand><channel> cards to draw 2.,,y,#cache #draw,,,,
+Cosmic Contemplation,2,zzzz,Spell,,-3,,3,"Cache all allied <memory> cards.
+They gain forget 3 while cached.",,y,#cache,,,,
+Eruption,3,z,Spell,,0,,3,Deal 3 damage to each<reality> card and player.,,y,#int #sweeper #burn,,,,
+Cannon Barrage,3,z,Spell,,-2,,3,Deal 4 damage to target <reality> unit and 1 damage to each other enemy <reality> unit.,,y,#int #burn1,,,,
+Vivid Nightmare,3,zz,Spell,Nightmare,-2,,4,Cache up to one target <memory> allied card of each card type.,,y,,,,,
+Forged Battleaxe,3,zzz,Spell,,2,,3,Deal 4 damage to target <reality> nonunit or player.,,n,,,,,
+Tabula Rasa,3,zzz,Spell,,-3,,4,"Each player discards all cards from their hand.
+Exploration",,y,,,,,
+Seasonal Festeval,4,zzz,Spell,,-2,,5,Recall any number of target <memory> cards with different base <energy> costs.,,y,,,,,
+Unstoppable Force,2,zzzz,Spell,,4,,3,"Deal 5 damage to target blocking unit.
+Unflip the unit it blocked.
+Exploration",,y,,,,,
+Singularity,3,zzzz,Spell,,1,,3,"Each player caches their <reality> cards. They gain ""Augment | 1<energy>"" while cached.
+Exploration",,y,,,,,
+Zelor Spellbook,0,zz,Item,Spellbook,0,,3,"Skill <infinite> | Discard<reality> ~: Create a cached , , or .",,y,,,,,
+Self Destructing Message,1,zz,Item,,-2,,6,"Arrive: Draw 2. 
+Round Start: Discard ~ and 2 <hand> cards.",,y,#discard<hand>1,,,,
+Spare Violence,1,zzzz,Item,,0,,3,"Arrive: Cache the top card of your deck.
+Round end: Discard all your currently cached cards to deal that much damage to target <reality> card or player.",,y,#cache2 #engine,,,,
+Intimidation,1,z,Item,,3,,3,"Vanishing
+Choose One --
+- Opponents can't gain life.
+- Units with <offense> 2 or less can't block.",,y,,,,,
+Burning Ascent,1,zzz,Item,,-1,,4,"<level1> | Count: You resolve a spell with the same base <energy> cost as an allied <memory><void> spell.
+<down> | Count 3+
+<level2> | Whenever you play a spell: Copy it. You may choose new targets for the copy.",,y,#ascension #engine,#single,,,
+Lost Tome,1,zzzz,Item,,-2,,2,Arrive: Draw a spell.,,y,,,,,
+First Blood,1,z,Item,Quest,0,,5,"Shared, Piracy
+<down> | Damage your opponent
+<explosion2> : Cache the top 2 cards of your deck.",,y,,,,,
+Lightning Generator,2,zz,Item,,0,,3,Round End: Deal 1 damage to opponents for each allied <reality> item.,,y,,,,,
+Infinity Vessel,2,zzz,Item,,-1,,4,"Arrive: Cache all cards from your hand.
+Your cached cards cost 1<energy> less.",,y,,,,,
+Beacon of Last Light,2,zzzz,Item,,-2,,3,Whenever one or more cards leave your memory: Create a Knight of Redemption card.,,y,#memoryleave,,,,
+Enterprising Merchant,3,zzz,Unit,,1,4,5,"Arrive: Cache the top card of your deck.
+Your cached cards cost 1<energy> less.",,y,#cache2,,,,
+Dockside Trove,4,zz,Item,,0,,4,Arrive: Cache the top three cards of your deck.,,n,,,,,
+Portal of Crap,5,zzzz,Spell,,-3,,5,"Summon to Dream up to one target <memory> unit, item, spell, and/or claim.",,y,,,,,
+Burst of Speed,1,ez,Spell,,4,,2,Recall an allied <reality> unit to deal 3 damage to target <reality><dream> card or player.,,y,,,,,
+Vampire's Bite,2,az,Spell,,3,,3,"Lifesteal
+Deal 2 damage to target <dream> card or player.",,y,,,,,
+Postmortem Revenge,4,ae,Spell,,-3,,5,Summon target <memory> allied unit. It strikes up to one other target <reality> unit.,,y,,,,,
+Steadfast Arbiter,2,oo,Unit,Arbiter,4,2,2,"Flying
+Arrive: Flip or unflip target <reality> unit. It loses it's abilities this round if it's an enemy.",,y,,,,,
+Liev Arbiter,3,ee,Unit,Arbiter,4,3,2,"Flying
+Arrive: Recall target <reality> card.",,y,,,,,
+Tundra Arbiter,2,eeee,Unit,Arbiter,4,2,2,Arrive: Recall target <dream> spell.,,y,,,,,
+Stronghold Guard,3,eee,Unit,Knight Arbiter,4,3,2,"Challenger
+Arrive: Flip or unflip target <reality> card.",,y,,,,,
+Elite Arbiter,2,eo,Unit,Arbiter,4,2,1,"Arrive: Choose one -- Destroy target <dream> card with <defense> less than the number of allied <reality>...
+- Arbiters
+- Items",,y,,,,,
+Ether Charge,1,ooo,Spell,Arbiter,3,,2,"Give target <reality> unit -2<offense> -2<defense> this round.
+If it's an allied arbiter, instead unflip it and give it +2<offense> +2<defense> this round.",,y,,,,,
+Distress Beacon,1,o,Spell,,0,,2,"Choose X - Outlander, Abomination, Nightmare, Knight, or Arbiter.
+Draw an X.",,y,,,,,
+Novice Law-Binder,2,ooo,Unit,Arbiter,3,1,3,"Flying
+Arrive: Flip target <reality> card. It doesn't unflip at next round start.",,y,,,,,
+Arcane Arbiter,2,<eo>,Unit,Arbiter,0,1,1,"Flying
+Arrive: Discard the top 4 cards of your deck. Recall a spell or arbiter from among them.",,y,,,,,
+Flash Freeze,3,ooo,Spell,Arbiter,3,,3,"Flip all enemy <reality> cards.
+<any> | ~ costs 1<energy> less if you control an arbiter.
+Exploration",,,,,,,
+Arbiter Squadron,2,ooo,Unit,Arbiter,2,0,1,"Flying
+Arrive: Create 2 Law-Mage cards. (1/1 unit with flying)",,,,,,,
+Dread Shade,1,aa,Unit,Nightmare,0,0,1,~ has +1<offense> for each card type among allied <memory><void> cards.,,n,,,,,
+Menacing Nightmare,2,a,Unit,Nightmare,0,1,1,"
+~ has +1<offense> +1<defense> for each card type among allied <memory><void> cards.",,y,,,,,
+Imaginary Ghost,2,z,Unit,Nightmare,0,1,1,"Arrive: Discard the 3 cards of your deck, then recall one of them.",,n,,,,,
+Emissary of Fear,3,aaa,Unit,Nightmare,0,1,1,"Flying
+~ has +1<offense> +1<defense> for each allied <memory><void> spell.",,y,,,,,
+Nightfall,3,az,Spell,Nightmare,0,,3,Create two Night Horror cards.,,y,,,,,
+Spooky Guy,1,zz,Unit,Nightmare,2,2,1,Recast 2<energy><zelor><zelor>,,y,,,,,
+Woodland Spectre,3,z,Unit,Nightmare,0,3,3,"Arrive: Each player discards a <hand><channel> card.
+Recast 2<energy><zelor><zelor>",,n,,,,,
+Spellmuncher,3,az,Unit,Nightmare,4,3,2,"Arrive: You may discard a <hand><channel> card to deal damage equal to it's base <energy> cost to target <dream> spell.
+Recast 3<energy><arca><zelor>",,y,,,,,
+Arcane Nightmare,2,<az>,Unit,Nightmare,0,1,1,"On a Roll
+Arrive: Discard the top 4 cards of your deck. Recall a spell or nightmare from among them.",,y,,,,,
+Terrifying Nightmare,1,zzz,Spell,Nightmare,0,,2,Create a Night Horror card.,,y,,,,,
+Blood Host,2,aa,Unit,Abomination,0,3,2,"<memory> | If an allied unit died this round, you may play ~ from memory.",,,,,,,
+Arcane Abomination,2,<am>,Unit,Abomination,0,1,1,"Lifesteal
+Arrive: Discard the top 4 cards of your deck. Recall a spell or abomination from among them.",,y,,,,,
+Milo the Cautious,1,mmm,Unit,Outlander,0,2,1,"Whenever you complete a quest level: Give ~ two +1<offense> +1<defense> mods.
+~ has On a Roll if you have another allied <reality> outlander.",,,,,,,
+Oasis Traveler,2,m,Unit,Outlander,0,2,2,"Swiftness
+Whenever you resolve a quest or outlander: Give ~ a +1<offense> +1<defense> mod.",,,,,,,
+Heroic Warrior,2,o,Unit,Outlander,0,2,3,Whenever you complete a quest level: Unflip allied <reality> units.,,y,,,,,
+Questing Adventurer,3,mmmm,Unit,Outlander,0,3,4,Strike: Complete a level of target <reality> quest.,,y,,,,,
+The Chosen One,4,mmm,Unit,Outlander,-1,4,4,"Arrive: Choose one --
+- Complete a level of target <reality> quest.
+- Draw a quest and summon it.",,y,,,,,
+Outlands Guardian,2,oo,Unit,Outlander,-1,2,2,"Allied <reality><dream> items and outlanders gain ""Ward - 3<energy>"".",,y,,,,,
+Determined Traveler,2,m,Unit,Outlander Abomination,0,2,1,The first time another allied outlander or abomination dies each round: Summon it.,,y,,,,,
+Spire Navigator,2,m,Unit,Outlander,0,2,2,Allied <reality><dream> units with base <energy> cost 1 and outlanders gain +1<offense> +1<defense>,,y,,,,,
+Grim Squire,3,mm,Unit,Outlander,0,2,4,Allied <reality> outlanders gain swiftness.,,y,,,,,
+Dungeon Diver,1,oo,Unit,Outlander,0,1,2,~ has +1<offense> for each other allied outlander and item.,,y,,,,,
+Swift Messenger,2,mm,Unit,Outlander,2,2,1,Arrive: Summon an outlander or quest with base <energy> cost 2 or less from your hand.,,y,,,,,
+Page the Outlanders,5,ooo,Spell,Outlander,-2,,4,"Choose One -- Draw two __ with base <energy> cost 2 and summon them.
+- Outlanders
+- Items",,y,,,,,
+Arcane Outlander,2,<mo>,Unit,Outlander,0,1,1,"First Strike
+Arrive: Discard the top 4 cards of your deck. Recall a spell or outlander from among them.",,y,,,,,
+Arcane Knight,2,<ez>,Unit,Knight,0,1,1,"Challenger
+Arrive: Discard the top 4 cards of your deck. Recall a spell or knight from among them.",,y,,,,,
+Manifest Arca,1,a,Spell,,0,,2,"Choose one -- Draw a...
+- Abomination
+- Spell
+- Multi source card",,y,,,,,
+Manifest Eminus,1,e,Spell,,0,,2,"Choose one -- Draw a...
+- Knight
+- Unit
+- Card with base <speed> 1+.",,y,,,,,
+Manifest Material,1,m,Spell,,0,,2,"Choose one -- Draw a...
+- Outlander
+- Quest
+- Card with base <energy> cost 1.",,y,,,,,
+Manifest Old World,1,oo,Spell,,0,,2,"Choose one -- Draw a...
+- Arbiter
+- Item
+- Card with base <speed> -1 or less.",,y,,,,,
+Manifest Zelor,1,z,Spell,,0,,2,"Choose one -- Draw a...
+- Nightmare
+- Single source card
+- Card with base <energy> cost 3+.",,y,,,,,
+Foundry Horror,2,<am>,Unit,Abomination,0,2,2,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Allied cards that share a subtype with the voided card cost 1<energy> less.",,y,,,,,
+Hero of the Countryside,2,<mo>,Unit,Outlander,0,2,3,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Allied <reality><dream> units that share a subtype with the voided card gain +1<offense> +1<defense>.",,n,,,,,
+Epic Pyromancer,1,<az>,Unit,Nightmare,0,1,2,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Whenever you resolve a card that shares a subtype with the voided card: Deal 1 damage to opponents.",,y,,,,,
+Knight of Pax-Nova,2,<ez>,Unit,Knight,0,2,3,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Whenever you resolve a card that shares a subtype with the voided card: Cache the top card of your deck.",,y,,,,,
+Ancient Smith,1,<mo>,Unit,Outlander,0,1,1,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Allied units that share a subtype with the voided card arrive with an addtional +1<offense> +1<defense> mod.",,n,,,,,
+Lord of the Shadows,1,<az>,Unit,Nightmare,0,1,2,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Allied <any> units gain the subtypes of the voided card",,y,,,,,
+The Impostor,1,o,Unit,,0,1,1,"Arrive in <dream>: Void an allied <reality><hand><channel><memory> unit.
+~ gains all abilities of the voided card",,n,,,,,
+Cryptic Mage,2,<eo>,Unit,Arbiter,0,1,1,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Allied <reality><dream> cards that share a subtype with the voided card gain ""Ward 2<energy>"".",,y,,,,,
+Deserted Soul,1,<am>,Unit,Abomination,0,1,2,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Allied <reality><dream> units that share a subtype with the voided card gain On a Roll.",,y,,,,,
+Forgotten Lich,2,<az>,Unit,Nightmare,0,1,4,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Allied <memory> cards that share a subtype with the voided card gain ""Recast 4<energy>"".",,y,,,,,
+Pax Nova Medic,2,<ez>,Unit,Knight,0,1,2,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Whenever you resolve a card that shares a subtype with the voided card: Create an Energy Flask card.",,y,,,,,
+Airshaper,1,<eo>,Unit,Arbiter,0,1,2,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Whenever you resolve a card that shares a subtype with the voided card: Give it flying this round.",,y,,,,,
+Passionate Knight,3,<ez>,Unit,Knight,0,1,2,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Whenever you resolve a card that shares a subtype with the voided card: Give allied units +1<offense> this round.",,y,,,,,
+Supply Manager,2,<mo>,Unit,Outlander,0,2,3,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Whenever you resolve a card that shares a subtype with the voided card: Create a Spare Supplies card.",,n,,,,,
+The Warden,2,<eo>,Unit,Arbiter,0,2,3,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Allied <any> units that share a subtype with the voided card gain ""Arrive: Flip target <reality> card.""",,n,,,,,
+Skyhaven Menace,3,<am>,Unit,Abomination,-2,2,2,"Arrive: Void an allied <reality><hand><channel><memory> card.
+Whenever an allied unit that shares a subtype with the voided card departs: Give allied <reality> units +1<offense> this round.",,y,,,,,
+Void Spike,2,aaaa,Spell,Void,4,,3,"Deal 3 damage to target <dream> card.
+Exploration",,y,,,,,
+Regenerate,2,aaa,Spell,,1,,3,"Gain 5 life.
+Draw 1
+Exploration",,y,,,,,
+Blinding Flash,2,aaa,Spell,,4,,3,"Remove all units from combat. Take 1 damage for each.
+Exploration",,y,,,,,
+Arcane Chains,2,aaa,Spell,,4,,3,"Target <reality><dream> nonspell loses all abilities this round.
+Draw 1
+Exploration",,y,#int,,,,
+The Ole One Two,1,eee,Spell,,-1,,3,"Give target <reality> unit double strike this round.
+Exploration",,y,,,,,
+Swipe,2,eee,Spell,,-2,,2,"Gain control of target <reality> card with base <energy> cost 1 or less.
+Exploration",,y,,,,,
+Quiet Vengeance,4,mm,Spell,,-1,,4,"Destroy all <reality> cards with base <energy> cost 3 or greater.
+Exploration",,y,,,,,
+Blackmail,2,oo,Spell,,4,,3,"Destroy target <dream> card unless it's controller pays 3<energy>.
+Exploration",,y,#int #stop,,,,
+Mimic,2,ooo,Spell,,3,,4,"Target <reality><dream> unit becomes a copy of another target <reality> unit this round.
+Exploration",,y,#int,,,,
+Brazen Theft,4,zz,Spell,,3,,4,"Cache target <dream> card. It costs 2<energy> less while cached.
+Exploration",,y,,,,,
+Tell no Tales,1,<ae>,Spell,,4,,2,"Void up to 2 target <memory> cards. Draw 1.
+Exploration",,y,,,,,
+Bowl of Soup,1,<ao>,Spell,,4,,3,"Draw 1
+Gain 2 life
+Exploration",,y,,,,,
+Disrupt Magic,2,<az>,Spell,,4,,3,"Deal 4 damage to target <dream> spell.
+Exploration",,y,,,,,
+Shatter,2,<em>,Spell,,4,,3,"Deal 4 damage to target <dream> item.
+Exploration",,y,,,,,
+Antimagic,3,<eo>,Spell,,4,,5,"Void target <dream> spell.
+Exploration",,y,,,,,
+Instant Shield,1,<mo>,Spell,,4,,3,"Destroy target <dream> card or ability targetting an allied card.
+Exploration",,y,,,,,
+Murderous Intent,2,<mz>,Spell,,4,,3,"Deal 4 damage to target <reality> unit.
+Exploration",,y,,,,,
+Swift Rescue,1,<ae>,Spell,,4,,4,"Give target <reality><dream> card +3<defense> this round.
+Exploration",,y,,,,,
+Eliminate,3,<ao>,Spell,,4,,5,"Void target <reality><dream> unit.
+Exploration",,y,,,,,
+Demolish,3,<oz>,Spell,,4,,5,"Void target <reality><dream> item.
+Exploration",,y,,,,,
+Erase,4,<mz>,Spell,,4,,6,"Void target <reality> card.
++1<energy>
+Exploration",,y,,,,,
+Give Lifesteal,1,aa,Spell,,2,,3,"Give target <reality> unit lifesteal this round. 
+Draw 1
+Exploration",,y,,,,,
+Calibrated Rift,0,aaaa,Spell,,0,,2,"Draw 1
+Exploration",,y,,,,,
+Annual Feast,0,eeee,Spell,,0,,2,"Draw 1
+Exploration",,y,,,,,
+Harvest Season,0,mmmm,Spell,,0,,2,"Draw 1.
+Exploration",,y,,,,,
+Visions of the Past,0,oooo,Spell,,0,,2,"Draw 1
+Exploration",,y,,,,,
+Sweet Dreams,0,zzzz,Spell,,0,,2,"Draw 1
+Exploration",,y,,,,,
+Abomination Spellbook,0,<am>,Item,,0,,3,Skill | <infinite> Discard ~: Create a cached,,n,,,,,
+Nightmare Spellbook,0,<az>,Item,,0,,3,Skill | <infinite> Discard ~: Create a cached,,n,,,,,
+Arbiter's Spellbook,0,<eo>,Item,,0,,3,Skill | <infinite> Discard ~: Create a cached,,y,,,,,
+Knight's Spellbook,0,<ez>,Item,,0,,3,"Skill | <infinite> Discard ~: Create a cached K.O. Punch, New Recruit, or Burst of Speed card.",,y,,,,,
+Outlander's Spellbook,0,<mo>,Item,,0,,3,Skill | <infinite> Discard ~: Create a cached,,n,,,,,
+College of Dreams Spellbook,0,<ae>,Item,Arca,0,,3,Skill | <infinite> Discard ~: Create a cached,,n,,,,,
+Skyhaven Spellbook,0,<am>,Item,Material,0,,3,Skill | <infinite> Discard ~: Create a cached,,n,,,,,
+Pax Spellbook,0,<ao>,Item,Old World,0,,3,Skill | <infinite> Discard ~: Create a cached,,n,,,,,
+Burning Plain Spellbook,0,<az>,Item,Arca,0,,3,Skill | <infinite> Discard ~: Create a cached,,n,,,,,
+Fost Feac Spellbook,0,<em>,Item,Eminus,0,,3,Skill | <infinite> Discard ~: Create a cached,,n,,,,,
+Stronghold Spellbook,0,<eo>,Item,Eminus,0,,3,Skill | <infinite> Discard ~: Create a cached,,n,,,,,
+Pax Nova Spellbook,0,<ez>,Item,Zelor,0,,3,Skill | <infinite> Discard ~: Create a cached,,n,,,,,
+Twilight Isle Spellbook,0,<mo>,Item,Old World,0,,3,Skill | <infinite> Discard ~: Create a cached,,n,,,,,
+Lentholm Spellbook,0,<mz>,Item,Material,0,,3,Skill | <infinite> Discard ~: Create a cached,,n,,,,,
+Pale Mountain Spellbook,0,<oz>,Item,Zelor,0,,3,Skill | <infinite> Discard ~: Create a cached,,n,,,,,
+Rift,0,a,Claim,"Home, Rift",1,,8,Arrive: Draw 1 at round end.,,y,,,,,
+Village,0,e,Claim,"Home, Town",1,,8,Arrive: Draw 1 at round end.,,y,,,,,
+Grove,0,m,Claim,"Home, Wilderness",1,,8,Arrive: Draw 1 at round end.,,y,,,,,
+Ruins,0,o,Claim,"Home, Ruins",1,,8,Arrive: Draw 1 at round end.,,y,,,,,
+Dreamscape,0,z,Claim,"Home, Dream",1,,8,Arrive: Draw 1 at round end.,,y,,,,,
+Quiet Gate,0,<eo>,Claim,,1,,6,Arrive: Draw 1 at round end.,,n,,,,,
+Lively Cathedral,0,<ez>,Claim,,1,,6,Arrive: Draw 1 at round end.,,y,,,,,
+Overgrown Watchtower,1,<eo>,Claim,,1,,6,Arrive: Draw 1 and create an Energy Flask card.,,n,,,,,
+Familiar Hollow,1,<ez>,Claim,,1,,6,Arrive: Draw 1 and create an Energy Flask card.,,n,,,,,
+College of Dreams Directive,3,ae,Spell,Arca Eminus,4,,4,"Choose two --
+- Deal 3 damage to target <dream> spell.
+- Give target <reality> unit swiftness and On a Roll this round.
+- Target <reality> unit strikes it's controller.",,y,,,,,
+Skyhaven Directive,3,am,Spell,Arca Material,4,,4,"Choose two --
+- Deal 2 damage to target <dream> unit.
+- Create 2 cached Three Paths.
+- Give target <reality><dream> card ""Ward -- 3<energy>, 3 life"" this round.",,y,,,,,
+Pax Directive,3,ao,Spell,Arca Old World,4,,4,"Choose two --
+- Void target <reality><dream> card until round end.
+- Opponents discard a <reality> unit.
+- Summon target <memory> allied card with base <energy> cost 2 or less.",,y,,,,,
+Burning Plain Directive,3,az,Spell,Arca Zelor,4,,4,"Choose two --
+- Target player discards a <hand><channel> card.
+- Lifesteal. Deal 2 damage to target <dream> spell or player.
+- Create a Night Horror card.",,y,,,,,
+Fost Feac Directive,3,em,Spell,Eminus Material,4,,4,"Choose two --
+- Recall target <reality> unit
+- Give target <reality><dream> unit +3<offense> +3<defense> this round.
+- Unflip up to 2 target blocking units.",,y,,,,,
+Stronghold Directive,3,eo,Spell,Eminus Old World,4,,4,"Choose two --
+- Flip target <reality> card.
+- Give target <reality> unit Challenger this round.
+- Recall target <dream> card.",,y,,,,,
+Pax Nova Directive,3,ez,Spell,Eminus Zelor,4,,4,"Choose two --
+- Deal 2 damage to target <reality><dream> card or player.
+- Recall target <reality><dream> unit.
+- Cache the top card of your deck.",,y,,,,,
+Twilight Isle Directive,3,mo,Spell,Material Old World,4,,4,"Choose two --
+- Void target <reality> card with base <energy> cost 1 or less.
+- Create a Survivor (2/2 Outlander unit)
+- Give target unit base stats 4<offense> 4<defense> this round.",,y,,,,,
+Lentholm Directive,3,mz,Spell,Material Zelor,4,,4,"Choose two --
+- You may choose new targets for target <dream> spell.
+- Remove target combating unit from combat. Unflip it if it's allied.
+- Unflip target <reality> card.",,y,,,,,
+Pale Mountain Directive,3,oz,Spell,Old World Zelor,4,,4,"Choose two -- 
+- Target <reality> unit loses all abilities and gets -2<offense> this round.
+- Draw 3, then discard <hand><channel> 2 cards.
+- Summon a spell with base <energy> cost 2 or less from your hand.",,y,,,,,
+Oruva,0,a,Claim,Starting Location,1,,8,,,n,,,,#starter,
+Liev,0,e,Claim,Starting Location,1,,8,,,n,,,,#starter,
+Svet,0,m,Claim,Starting Location,1,,8,,,n,,,,#starter,
+Myrkur,0,o,Claim,Starting Location,1,,8,,,n,,,,#starter,
+Aton,0,z,Claim,Starting Location,1,,8,,,n,,,,#starter,
+The College of Dreams,0,<ae>,Claim,Starting Location,1,,8,You begin the game with 2 less life.,,y,,,,#starter,
+Skyhaven,0,<am>,Claim,Starting Location,1,,8,You begin the game with 2 less life.,,y,,,,#starter,
+Pax,0,<ao>,Claim,Starting Location,1,,8,You begin the game with 2 less life.,,y,,,,#starter,
+The Burning Plain,0,<az>,Claim,Starting Location,1,,8,You begin the game with 2 less life.,,y,,,,#starter,
+Fost Feac,0,<em>,Claim,Starting Location,1,,8,You begin the game with 2 less life.,,y,,,,#starter,
+Arbiters' Stronghold,0,<eo>,Claim,Starting Location,1,,8,You begin the game with 2 less life.,,y,,,,#starter,
+Pax Nova,0,<ez>,Claim,Starting Location,1,,8,You begin the game with 2 less life.,,y,,,,#starter,
+The Twilight Isle,0,<mo>,Claim,Starting Location,1,,8,You begin the game with 2 less life.,,y,,,,#starter,
+Lentholm,0,<mz>,Claim,Starting Location,1,,8,You begin the game with 2 less life.,,y,,,,#starter,
+The Pale Mountain,0,<oz>,Claim,Starting Location,1,,8,You begin the game with 2 less life.,,y,,,,#starter,
+The College of Dreams*,0,<ae>,Claim,Home,0,,8,Arrive: Draw 1 at round end.,,y,,,,,
+Skyhaven*,0,<am>,Claim,Home,0,,8,Arrive: Draw 1 at round end.,,y,,,,,
+Pax*,0,<ao>,Claim,Home,0,,8,Arrive: Draw 1 at round end.,,y,,,,,
+The Burning Plain*,0,<az>,Claim,Home,0,,8,Arrive: Draw 1 at round end.,,y,,,,,
+Fost Feac*,0,<em>,Claim,Home,0,,8,Arrive: Draw 1 at round end.,,y,,,,,
+Arbiters' Stronghold*,0,<eo>,Claim,Home,0,,8,Arrive: Draw 1 at round end.,,y,,,,,
+Pax Nova*,0,<ez>,Claim,Home,0,,8,Arrive: Draw 1 at round end.,,y,,,,,
+The Twilight Isle*,0,<mo>,Claim,Home,0,,8,Arrive: Draw 1 at round end.,,y,,,,,
+Lentholm*,0,<mz>,Claim,Home,0,,8,Arrive: Draw 1 at round end.,,y,,,,,
+The Pale Mountain*,0,<oz>,Claim,Home,0,,8,Arrive: Draw 1 at round end.,,y,,,,,

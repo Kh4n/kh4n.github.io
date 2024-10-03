@@ -3,13 +3,16 @@
     import { getCards } from "./card-data";
     import FieldC from "./components/FieldC.svelte";
     import FieldOppC from "./components/FieldOppC.svelte";
-    import { Card, type GameState, type PlayArea } from "./game-state";
+    import { Card, type GameState } from "./game-state";
     import { type DataConnection, Peer } from "peerjs";
     import { createStateChange, createTurnOrder, type NetMessage } from "./net";
     import ColumnC from "./components/ColumnC.svelte";
 
     let state: GameState = {
         player: {
+            life: 10,
+            energy: 2,
+            attacks: 2,
             reality: [],
             channeled: [],
             combatArea: [],
@@ -20,6 +23,9 @@
         },
 
         opponent: {
+            life: 10,
+            energy: 2,
+            attacks: 2,
             reality: [],
             channeled: [],
             combatArea: [],
@@ -59,6 +65,7 @@
     let connection: DataConnection = undefined;
 
     // connected = true;
+    // ourTurn = true;
     // playerId = "";
 
     peer.on("open", function (id) {
@@ -119,10 +126,43 @@
         </button>
     {/if}
     <div
-        class="flex h-screen max-h-screen min-w-[65rem] flex-row gap-2 p-1 pl-24 pt-24 {ourTurn
+        class="flex h-screen max-h-screen min-w-[65rem] flex-row gap-2 p-1 pl-16 pt-36 {ourTurn
             ? ''
             : 'pointer-events-none'}"
     >
+        <div class="absolute left-2 top-2 flex flex-row gap-1">
+            <div class="flex flex-col">
+                Player
+                <div class="flex flex-row gap-1">
+                    <div class="w-full">Life:</div>
+                    <input type="number" bind:value={state.player.life} />
+                </div>
+                <div class="flex flex-row gap-1">
+                    <div class="w-full">Energy:</div>
+                    <input type="number" bind:value={state.player.energy} />
+                </div>
+                <div class="flex flex-row gap-1">
+                    <div class="w-full">Attacks left:</div>
+                    <input type="number" bind:value={state.player.attacks} />
+                </div>
+            </div>
+            <div class="flex flex-col">
+                Opponent
+                <div class="flex flex-row gap-1">
+                    <div class="w-full">Life:</div>
+                    <input type="number" bind:value={state.opponent.life} />
+                </div>
+                <div class="flex flex-row gap-1">
+                    <div class="w-full">Energy:</div>
+                    <input type="number" bind:value={state.opponent.energy} />
+                </div>
+                <div class="flex flex-row gap-1">
+                    <div class="w-full">Attacks left:</div>
+                    <input type="number" bind:value={state.opponent.attacks} />
+                </div>
+            </div>
+        </div>
+
         <div class="rounded border border-black">
             <ColumnC name="Dream" dragType="player" bind:area={state.dream} />
         </div>

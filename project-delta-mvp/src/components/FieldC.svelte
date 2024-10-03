@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="flex flex-row gap-1">
-        <div class="flex flex-col">
+        <div class="flex flex-col gap-1">
             <div class="rounded border border-black p-1">
                 <RealityC dragType="player" bind:area={playArea.reality} />
             </div>

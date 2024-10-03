@@ -41,6 +41,10 @@ export class Player {
 export type CardSpace = Card | undefined;
 
 export interface PlayArea {
+    life: number;
+    energy: number;
+    attacks: number;
+
     combatArea: Card[];
     reality: Card[];
 

@@ -46,7 +46,7 @@
         on:consider={handle}
         on:finalize={handle}
         style="grid-template-columns: repeat(6, 8.5rem);"
-        class="grid max-h-[13.25rem] min-h-[12rem] min-w-[51rem] gap-x-1"
+        class="grid max-h-[13.25rem] min-h-[12rem] min-w-[51rem] gap-1"
     >
         {#each area as c, i (c.id)}
             <CardC card={c} {updateCard} />

@@ -3,17 +3,17 @@
     import { dndzone } from "svelte-dnd-action";
     import CardC from "./CardC.svelte";
     import { dragTransform } from "../common";
+    import { placeAtEnd } from "../util";
 
     export let area: Card[];
     export let name: string;
     export let dragType: string;
 
     function handle(e) {
-        area = e.detail.items;
+        area = placeAtEnd(area, e.detail.items);
     }
 
     function updateCard() {
-        console.log("here");
         area = area;
     }
 </script>

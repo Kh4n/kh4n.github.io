@@ -3,24 +3,11 @@
     import { dndzone } from "svelte-dnd-action";
     import CardC from "./CardC.svelte";
     import { dragTransform } from "../common";
+    import { placeAtEnd } from "../util";
 
     export let deck: Card[];
     export let name: string;
     export let dragType: string;
-
-    function placeAtEnd(orig: Card[], updated: Card[]) {
-        for (let i = 0; i < updated.length - 1; ++i) {
-            let cur = updated[i];
-            let ind = orig.findIndex((v) => v.id === cur.id);
-            if (ind === -1) {
-                let tmp = updated[updated.length - 1];
-                updated[updated.length - 1] = cur;
-                updated[i] = tmp;
-                return updated;
-            }
-        }
-        return updated;
-    }
 
     function handle(e) {
         deck = placeAtEnd(deck, e.detail.items);
