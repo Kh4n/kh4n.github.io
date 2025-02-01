@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<script src="wasm_exec.js"></script>
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script>
+const go = new Go();
+WebAssembly.instantiateStreaming(fetch("project-delta.wasm"), go.importObject).then(result => {
+    go.run(result.instance);
+});
+</script>
