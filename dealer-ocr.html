@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>DealerOCR</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --panel: #ffffff; --text: #1c2128; --muted: #646d78; --line: #dfe3e8; --selected: #e8eefb;
+    --accent: #2457c5; --accent-text: #ffffff;
+    --keep: #17693a; --keep-bg: #e3f4e9; --drop: #8a3b32; --drop-bg: #f8e9e6; --error: #a32a1e;
+    --pending: #5b6470; --pending-bg: #eceff2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14171b; --panel: #1d2126; --text: #e8eaed; --muted: #9aa3ad; --line: #30363d; --selected: #26324a;
+      --accent: #7fa6f5; --accent-text: #10151d;
+      --keep: #7fd6a0; --keep-bg: #1b3325; --drop: #eda99f; --drop-bg: #3a2320; --error: #f19a8e;
+      --pending: #b4bcc6; --pending-bg: #2b3036;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .shell { max-width: 1120px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 20px; }
+  h1 { font-size: 22px; margin: 0; }
+  h2 { font-size: 16px; margin: 0 0 12px; overflow-wrap: anywhere; }
+  .layout { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 16px; align-items: start; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+  #gate { max-width: 420px; margin: 48px auto; }
+  aside { position: sticky; top: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
+  .new-link { display: block; text-align: center; font-weight: 600; text-decoration: none; padding: 8px; border-radius: 6px; background: var(--accent); color: var(--accent-text); }
+  .job-list { list-style: none; margin: 12px 0 0; padding: 0; max-height: calc(100vh - 190px); overflow-y: auto; }
+  .job-list li { position: relative; }
+  .job-row { display: block; color: inherit; text-decoration: none; padding: 8px 28px 8px 10px; border-radius: 6px; }
+  .job-row:hover { background: var(--bg); }
+  .job-row[aria-current=page] { background: var(--selected); }
+  .job-name { display: block; font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .job-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+  .unseen { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
+  .remove { position: absolute; top: 6px; right: 4px; border: 0; background: none; color: var(--muted); padding: 0 6px; font-size: 16px; line-height: 1.4; }
+  .remove:hover { color: var(--text); }
+  .muted { color: var(--muted); }
+  .small { font-size: 13px; }
+  .error { color: var(--error); overflow-wrap: anywhere; }
+  label { display: block; font-weight: 600; margin-bottom: 14px; }
+  label .hint { display: block; font-weight: 400; font-size: 13px; color: var(--muted); }
+  input[type=password], input[type=file] {
+    display: block; width: 100%; margin-top: 6px; padding: 8px; font: inherit; color: inherit;
+    background: var(--bg); border: 1px solid var(--line); border-radius: 6px;
+  }
+  button { font: inherit; cursor: pointer; border-radius: 6px; padding: 8px 14px; border: 1px solid var(--line); background: var(--panel); color: var(--text); }
+  button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); font-weight: 600; }
+  button:disabled { opacity: .55; cursor: default; }
+  button.link { border: 0; background: none; color: var(--muted); padding: 0; text-decoration: underline; font-size: 13px; }
+  a { color: var(--accent); }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 16px; margin: 0 0 16px; }
+  dt { color: var(--muted); }
+  dd { margin: 0; overflow-wrap: anywhere; }
+  .filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .filters button { padding: 4px 12px; font-size: 13px; }
+  .filters button[aria-pressed=true] { background: var(--text); border-color: var(--text); color: var(--bg); }
+  .page { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 4px 14px; padding: 14px 0; border-top: 1px solid var(--line); }
+  .page-side { text-align: center; }
+  .page-no { font-size: 18px; font-weight: 600; display: block; }
+  .page-side a { display: block; }
+  .badge { display: inline-block; font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 999px; }
+  .badge.keep { color: var(--keep); background: var(--keep-bg); }
+  .badge.drop { color: var(--drop); background: var(--drop-bg); }
+  .badge.pending { color: var(--pending); background: var(--pending-bg); }
+  .doc-type { font-weight: 600; overflow-wrap: anywhere; }
+  .field { margin: 4px 0 0; overflow-wrap: anywhere; }
+  .field b { color: var(--muted); font-weight: 600; font-size: 13px; }
+  [hidden] { display: none !important; }
+  @media (max-width: 760px) {
+    .layout { grid-template-columns: minmax(0, 1fr); }
+    aside { position: static; }
+    .job-list { max-height: 190px; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <header>
+    <h1>DealerOCR</h1>
+    <button id="sign-out" class="link" hidden>Forget access token</button>
+  </header>
+
+  <form id="gate" class="panel" hidden>
+    <h2>Access token</h2>
+    <label>Enter the token you were given
+      <input id="token" type="password" autocomplete="off" required>
+    </label>
+    <div class="actions">
+      <button class="primary" type="submit">Continue</button>
+      <span id="gate-error" class="error"></span>
+    </div>
+  </form>
+
+  <div id="app" class="layout" hidden>
+    <aside>
+      <a class="new-link" href="#new">+ New job</a>
+      <ul id="job-list" class="job-list"></ul>
+      <p id="no-jobs" class="muted small">Jobs you start will appear here.</p>
+      <p id="connection" class="error small" hidden>Can't reach the server. Retrying…</p>
+    </aside>
+
+    <main>
+      <form id="upload" class="panel" hidden>
+        <h2>New job</h2>
+        <label>Dealer packet
+          <span class="hint">The full packet, as a PDF (up to 100 MB).</span>
+          <input id="packet" type="file" accept="application/pdf,.pdf" required>
+        </label>
+        <label>Bank instructions
+          <span class="hint">The bank's required document list, as a PDF (up to 100 MB).</span>
+          <input id="instructions" type="file" accept="application/pdf,.pdf" required>
+        </label>
+        <div class="actions">
+          <button id="submit" class="primary" type="submit">Filter packet</button>
+          <span id="upload-error" class="error"></span>
+        </div>
+        <p class="muted small">Files are processed by Google Gemini and deleted after 3 days.</p>
+      </form>
+
+      <section id="job" class="panel" hidden>
+        <h2 id="job-title"></h2>
+        <dl>
+          <dt>Status</dt><dd id="status"></dd>
+          <dt id="instructions-label">Instructions</dt><dd id="instructions-name"></dd>
+          <dt>Job ID</dt><dd id="job-id"></dd>
+          <dt>Created</dt><dd id="created"></dd>
+          <dt>Deleted after</dt><dd id="expires"></dd>
+          <dt id="summary-label" hidden>Result</dt><dd id="summary" hidden></dd>
+        </dl>
+        <p id="job-error" class="error" hidden></p>
+        <div class="actions">
+          <button id="download" class="primary" hidden>Download filtered PDF</button>
+          <span id="download-error" class="error"></span>
+        </div>
+      </section>
+
+      <section id="results" class="panel" hidden>
+        <h2>Page decisions</h2>
+        <div id="filters" class="filters"></div>
+        <p id="no-preview" class="muted small" hidden>Page previews are only available in the tab session that uploaded the packet.</p>
+        <div id="pages"></div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script>
+"use strict";
+const API_URL = "https://us-central1-dealer-ocr.cloudfunctions.net/dealer-ocr-api";
+const MAX_UPLOAD_BYTES = 100 * 1024 * 1024;
+const RETENTION_MS = 3 * 24 * 60 * 60 * 1000;
+const POLL_MS = 5000;
+const TOKEN_STORAGE = "dealerocr-token";
+const JOBS_STORAGE = "dealerocr-jobs";
+const ACTIVE = new Set(["QUEUED", "PROCESSING"]);
+const STATUS_TEXT = {
+  QUEUED: "Queued",
+  PROCESSING: "Reviewing pages",
+  COMPLETE: "Complete",
+  FAILED: "Failed",
+};
+
+const element = (id) => document.getElementById(id);
+
+// Only a summary of each job is stored. Page decisions stay on the server and are fetched on open.
+let token = readStorage(TOKEN_STORAGE) || "";
+let jobs = loadJobs();
+let currentJobId = null;
+let filter = "all";
+let lastRendered = "";
+const details = new Map();
+const notFound = new Set();
+const uploading = new Set();
+const packetUrls = new Map();
+let pollTimer = null;
+let polling = false;
+let pollAgain = false;
+
+function readStorage(key) {
+  try { return localStorage.getItem(key); } catch { return null; }
+}
+
+function writeStorage(key, value) {
+  try {
+    if (value) localStorage.setItem(key, value);
+    else localStorage.removeItem(key);
+  } catch { /* State just won't survive a reload. */ }
+}
+
+function loadJobs() {
+  try {
+    const stored = JSON.parse(readStorage(JOBS_STORAGE) || "[]");
+    return Array.isArray(stored) ? stored.filter((job) => new Date(job.expiresAt) > new Date()) : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveJobs() {
+  writeStorage(JOBS_STORAGE, JSON.stringify(jobs));
+}
+
+const findJob = (id) => jobs.find((job) => job.id === id);
+
+function updateJob(id, changes) {
+  const job = findJob(id);
+  if (!job) return;
+  Object.assign(job, changes);
+  saveJobs();
+  renderSidebar();
+}
+
+function removeJob(id) {
+  jobs = jobs.filter((job) => job.id !== id);
+  saveJobs();
+  if (packetUrls.has(id)) {
+    URL.revokeObjectURL(packetUrls.get(id));
+    packetUrls.delete(id);
+  }
+  renderSidebar();
+}
+
+class SignedOut extends Error {}
+
+async function rpc(method, body) {
+  const response = await fetch(`${API_URL}/${method}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "X-Api-Key": token },
+    body: JSON.stringify(body),
+  });
+  if (response.status === 401) {
+    signOut("That access token was not accepted.");
+    throw new SignedOut();
+  }
+  const data = await response.json().catch(() => ({}));
+  return { status: response.status, data };
+}
+
+async function rpcOk(method, body) {
+  const { status, data } = await rpc(method, body);
+  if (status >= 300) throw new Error(data.error || `${method} failed (HTTP ${status})`);
+  return data;
+}
+
+function signOut(message) {
+  clearTimeout(pollTimer);
+  token = "";
+  writeStorage(TOKEN_STORAGE, "");
+  element("token").value = "";
+  element("gate-error").textContent = message || "";
+  route();
+}
+
+// Routing: the URL hash is the only navigation state, so back, forward and reload all work.
+function route() {
+  element("gate").hidden = Boolean(token);
+  element("app").hidden = !token;
+  element("sign-out").hidden = !token;
+  if (!token) return;
+
+  const match = location.hash.match(/^#job=([\w-]+)$/);
+  const nextJobId = match ? match[1] : null;
+  if (nextJobId !== currentJobId) {
+    filter = "all";
+    window.scrollTo(0, 0);
+  }
+  lastRendered = "";
+  currentJobId = nextJobId;
+  element("upload").hidden = Boolean(currentJobId);
+  element("job").hidden = !currentJobId;
+  element("results").hidden = true;
+
+  if (currentJobId && findJob(currentJobId)?.unseen) updateJob(currentJobId, { unseen: false });
+  renderSidebar();
+  renderJob();
+  poll();
+}
+
+function jobLabel(job) {
+  if (uploading.has(job.id)) return "Uploading";
+  if (job.uploadError || job.status === "AWAITING_UPLOAD") return "Upload incomplete";
+  return STATUS_TEXT[job.status] || job.status;
+}
+
+function badgeClass(job) {
+  if (job.status === "COMPLETE") return "keep";
+  if (job.status === "FAILED" || job.uploadError) return "drop";
+  return "pending";
+}
+
+function renderSidebar() {
+  element("no-jobs").hidden = jobs.length > 0;
+  element("job-list").replaceChildren(...jobs.map((job) => {
+    const item = document.createElement("li");
+
+    const link = document.createElement("a");
+    link.className = "job-row";
+    link.href = `#job=${job.id}`;
+    if (job.id === currentJobId) link.setAttribute("aria-current", "page");
+    const name = document.createElement("span");
+    name.className = "job-name";
+    name.textContent = job.packetName;
+    name.title = job.packetName;
+    const meta = document.createElement("span");
+    meta.className = "job-meta";
+    const badge = document.createElement("span");
+    badge.className = `badge ${badgeClass(job)}`;
+    badge.textContent = jobLabel(job);
+    meta.append(badge);
+    if (job.total !== undefined) meta.append(`${job.kept}/${job.total} kept`);
+    if (job.unseen) {
+      const dot = document.createElement("span");
+      dot.className = "unseen";
+      dot.title = "Finished, not opened yet";
+      meta.append(dot);
+    }
+    link.append(name, meta);
+
+    const remove = document.createElement("button");
+    remove.className = "remove";
+    remove.type = "button";
+    remove.textContent = "×";
+    remove.title = "Remove from this list";
+    remove.setAttribute("aria-label", `Remove ${job.packetName} from this list`);
+    remove.hidden = uploading.has(job.id);
+    remove.addEventListener("click", () => {
+      removeJob(job.id);
+      if (job.id === currentJobId) location.replace("#new");
+    });
+
+    item.append(link, remove);
+    return item;
+  }));
+}
+
+function renderJob() {
+  if (!currentJobId) return;
+  const row = findJob(currentJobId);
+  const job = details.get(currentJobId);
+  const signature = JSON.stringify([currentJobId, row, job, filter, uploading.has(currentJobId), notFound.has(currentJobId)]);
+  if (signature === lastRendered) return;
+  lastRendered = signature;
+
+  element("job-title").textContent = row ? row.packetName : "Job";
+  element("job-id").textContent = currentJobId;
+  element("instructions-name").textContent = row?.instructionsName || "";
+  element("instructions-name").hidden = element("instructions-label").hidden = !row?.instructionsName;
+  element("created").textContent = formatTime(job?.createdAt);
+  element("expires").textContent = formatTime(job?.expiresAt);
+
+  let error = job?.error ? `Error: ${job.error}` : "";
+  if (row?.uploadError) error = `Upload failed: ${row.uploadError}. Please start a new job.`;
+  if (notFound.has(currentJobId)) error = "Job not found. Jobs are deleted after 3 days.";
+
+  if (notFound.has(currentJobId)) element("status").textContent = "Unavailable";
+  else if (row) element("status").textContent = jobLabel(row);
+  else element("status").textContent = job ? jobLabel(job) : "Loading…";
+  if (!error && !uploading.has(currentJobId) && job?.status === "AWAITING_UPLOAD") {
+    error = "The upload did not finish. Please start a new job.";
+  }
+  element("job-error").textContent = error;
+  element("job-error").hidden = !error;
+  element("download").hidden = !job?.downloadUrl;
+
+  const pages = job?.pages;
+  element("summary").hidden = element("summary-label").hidden = !pages;
+  element("results").hidden = !pages;
+  if (pages) {
+    const kept = pages.filter((page) => page.include).length;
+    element("summary").textContent = kept
+      ? `Kept ${kept} of ${pages.length} pages`
+      : `No pages kept out of ${pages.length}, so there is no filtered PDF`;
+    element("no-preview").hidden = packetUrls.has(currentJobId);
+    renderPages(pages);
+  }
+}
+
+function formatTime(value) {
+  return value ? new Date(value).toLocaleString() : "—";
+}
+
+function renderPages(pages) {
+  const kept = pages.filter((page) => page.include).length;
+  const options = [
+    ["all", `All (${pages.length})`],
+    ["keep", `Kept (${kept})`],
+    ["drop", `Dropped (${pages.length - kept})`],
+  ];
+  element("filters").replaceChildren(...options.map(([value, label]) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = label;
+    button.setAttribute("aria-pressed", String(filter === value));
+    button.addEventListener("click", () => { filter = value; renderJob(); });
+    return button;
+  }));
+
+  const visible = pages.filter((page) => filter === "all" || page.include === (filter === "keep"));
+  element("pages").replaceChildren(...visible.map(pageRow));
+}
+
+// Model output goes in through textContent only, so a packet's contents can't inject markup.
+function pageRow(page) {
+  const row = document.createElement("article");
+  row.className = "page";
+
+  const side = document.createElement("div");
+  side.className = "page-side";
+  const number = document.createElement("span");
+  number.className = "page-no";
+  number.textContent = page.page;
+  const badge = document.createElement("span");
+  badge.className = `badge ${page.include ? "keep" : "drop"}`;
+  badge.textContent = page.include ? "Keep" : "Drop";
+  side.append(number, badge);
+  const packetUrl = packetUrls.get(currentJobId);
+  if (packetUrl) {
+    const view = document.createElement("a");
+    view.className = "small";
+    view.href = `${packetUrl}#page=${page.page}`;
+    view.target = "_blank";
+    view.rel = "noopener";
+    view.textContent = "View";
+    side.append(view);
+  }
+
+  const body = document.createElement("div");
+  const type = document.createElement("div");
+  type.className = "doc-type";
+  type.textContent = page.documentType;
+  body.append(type, field("Page shows", page.description), field("Reasoning", page.reasoning));
+
+  row.append(side, body);
+  return row;
+}
+
+function field(label, value) {
+  const paragraph = document.createElement("p");
+  paragraph.className = "field";
+  const name = document.createElement("b");
+  name.textContent = `${label}: `;
+  paragraph.append(name, value);
+  return paragraph;
+}
+
+// Polling: one loop covers every unfinished job, plus the open job until it has loaded.
+function jobsToPoll() {
+  const ids = new Set(jobs
+    .filter((job) => ACTIVE.has(job.status) && !uploading.has(job.id))
+    .map((job) => job.id));
+  if (currentJobId && !notFound.has(currentJobId)) {
+    const open = details.get(currentJobId);
+    if (!open || (ACTIVE.has(open.status) && !uploading.has(currentJobId))) ids.add(currentJobId);
+  }
+  return [...ids];
+}
+
+async function poll() {
+  clearTimeout(pollTimer);
+  if (polling) {
+    pollAgain = true;
+    return;
+  }
+  polling = true;
+  const results = await Promise.allSettled(jobsToPoll().map(refreshJob));
+  polling = false;
+  const failed = results.some((result) => result.status === "rejected" && !(result.reason instanceof SignedOut));
+  element("connection").hidden = !failed;
+  if (!token) return;
+  if (pollAgain) {
+    pollAgain = false;
+    poll();
+  } else {
+    pollTimer = setTimeout(poll, POLL_MS);
+  }
+}
+
+async function refreshJob(id) {
+  const { status, data } = await rpc("getJob", { jobId: id });
+  if (status === 404) {
+    notFound.add(id);
+    details.delete(id);
+    removeJob(id);
+  } else if (status >= 300) {
+    throw new Error(data.error || `HTTP ${status}`);
+  } else {
+    details.set(id, data);
+    const row = findJob(id);
+    if (row && !uploading.has(id)) {
+      const finished = ACTIVE.has(row.status) && !ACTIVE.has(data.status);
+      const changes = { status: data.status };
+      if (data.expiresAt) changes.expiresAt = data.expiresAt;
+      if (data.pages) {
+        changes.total = data.pages.length;
+        changes.kept = data.pages.filter((page) => page.include).length;
+      }
+      if (finished && id !== currentJobId) changes.unseen = true;
+      updateJob(id, changes);
+    }
+  }
+  if (id === currentJobId) renderJob();
+}
+
+element("sign-out").addEventListener("click", () => signOut());
+window.addEventListener("hashchange", route);
+window.addEventListener("beforeunload", (event) => {
+  if (uploading.size) event.preventDefault();
+});
+window.addEventListener("storage", (event) => {
+  if (event.key !== JOBS_STORAGE) return;
+  jobs = loadJobs();
+  renderSidebar();
+  renderJob();
+  poll();
+});
+
+element("gate").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  element("gate-error").textContent = "";
+  const entered = element("token").value.trim();
+  token = entered;
+  try {
+    // A made-up job gets 404 with a good token and 401 with a bad one, and creates nothing.
+    const { status } = await rpc("getJob", { jobId: "token-check" });
+    if (status !== 404) throw new Error(`Unexpected response (HTTP ${status})`);
+    writeStorage(TOKEN_STORAGE, entered);
+    route();
+  } catch (error) {
+    if (error instanceof SignedOut) return;
+    token = "";
+    element("gate-error").textContent = `Could not check the token: ${error.message}`;
+  }
+});
+
+element("upload").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const errorText = element("upload-error");
+  const button = element("submit");
+  const packet = element("packet").files[0];
+  const instructions = element("instructions").files[0];
+  errorText.textContent = "";
+  if (packet.size > MAX_UPLOAD_BYTES || instructions.size > MAX_UPLOAD_BYTES) {
+    errorText.textContent = "Each file must be 100 MB or smaller.";
+    return;
+  }
+
+  button.disabled = true;
+  let created;
+  try {
+    created = await rpcOk("createJob", {});
+  } catch (error) {
+    if (!(error instanceof SignedOut)) errorText.textContent = error.message;
+    return;
+  } finally {
+    button.disabled = false;
+  }
+
+  // Uploads carry on in the background, so people can queue another job straight away.
+  const id = created.jobId;
+  uploading.add(id);
+  packetUrls.set(id, URL.createObjectURL(packet));
+  jobs.unshift({
+    id,
+    packetName: packet.name,
+    instructionsName: instructions.name,
+    status: "AWAITING_UPLOAD",
+    expiresAt: new Date(Date.now() + RETENTION_MS).toISOString(),
+  });
+  saveJobs();
+  element("upload").reset();
+  location.hash = `#job=${id}`;
+  uploadJob(id, created.uploadUrls, packet, instructions);
+});
+
+async function uploadJob(id, urls, packet, instructions) {
+  let changes;
+  try {
+    await Promise.all([put(urls.packet, packet), put(urls.instructions, instructions)]);
+    await rpcOk("startJob", { jobId: id });
+    changes = { status: "QUEUED" };
+  } catch (error) {
+    changes = { uploadError: error instanceof SignedOut ? "access token rejected" : error.message };
+  }
+  uploading.delete(id);
+  updateJob(id, changes);
+  details.delete(id);
+  renderJob();
+  poll();
+}
+
+async function put(url, file) {
+  const response = await fetch(url, {
+    method: "PUT",
+    headers: { "Content-Type": "application/pdf" },
+    body: file,
+  });
+  if (!response.ok) throw new Error(`Upload of ${file.name} failed (HTTP ${response.status})`);
+}
+
+element("download").addEventListener("click", async () => {
+  const button = element("download");
+  const errorText = element("download-error");
+  errorText.textContent = "";
+  button.disabled = true;
+  try {
+    // Links expire after 15 minutes, so always ask for a fresh one.
+    const job = await rpcOk("getJob", { jobId: currentJobId });
+    const response = await fetch(job.downloadUrl);
+    if (!response.ok) throw new Error(`Download failed (HTTP ${response.status})`);
+    const url = URL.createObjectURL(await response.blob());
+    const name = (findJob(currentJobId)?.packetName || "packet.pdf").replace(/\.pdf$/i, "");
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${name}_filtered.pdf`;
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+  } catch (error) {
+    if (!(error instanceof SignedOut)) errorText.textContent = error.message;
+  } finally {
+    button.disabled = false;
+  }
+});
+
+route();
+</script>
+</body>
+</html>
